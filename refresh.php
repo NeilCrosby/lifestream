@@ -1,7 +1,5 @@
 <?php
 
-$tenWordCount = 0;
-
 function __autoload($class_name) {
   require_once $class_name . '.php';
 }
@@ -252,8 +250,6 @@ function getHtmlForEntryFlickrThumbnail( $items, $stream ) {
 
 function getHtmlForEntryTheTenWordReview( $item ) {
 	
-	global $tenWordCount;
-	
 	$tenWordColors = array( 
 													'000000',
 													'8c288b', 
@@ -266,12 +262,6 @@ function getHtmlForEntryTheTenWordReview( $item ) {
 													'87c80a',
 													'00adef',
 												);
-	
-	
-	$tenWordCount++;
-	if ( $tenWordCount >= sizeof($tenWordColors) ) {
-		$tenWordCount = 0;
-	}
 	
 	$description = (string) $item->description;
 	$description = simplexml_load_string( "<?xml version='1.0'?><description>$description</description>" );
