@@ -1,0 +1,15 @@
+RewriteEngine on
+
+###################################################
+# Remove the leading www if one exists
+###################################################
+RewriteCond %{HTTP_HOST} ^www\.(.*)
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+###################################################
+# Redirect RSS silently to the correct Yahoo! Pipes
+###################################################
+RewriteRule ^main.rss$ /feeds.php?feed=considered [L]
+RewriteRule ^stream-of-consciousness.rss$ /feeds.php?feed=stream-of-consciousness [L]
+RewriteRule ^others-said.rss$ /feeds.php?feed=others-said [L]
+
