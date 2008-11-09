@@ -277,12 +277,15 @@ function getHtmlForEntryTheTenWordReview( $item ) {
 	$description = simplexml_load_string( "<?xml version='1.0'?><description>$description</description>" );
 
 	$tenWordCount = substr( number_format( hexdec( md5( $description->p[0] ) ) ), -1);
+	
+	preg_match('/^(.*) by /', $item->title, $matches);
+	$title = ($matches) ? $matches[1] : $item->title;
 
 	return "
 		<li class='module thetenwordreview' style='background-color: #{$tenWordColors[$tenWordCount]}'>
 		  <div>
   		  <div class='hd'>
-  		    <h3><a href='{$item->link}'>{$item->title}</a></h3>
+  		    <h3><a href='{$item->link}'>$title</a></h3>
   		  </div>
   		  <div class='bd'>
 		    	{$description->p[0]}
