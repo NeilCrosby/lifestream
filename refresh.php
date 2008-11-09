@@ -32,7 +32,7 @@ function getTemplate() {
 }
 
 function saveOutput( $template ) {
-  return file_put_contents($_SERVER['DOCUMENT_ROOT'].'/index.php', $template);
+  return file_put_contents($_SERVER['DOCUMENT_ROOT'].'/index.html', $template);
 }
 
 
