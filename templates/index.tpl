@@ -116,6 +116,26 @@
       color: #111;
     }
 
+    #secondary .module.twitter.twitter_at_user .hd {
+      background-image: url(images/lozenge_twitter_at_user_speech.png);
+    }
+
+    #secondary .module.twitter.twitter_at_user .bd  {
+      background: #dfeef9 url(/images/lozenge_twitter_at_user_tl.png) no-repeat left top;
+    }
+    
+    #secondary .module.twitter.twitter_at_user .bd p  {
+      background-image: url(/images/lozenge_twitter_at_user_tr.png);
+    }
+
+    #secondary .module.twitter.twitter_at_user .ft  {
+      background: #dfeef9 url(/images/lozenge_twitter_at_user_bl.png) no-repeat left bottom;
+    }
+    
+    #secondary .module.twitter.twitter_at_user .ft p  {
+      background-image: url(/images/lozenge_twitter_at_user_br.png);
+    }
+
     #secondary .module.delicious  {
       min-height: 42px;
       border-top: 1px solid #ccc;

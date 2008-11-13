@@ -195,7 +195,7 @@ function getHtmlForEntryFlickr( $item ) {
 		//	$height = $maxHeight;
 		//}
 		
-		$description = "<p><a href='{$item->link}'><img src='{$matches[1]}.jpg' width='{$width}' height='{$height}' alt='$title'></a></p>";
+		$description = "<p><a href='{$item->link}'><img src='{$matches[1]}.jpg' width='{$width}' height='{$height}' alt='{$item->title}'></a></p>";
 	}
 	
 	return "
@@ -324,14 +324,25 @@ function getHtmlForEntryDelicious( $item ) {
 }
 
 function getHtmlForEntryTwitter( $item ) {
+	$twitterUsername = 'NeilCrosby';
+	
+	$description = strip_tags($item->description);
+	$class = '';
+	if ( $twitterUsername != substr($description, 0, strlen($twitterUsername)) ) {
+		$author = $item->author[0];
+		preg_match('/(^[^\s]+)/', $author, $matches);
+		$description = $matches[1] . ': ' . $description;
+		$class=' twitter_at_user';
+ 	}
+	
 	return "
-		<li class='module twitter'>
+		<li class='module twitter$class'>
 		  <div>
   		  <div class='hd'>
   		    <h3><a href='{$item->link}'>Twitter</a></h3>
   		  </div>
   		  <div class='bd'>
-  		    <p><a href='{$item->link}'>{$item->description}</a></p>
+  		    <p><a href='{$item->link}'>$description</a></p>
   		  </div>
 			  <div class='ft'>
 			    <p>{$item->pubDate}</p>
