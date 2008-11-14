@@ -98,6 +98,8 @@ function getDataFromFeed( $url ) {
 }
 
 function getHtmlForEntry( $item, $stream='considered', $backlog = array() ) {
+  $item->pubDate = date('l jS F Y, H:i', strtotime($item->pubDate));
+
   $html = '';
   if ( sizeof( $backlog ) > 0 && !preg_match( '/^http:\/\/www\.flickr\.com/', $item->link ) ) {
 
