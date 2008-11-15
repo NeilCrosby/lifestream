@@ -149,6 +149,13 @@ function getHtmlForEntryUpcoming( $item ) {
 	  $item->description = substr( $item->description, 0, $pos );
 	}
 	
+	$maxDescriptionLength = 70;
+
+	$description = $item->description;
+	if ( mb_strlen($description) > $maxDescriptionLength ) {
+		$description = mb_substr( $description, 0, $maxDescriptionLength) . '&hellip;';
+	}
+	
 	$pos = strpos( $item->title, ':' );
 	if ( false !== $pos ) {
 	  $date = substr( $item->title, 0, $pos );
@@ -160,14 +167,21 @@ function getHtmlForEntryUpcoming( $item ) {
 	  $year  = $matches[3];
 	}
 	
+	$maxTitleLength = 23;
+
+	$title = $item->title;
+	if ( mb_strlen($title) > $maxTitleLength ) {
+		$title = mb_substr( $title, 0, $maxTitleLength) . '&hellip;';
+	}
+	
 	return <<<HTML
 		<li class='module upcoming'>
 			<div class='hd'>
-				<h3><a href='{$item->link}'>{$item->title}</a></h3>
+				<h3><a href='{$item->link}'>{$title}</a></h3>
 			</div>
 			<div class='bd'>
 				<p class='date'><span>{$month} {$year}</span>{$day}</p>
-				<p>{$item->description}</p>
+				<p>{$description}</p>
 			</div>
 			<div class='ft'>
 				<p>{$item->pubDate}</p>
@@ -301,15 +315,22 @@ HTML;
 }
 
 function getHtmlForEntryDelicious( $item ) {
-	preg_match( '/^del\.icio\.us link:\s*(.*)/', $item->title, $matches);
+	$maxDescriptionLength = 70;
+
+	$description = $item->description;
+	if ( mb_strlen($description) > $maxDescriptionLength ) {
+		$description = mb_substr( $description, 0, $maxDescriptionLength) . '&hellip;';
+	}
 	
+	preg_match( '/^del\.icio\.us link:\s*(.*)/', $item->title, $matches);
+
 	return <<<HTML
 		<li class='module delicious'>
 			<div class='hd'>
 				<h3><a href='{$item->link}'>{$matches[1]}</a></h3>
 			</div>
 			<div class='bd'>
-				<p>{$item->description}</p>
+				<p>$description</p>
 			</div>
 			<div class='ft'>
 				<p>{$item->pubDate}</p>
@@ -336,7 +357,7 @@ function getHtmlForEntryTwitter( $item ) {
 				<h3><a href='{$item->link}'>Twitter</a></h3>
 			</div>
 			<div class='bd'>
-				<p><a href='{$item->link}'>$description</a></p>
+				<p><a href='{$item->link}'>{$description}</a></p>
 			</div>
 			<div class='ft'>
 				<p>{$item->pubDate}</p>
