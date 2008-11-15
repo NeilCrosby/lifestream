@@ -344,7 +344,7 @@ function getHtmlForEntryTwitter( $item ) {
 	
 	$description = strip_tags($item->description);
 	$class = '';
-	if ( $twitterUsername != substr($description, 0, strlen($twitterUsername)) ) {
+	if ( $twitterUsername != mb_substr($item->author[0], 0, strlen($twitterUsername)) && $twitterUsername != mb_substr($description, 0, strlen($twitterUsername)) ) {
 		$author = $item->author[0];
 		preg_match('/(^[^\s]+)/', $author, $matches);
 		$description = $matches[1] . ': ' . $description;
