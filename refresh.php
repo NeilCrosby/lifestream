@@ -128,20 +128,19 @@ function getHtmlForEntry( $item, $stream='considered', $backlog = array() ) {
     return $html.getHtmlForEntryUpcoming($item);
   }
   
-	return $html."
+	return $html.<<<HTML
 		<li class='module'>
-		  <div>
-		    <div class='hd'>
-			    <h3><a href='{$item->link}'>{$item->title}</a></h3>
-			  </div>
-			  <div class='bd'>
-			    {$item->description}
-			  </div>
-			  <div class='ft'>
-			    <p>$item->pubDate</p>
-			  </div>
+			<div class='hd'>
+				<h3><a href='{$item->link}'>{$item->title}</a></h3>
 			</div>
-		</li>";
+			<div class='bd'>
+				{$item->description}
+			</div>
+			<div class='ft'>
+				<p>$item->pubDate</p>
+			</div>
+		</li>
+HTML;
 }
 
 function getHtmlForEntryUpcoming( $item ) {
@@ -161,21 +160,20 @@ function getHtmlForEntryUpcoming( $item ) {
 	  $year  = $matches[3];
 	}
 	
-	return "
+	return <<<HTML
 		<li class='module upcoming'>
-		  <div>
-  		  <div class='hd'>
-  		    <h3><a href='{$item->link}'>{$item->title}</a></h3>
-  		  </div>
-  		  <div class='bd'>
-  		    <p class='date'><span>{$month} {$year}</span>{$day}</p>
-  		    <p>{$item->description}</p>
-  		  </div>
-			  <div class='ft'>
-			    <p>{$item->pubDate}</p>
-        </div>
-      </div>
-		</li>";
+			<div class='hd'>
+				<h3><a href='{$item->link}'>{$item->title}</a></h3>
+			</div>
+			<div class='bd'>
+				<p class='date'><span>{$month} {$year}</span>{$day}</p>
+				<p>{$item->description}</p>
+			</div>
+			<div class='ft'>
+				<p>{$item->pubDate}</p>
+			</div>
+		</li>
+HTML;
 }
 
 function getHtmlForEntryFlickr( $item ) {
@@ -200,70 +198,68 @@ function getHtmlForEntryFlickr( $item ) {
 		$description = "<p><a href='{$item->link}'><img src='{$matches[1]}.jpg' width='{$width}' height='{$height}' alt='{$item->title}'></a></p>";
 	}
 	
-	return "
+	return <<<HTML
 		<li class='module flickr'>
-		  <div>
-  		  <div class='hd'>
-  		    <h3><a href='{$item->link}'>{$item->title}</a></h3>
-  		  </div>
-  		  <div class='bd'>
-		    	{$description}
-  		  </div>
-			  <div class='ft'>
-	    		<p>{$item->pubDate}</p>
-        </div>
-      </div>
-		</li>";
+			<div class='hd'>
+				<h3><a href='{$item->link}'>{$item->title}</a></h3>
+			</div>
+			<div class='bd'>
+				{$description}
+			</div>
+			<div class='ft'>
+				<p>{$item->pubDate}</p>
+			</div>
+		</li>
+HTML;
 }
 
 function getHtmlForEntryFlickrThumbnail( $items, $stream ) {
-  $output = '';
-  foreach ( $items as $item ) {
-    $title = $item->title;
-    if ( 'consciousness' == $stream ) {
-      $title = 'flickr favourite: '.$title;
-    }
-  
-    $description = $item->description;
-  	//$item->description = preg_replace( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg" width="\d+" height="\d+/', '$1_t.jpg', $item->description);
-  	if (preg_match( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg/', $item->description, $matches) ) {
-  	  $description = "<a href='{$item->link}'><img src='{$matches[1]}_s.jpg' alt='$title'></a>";
-  	}
-  
-	
-  	$output .= "<li>{$description}</li>";
-  }
-  
-  return "
-    <li class='module flickr'>
-  	  <div>
-  		  <div class='hd'>
-  		    <h3>Flickr</h3>
-  		  </div>
-  		  <div class='bd'>
-  	    	<ol>$output</ol>
-  		  </div>
-  		  <div class='ft'>
-      		<p>{$item->pubDate}</p>
-        </div>
-      </div>
-  	</li>";
-}
+	$output = '';
+	foreach ( $items as $item ) {
+		$title = $item->title;
+		if ( 'consciousness' == $stream ) {
+			$title = 'flickr favourite: '.$title;
+		}
+
+		$description = $item->description;
+		//$item->description = preg_replace( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg" width="\d+" height="\d+/', '$1_t.jpg', $item->description);
+		if (preg_match( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg/', $item->description, $matches) ) {
+			$description = "<a href='{$item->link}'><img src='{$matches[1]}_s.jpg' alt='$title'></a>";
+		}
+
+
+		$output .= "<li>{$description}</li>";
+	}
+
+	return <<<HTML
+		<li class='module flickr'>
+			<div class='hd'>
+				<h3>Flickr</h3>
+			</div>
+			<div class='bd'>
+				<ol>$output</ol>
+			</div>
+			<div class='ft'>
+				<p>{$item->pubDate}</p>
+			</div>
+		</li>
+HTML;
+	}
 
 function getHtmlForEntryTheTenWordReview( $item ) {
 	
 	$tenWordColors = array( 
-													'000000',
-													'8c288b', 
-													'f6821f',
-													'87c80a',
-													'00adef',
-													'000000',
-													'8c288b', 
-													'f6821f',
-													'87c80a',
-													'00adef',
-												);
+		'000000',
+		'8c288b', 
+		'f6821f',
+		'87c80a',
+		'00adef',
+		'000000',
+		'8c288b', 
+		'f6821f',
+		'87c80a',
+		'00adef',
+	);
 	
 	$description = (string) $item->description;
 	$description = simplexml_load_string( "<?xml version='1.0'?><description>$description</description>" );
@@ -273,56 +269,53 @@ function getHtmlForEntryTheTenWordReview( $item ) {
 	preg_match('/^(.*) by /', $item->title, $matches);
 	$title = ($matches) ? $matches[1] : $item->title;
 
-	return "
+	return <<<HTML
 		<li class='module thetenwordreview' style='background-color: #{$tenWordColors[$tenWordCount]}'>
-		  <div>
-  		  <div class='hd'>
-  		    <h3><a href='{$item->link}'>$title</a></h3>
-  		  </div>
-  		  <div class='bd'>
-		    	{$description->p[0]}
-					<p class='icon'><a href='http://thetenwordreview.com/users/workingwithme'><img src='http://thetenwordreview.com/images/icons/workingwithme.png' alt='workingwithme&apos;s icon'></a></p>
-  		  </div>
-			  <div class='ft'>
-	    		<p>{$item->pubDate}</p>
-        </div>
-      </div>
-		</li>";
+			<div class='hd'>
+				<h3><a href='{$item->link}'>$title</a></h3>
+			</div>
+			<div class='bd'>
+				{$description->p[0]}
+				<p class='icon'><a href='http://thetenwordreview.com/users/workingwithme'><img src='http://thetenwordreview.com/images/icons/workingwithme.png' alt='workingwithme&apos;s icon'></a></p>
+			</div>
+			<div class='ft'>
+				<p>{$item->pubDate}</p>
+			</div>
+		</li>
+HTML;
 }
 
 function getHtmlForEntryLastFm( $item ) {
-	return "
+	return <<<HTML
 		<li class='module lastfm'>
-		  <div>
-  		  <div class='hd'>
-  		    <h3><span>Last.fm: </span><a href='{$item->link}'>{$item->title}</a></h3>
-  		  </div>
-  		  <div class='bd'>
-		    	<p>{$item->pubDate}</p>
-  		  </div>
-			  <div class='ft'>
-        </div>
-      </div>
-		</li>";
+			<div class='hd'>
+				<h3><span>Last.fm: </span><a href='{$item->link}'>{$item->title}</a></h3>
+			</div>
+			<div class='bd'>
+				<p>{$item->pubDate}</p>
+			</div>
+			<div class='ft'>
+			</div>
+		</li>
+HTML;
 }
 
 function getHtmlForEntryDelicious( $item ) {
 	preg_match( '/^del\.icio\.us link:\s*(.*)/', $item->title, $matches);
 	
-	return "
+	return <<<HTML
 		<li class='module delicious'>
-		  <div>
-  		  <div class='hd'>
-  		    <h3><a href='{$item->link}'>{$matches[1]}</a></h3>
-  		  </div>
-  		  <div class='bd'>
-  		    <p>{$item->description}</p>
-  		  </div>
-			  <div class='ft'>
-			    <p>{$item->pubDate}</p>
-        </div>
-      </div>
-		</li>";
+			<div class='hd'>
+				<h3><a href='{$item->link}'>{$matches[1]}</a></h3>
+			</div>
+			<div class='bd'>
+				<p>{$item->description}</p>
+			</div>
+			<div class='ft'>
+				<p>{$item->pubDate}</p>
+			</div>
+		</li>
+HTML;
 }
 
 function getHtmlForEntryTwitter( $item ) {
@@ -337,20 +330,19 @@ function getHtmlForEntryTwitter( $item ) {
 		$class=' twitter_at_user';
  	}
 	
-	return "
+	return <<<HTML
 		<li class='module twitter$class'>
-		  <div>
-  		  <div class='hd'>
-  		    <h3><a href='{$item->link}'>Twitter</a></h3>
-  		  </div>
-  		  <div class='bd'>
-  		    <p><a href='{$item->link}'>$description</a></p>
-  		  </div>
-			  <div class='ft'>
-			    <p>{$item->pubDate}</p>
-        </div>
-      </div>
-		</li>";
+			<div class='hd'>
+				<h3><a href='{$item->link}'>Twitter</a></h3>
+			</div>
+			<div class='bd'>
+				<p><a href='{$item->link}'>$description</a></p>
+			</div>
+			<div class='ft'>
+				<p>{$item->pubDate}</p>
+			</div>
+		</li>
+HTML;
 }
 
 ?>
