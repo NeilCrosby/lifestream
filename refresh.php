@@ -128,13 +128,19 @@ function getHtmlForEntry( $item, $stream='considered', $backlog = array() ) {
     return $html.getHtmlForEntryUpcoming($item);
   }
   
+    $maxDescLen = 100;
+    $description = strip_tags($item->description);
+    if ( 'considered' != $stream && mb_strlen($description) > $maxDescLen ) {
+        $description = mb_substr( $description, 0, $maxDescLen ).'&hellip;';
+    }
+  
 	return $html.<<<HTML
 		<li class='module'>
 			<div class='hd'>
 				<h3><a href='{$item->link}'>{$item->title}</a></h3>
 			</div>
 			<div class='bd'>
-				{$item->description}
+				{$description}
 			</div>
 			<div class='ft'>
 				<p>$item->pubDate</p>
