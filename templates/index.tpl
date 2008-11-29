@@ -1,38 +1,38 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-	"http://www.w3.org/TR/html4/strict.dtd">
+    "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-	<title>Neil Crosby</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.4.1/build/reset-fonts-grids/reset-fonts-grids.css">
+    <title>Neil Crosby</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.4.1/build/reset-fonts-grids/reset-fonts-grids.css">
     <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
-	<style>
-	  html {
-	    font-family: Arial, sans-serif;
-	  }
-	 
-		#hd {
-			margin: 2em 4px 2em 4px;
-		}
-	
-		h1 {
-	    font-size: 300%;
-	    font-weight: bold;
-	  }
-	  
-	  h2 {
-	    font-size: 107%;
+    <style>
+      html {
+        font-family: Arial, sans-serif;
+      }
+     
+        #hd {
+            margin: 2em 4px 2em 4px;
+        }
+    
+        h1 {
+        font-size: 300%;
+        font-weight: bold;
+      }
+      
+      h2 {
+        font-size: 107%;
       margin: 1em 4px 1em 4px;
       font-weight: bold;
-	  }
-	
+      }
+    
     ol,
-	  li {
-	    list-style: none;
-	    padding: 0;
-	    margin: 0 0 1em 0;
-	  }
-	
+      li {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1em 0;
+      }
+    
     .module {
       clear: both;
       margin: 1em 4px 1em 4px;
@@ -40,8 +40,8 @@
     }
     
     .module .bd p {
-    	margin: 0.5em 0 0.5em 0;
-		}
+        margin: 0.5em 0 0.5em 0;
+        }
     
     #secondary .module {
       font-size: 93%;
@@ -152,14 +152,14 @@
     }
 
     #secondary .module.lastfm .hd h3 {
-			font-size: 85%;
+            font-size: 85%;
       padding: 5px 5px 3px 26px;
     }
 
     #secondary .module.lastfm .hd h3 span {
-			position: absolute;
-			left: 5px;
-			top: 1em;
+            position: absolute;
+            left: 5px;
+            top: 1em;
       background-image: url(images/favicon_lastfm.png);
       width: 16px;
       height: 16px;
@@ -167,12 +167,12 @@
     }
 
     #secondary .module.lastfm .hd h3 a {
-			color: #eee;
+            color: #eee;
     }
 
     #secondary .module.lastfm .bd {
-			font-size: 75%;
-			color: #eee;
+            font-size: 75%;
+            color: #eee;
       background: #d20039 url(images/lozenge_lastfm_br.png) no-repeat right bottom;
       padding: 0 5px 5px 26px;
     }
@@ -243,55 +243,55 @@
     }
     
     .module.thetenwordreview {
-			background: #8c288b;
-    	color: #f8f3f8;
-			border: 1px solid black;
-			position: relative;
-		}
+            background: #8c288b;
+        color: #f8f3f8;
+            border: 1px solid black;
+            position: relative;
+        }
     
     .module.thetenwordreview .hd {
-    	margin: 0.5em 10px 0 70px;
-			font-size: 115%;
-			font-weight: bold;
-		}
+        margin: 0.5em 10px 0 70px;
+            font-size: 115%;
+            font-weight: bold;
+        }
     
     .module.thetenwordreview .hd h3 {
-			font-weight: bold;
-		}
+            font-weight: bold;
+        }
     
     .module.thetenwordreview .hd h3 a {
-    	color: #f8f3f8;
-			text-decoration: none;
-		}
+        color: #f8f3f8;
+            text-decoration: none;
+        }
     
     .module.thetenwordreview .bd {
-    	margin: 0.5em 10px 0.5em 70px;
-		}
+        margin: 0.5em 10px 0.5em 70px;
+        }
     
     .module.thetenwordreview .bd p.icon {
-			position: absolute;
-			top: 5px;
-			left: 10px;
-		}
+            position: absolute;
+            top: 5px;
+            left: 10px;
+        }
     
     .module.thetenwordreview .bd p.icon a img {
-			border: 1px solid #8888bb;
-		}
+            border: 1px solid #8888bb;
+        }
     
     .module.thetenwordreview .ft {
-    	margin: 0.5em 10px 0.5em 70px;
-			font-size: 75%;
-		}
+        margin: 0.5em 10px 0.5em 70px;
+            font-size: 75%;
+        }
     
-	</style>
+    </style>
 </head>
 <body>
-  <div id="doc4">					
+  <div id="doc4">                   
     <div id="hd">
       <h1>Neil Crosby</h1>
-			<p>
-				An automagically updating collection of things that I've either created, liked or had written about <a href="/vcard" rel="me">Neil Crosby</a>.
-			</p>
+            <p>
+                An automagically updating collection of things that I've either created, liked or had written about <a href="/vcard" rel="me">Neil Crosby</a>.
+            </p>
     </div>
     <div id="bd">
       <div id="yui-main">
