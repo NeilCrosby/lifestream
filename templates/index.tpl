@@ -286,59 +286,52 @@
     </style>
 </head>
 <body>
-  <div id="doc4">                   
-    <div id="hd">
-      <h1>Neil Crosby</h1>
+    <div id="doc4">                   
+        <div id="hd">
+            <h1>Neil Crosby</h1>
             <p>
                 An automagically updating collection of things that I've either created, liked or had written about <a href="/vcard" rel="me">Neil Crosby</a>.
             </p>
-    </div>
-    <div id="bd">
-      <div id="yui-main">
-        <div class="yui-b">
-          <div class='yui-g'>
-            <div class='yui-u first'>
-              <h2>Considered Thoughts <a href='/main.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
-
-              ##consideredthoughts##
-            </div>
-            <div class='yui-g' id='secondary'>
-              <div id='consciousness' class='yui-u first'>
-                <h2>Stream of Consciousness <a href='/stream-of-consciousness.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
-
-                ##streamofconsciousness##
-              </div>
-              <div class='yui-u'>
-                
-                <!--<div class='module camwhore'>
-                  <div class='hd'>
-                    <h2>Cam Whore</h2>
-                  </div>
-                  <div class='bd'>
-                    <p>
-                      <img src='http://www.workingwith.me.uk/images/camwhore.jpg' alt='What my laptop sees'>
-                    </p>
-                  </div>
-                  <div class='ft'></div>
-                </div>-->
-
-                <div id='otherssaid'>
-                <h2>From Elsewhere <a href='/others-said.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
-
-                ##otherssaid##
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
-      </div>
+        <div id="bd">
+            <div id="yui-main">
+                <div class="yui-b">
+                    <div class='yui-g'>
+                        <div class='yui-u first'>
+                            <h2>Considered Thoughts <a href='/main.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
+                            ##consideredthoughts##
+                        </div>
+                        <div class='yui-g' id='secondary'>
+                            <div id='consciousness' class='yui-u first'>
+                                <h2>Stream of Consciousness <a href='/stream-of-consciousness.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
+                                ##streamofconsciousness##
+                            </div>
+                            <div class='yui-u'>
+                                <!--<div class='module camwhore'>
+                                    <div class='hd'>
+                                        <h2>Cam Whore</h2>
+                                    </div>
+                                    <div class='bd'>
+                                        <p>
+                                            <img src='http://www.workingwith.me.uk/images/camwhore.jpg' alt='What my laptop sees'>
+                                        </p>
+                                    </div>
+                                    <div class='ft'></div>
+                                </div>-->
+                                <div id='otherssaid'>
+                                    <h2>From Elsewhere <a href='/others-said.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
 
+                                    ##otherssaid##
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ft">
+            <p>Some sort of footer crap</p>
+        </div>
     </div>
-
-    <div id="ft">
-      <p>Some sort of footer crap</p>
-    </div>
-  </div>
 </body>
 </html>
