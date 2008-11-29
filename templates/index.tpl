@@ -216,23 +216,6 @@
             color: #fff;
         }
 
-        /*#secondary .module.flickr {
-            clear: none;
-            float: left;
-            margin: 0;
-        }
-
-        #secondary .module.flickr .hd {
-            display: none;
-        }
-
-        #secondary .module.flickr .bd {
-        }
-
-        #secondary .module.flickr .ft {
-            display: none;
-        }*/
-
         #secondary .module.flickr .bd li {
             float: left;
             height: 75px;
