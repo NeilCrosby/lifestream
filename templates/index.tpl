@@ -313,7 +313,7 @@
             </div>
         </div>
         <div id="ft">
-            <p>Some sort of footer crap</p>
+            <p>Some sort of footer crap 2.0</p>
         </div>
     </div>
 </body>
