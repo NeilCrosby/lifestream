@@ -37,52 +37,38 @@ function saveOutput( $template ) {
 
 
 function getConsideredThoughts() {
-  // key and cache length (in seconds)
-  $rand = "&rand=".time();
-	$data = getDataFromFeed( "http://pipes.yahoo.com/pipes/pipe.run?_id=ADbNqOil3BGGzfPa6kjTQA&_render=rss$rand" );
+    // key and cache length (in seconds)
+    $rand = "&rand=".time();
 
-	$output = "<ol>";
-	foreach ( $data->channel->item as $item ) {
-		$output .= getHtmlForEntry($item, 'considered');
-	}
-	$output .= "</ol>";
-  
-	return $output;
+    return getHtmlForStream('considered', "http://pipes.yahoo.com/pipes/pipe.run?_id=ADbNqOil3BGGzfPa6kjTQA&_render=rss$rand");
 }
 
 function getStreamOfConsciousness() {
-  $rand = "&rand=".time();
-	$data = getDataFromFeed( "http://pipes.yahoo.com/pipes/pipe.run?_id=f41d64550e674b7f01bad0f3c49d46f8&_render=rss$rand" );
+    $rand = "&rand=".time();
+
+    return getHtmlForStream('consciousness', "http://pipes.yahoo.com/pipes/pipe.run?_id=f41d64550e674b7f01bad0f3c49d46f8&_render=rss$rand");
+}
+
+function getOthersSaid() {
+    $rand = "&rand=".time();
+    $rand = ""; // because pipes isn't happy with me breaking caching
+
+    return getHtmlForStream('otherssaid', "http://pipes.yahoo.com/pipes/pipe.run?_id=ygKh4Siu3BGqyNyQJphxuA&_render=rss$rand");
+}
+
+function getHtmlForStream($stream, $url) {
+	$data = getDataFromFeed( $url );
 
 	$backlog = array();
 	$output = "<ol>";
 	foreach ( $data->channel->item as $item ) {
-		$output .= getHtmlForEntry($item, 'consciousness', &$backlog);
+		$output .= getHtmlForEntry($item, $stream, &$backlog);
 	}
 	
 	if ( sizeof($backlog) > 0) {
-		$output .= getHtmlForEntry($item, 'consciousness', &$backlog);
+		$output .= getHtmlForEntry($item, $stream, &$backlog);
 	}
 	
-	$output .= "</ol>";
-  
-	return $output;
-}
-
-function getOthersSaid() {
-  $rand = "&rand=".time();
-	$rand = ""; // because pipes isn't happy with me breaking caching
-	$data = getDataFromFeed( "http://pipes.yahoo.com/pipes/pipe.run?_id=ygKh4Siu3BGqyNyQJphxuA&_render=rss$rand" );
-
-  $backlog = array();
-	$output = "<ol>";
-	foreach ( $data->channel->item as $item ) {
-		$output .= getHtmlForEntry($item, 'otherssaid', &$backlog);
-	}
-	
-	if ( sizeof($backlog) > 0) {
-		$output .= getHtmlForEntry($item, 'otherssaid', &$backlog);
-	}
 	$output .= "</ol>";
   
 	return $output;
