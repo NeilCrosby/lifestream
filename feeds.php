@@ -16,7 +16,7 @@ if ( !isset( $_GET['feed'] ) || !array_key_exists( $_GET['feed'], $options ) ) {
 }
 
 header("Content-Type: application/rss+xml");
-if ('FeedBurner' == substr($_SERVER['USER_AGENT'], 0, strlen('FeedBurner'))) {
+if ('FeedBurner' == mb_substr($_SERVER['USER_AGENT'], 0, mb_strlen('FeedBurner'))) {
     readfile( $optionsFeedburner[$_GET['feed']] );
 } else {
     readfile( $options[$_GET['feed']] );

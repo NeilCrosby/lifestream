@@ -138,7 +138,7 @@ HTML;
 function getHtmlForEntryUpcoming( $item ) {
     $pos = strpos( $item->description, '<br />' );
     if ( false !== $pos ) {
-        $item->description = substr( $item->description, 0, $pos );
+        $item->description = mb_substr( $item->description, 0, $pos );
     }
     
     $maxDescriptionLength = 70;
@@ -150,8 +150,8 @@ function getHtmlForEntryUpcoming( $item ) {
     
     $pos = strpos( $item->title, ':' );
     if ( false !== $pos ) {
-        $date = substr( $item->title, 0, $pos );
-        $item->title = substr( $item->title, $pos + 2 );
+        $date = mb_substr( $item->title, 0, $pos );
+        $item->title = mb_substr( $item->title, $pos + 2 );
 
         preg_match( '/(\w+)\s+(\d+),\s+(\d+)/', $date, $matches );
         $month = $matches[1];
@@ -270,7 +270,7 @@ function getHtmlForEntryTheTenWordReview( $item ) {
     $description = (string) $item->description;
     $description = simplexml_load_string( "<?xml version='1.0'?><description>$description</description>" );
 
-    $tenWordCount = substr( number_format( hexdec( md5( $description->p[0] ) ) ), -1);
+    $tenWordCount = mb_substr( number_format( hexdec( md5( $description->p[0] ) ) ), -1);
     
     preg_match('/^(.*) by /', $item->title, $matches);
     $title = ($matches) ? $matches[1] : $item->title;
@@ -336,7 +336,7 @@ function getHtmlForEntryTwitter( $item ) {
     
     $description = strip_tags($item->description);
     $class = '';
-    if ( $twitterUsername != mb_substr($item->author[0], 0, strlen($twitterUsername)) && $twitterUsername != mb_substr($description, 0, strlen($twitterUsername)) ) {
+    if ( $twitterUsername != mb_substr($item->author[0], 0, mb_strlen($twitterUsername)) && $twitterUsername != mb_substr($description, 0, mb_strlen($twitterUsername)) ) {
         $author = $item->author[0];
         preg_match('/(^[^\s]+)/', $author, $matches);
         $description = $matches[1] . ': ' . $description;
