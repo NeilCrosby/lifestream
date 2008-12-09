@@ -1,5 +1,13 @@
 <?php
 
+define("INPUT_RSS_CONSIDERED",      "http://pipes.yahoo.com/pipes/pipe.run?_id=ADbNqOil3BGGzfPa6kjTQA&_render=rss");
+define("INPUT_RSS_CONSCIOUSNESS",   "http://pipes.yahoo.com/pipes/pipe.run?_id=f41d64550e674b7f01bad0f3c49d46f8&_render=rss");
+define("INPUT_RSS_OTHERS_SAID",     "http://pipes.yahoo.com/pipes/pipe.run?_id=ygKh4Siu3BGqyNyQJphxuA&_render=rss");
+define("FILE_TEMPLATE",             "/templates/index.tpl");
+define("FILE_OUTPUT",               "/index.html");
+define("TEN_WORD_USER",             "workingwithme");
+define("TWITTER_USERNAME",          "NeilCrosby");
+
 function __autoload($class_name) {
     require_once $class_name . '.php';
 }
@@ -28,31 +36,31 @@ header("Location: http://$server/");
 
 
 function getTemplate() {
-    return file_get_contents($_SERVER['DOCUMENT_ROOT'].'/templates/index.tpl');
+    return file_get_contents($_SERVER['DOCUMENT_ROOT'].FILE_TEMPLATE);
 }
 
 function saveOutput( $template ) {
-    return file_put_contents($_SERVER['DOCUMENT_ROOT'].'/index.html', $template);
+    return file_put_contents($_SERVER['DOCUMENT_ROOT'].FILE_OUTPUT, $template);
 }
 
 
 function getConsideredThoughts() {
     $rand = "&rand=".time();
 
-    return getHtmlForStream('considered', "http://pipes.yahoo.com/pipes/pipe.run?_id=ADbNqOil3BGGzfPa6kjTQA&_render=rss$rand");
+    return getHtmlForStream('considered', INPUT_RSS_CONSIDERED.$rand);
 }
 
 function getStreamOfConsciousness() {
     $rand = "&rand=".time();
 
-    return getHtmlForStream('consciousness', "http://pipes.yahoo.com/pipes/pipe.run?_id=f41d64550e674b7f01bad0f3c49d46f8&_render=rss$rand");
+    return getHtmlForStream('consciousness', INPUT_RSS_CONSCIOUSNESS.$rand);
 }
 
 function getOthersSaid() {
     $rand = "&rand=".time();
     $rand = ""; // because pipes isn't happy with me breaking caching
 
-    return getHtmlForStream('otherssaid', "http://pipes.yahoo.com/pipes/pipe.run?_id=ygKh4Siu3BGqyNyQJphxuA&_render=rss$rand");
+    return getHtmlForStream('otherssaid', INPUT_RSS_OTHERS_SAID.$rand);
 }
 
 function getHtmlForStream($stream, $url) {
@@ -264,6 +272,8 @@ function getHtmlForEntryTheTenWordReview( $item ) {
     
     preg_match('/^(.*) by /', $item->title, $matches);
     $title = ($matches) ? $matches[1] : $item->title;
+    
+    $user = TEN_WORD_USER;
 
     return <<<HTML
         <li class='module thetenwordreview' style='background-color: #{$tenWordColors[$tenWordCount]}'>
@@ -272,7 +282,7 @@ function getHtmlForEntryTheTenWordReview( $item ) {
             </div>
             <div class='bd'>
                 {$description->p[0]}
-                <p class='icon'><a href='http://thetenwordreview.com/users/workingwithme'><img src='http://thetenwordreview.com/images/icons/workingwithme.png' alt='workingwithme&apos;s icon'></a></p>
+                <p class='icon'><a href='http://thetenwordreview.com/users/{$user}'><img src='http://thetenwordreview.com/images/icons/{$user}.png' alt='{$user}&apos;s icon'></a></p>
             </div>
             <div class='ft'>
                 <p>{$item->pubDate}</p>
@@ -322,11 +332,9 @@ HTML;
 }
 
 function getHtmlForEntryTwitter( $item ) {
-    $twitterUsername = 'NeilCrosby';
-    
     $description = strip_tags($item->description);
     $class = '';
-    if ( $twitterUsername != mb_substr($item->author[0], 0, mb_strlen($twitterUsername)) && $twitterUsername != mb_substr($description, 0, mb_strlen($twitterUsername)) ) {
+    if ( TWITTER_USERNAME != mb_substr($item->author[0], 0, mb_strlen(TWITTER_USERNAME)) && TWITTER_USERNAME != mb_substr($description, 0, mb_strlen(TWITTER_USERNAME)) ) {
         $author = $item->author[0];
         preg_match('/(^[^\s]+)/', $author, $matches);
         $description = $matches[1] . ': ' . $description;
