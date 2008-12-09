@@ -37,7 +37,6 @@ function saveOutput( $template ) {
 
 
 function getConsideredThoughts() {
-    // key and cache length (in seconds)
     $rand = "&rand=".time();
 
     return getHtmlForStream('considered', "http://pipes.yahoo.com/pipes/pipe.run?_id=ADbNqOil3BGGzfPa6kjTQA&_render=rss$rand");
@@ -76,10 +75,7 @@ function getHtmlForStream($stream, $url) {
 
 function getDataFromFeed( $url ) {
     $data = simplexml_load_file( $url );
-    
-//    echo ($data) ? "<p>$url loaded data correctly</p>" : "<p>Bad data from $url</p>";
-//    print_r($data);
-    
+
     return $data;
 }
 
@@ -193,13 +189,8 @@ function getHtmlForEntryFlickr( $item ) {
         $maxWidth = 469;
         $maxHeight = 469;
         
-        //if ( $width > $height) {
-            $height = ($maxWidth / $width) * $height;
-            $width  = $maxWidth;
-        //} else {
-        //  $width  = ($maxHeight / $height) * $width;
-        //  $height = $maxHeight;
-        //}
+        $height = ($maxWidth / $width) * $height;
+        $width  = $maxWidth;
         
         $description = "<p><a href='{$item->link}'><img src='{$matches[1]}.jpg' width='{$width}' height='{$height}' alt='{$item->title}'></a></p>";
     }
@@ -228,7 +219,6 @@ function getHtmlForEntryFlickrThumbnail( $items, $stream ) {
         }
 
         $description = $item->description;
-        //$item->description = preg_replace( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg" width="\d+" height="\d+/', '$1_t.jpg', $item->description);
         if (preg_match( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg/', $item->description, $matches) ) {
             $description = "<a href='{$item->link}'><img src='{$matches[1]}_s.jpg' alt='$title'></a>";
         }
