@@ -250,7 +250,7 @@ function getHtmlForEntryFlickrThumbnail( $items, $stream ) {
             </div>
         </li>
 HTML;
-    }
+}
 
 function getHtmlForEntryTheTenWordReview( $item ) {
     
