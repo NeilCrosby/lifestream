@@ -290,17 +290,6 @@
                                 ##streamofconsciousness##
                             </div>
                             <div class='yui-u'>
-                                <!--<div class='module camwhore'>
-                                    <div class='hd'>
-                                        <h2>Cam Whore</h2>
-                                    </div>
-                                    <div class='bd'>
-                                        <p>
-                                            <img src='http://www.workingwith.me.uk/images/camwhore.jpg' alt='What my laptop sees'>
-                                        </p>
-                                    </div>
-                                    <div class='ft'></div>
-                                </div>-->
                                 <div id='otherssaid'>
                                     <h2>From Elsewhere <a href='/others-said.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
 
