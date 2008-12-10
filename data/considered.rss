@@ -1,0 +1,388 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:yt="http://gdata.youtube.com/schemas/2007">
+   <channel>
+      <title>Lifestream considered</title>
+      <description>Pipes Output</description>
+      <link>http://pipes.yahoo.com/pipes/pipe.info?_id=ADbNqOil3BGGzfPa6kjTQA</link>
+      <pubDate>Wed, 10 Dec 2008 06:49:50 -0800</pubDate>
+      <generator>http://pipes.yahoo.com/pipes/</generator>
+
+      <item>
+         <title>How to make a stop-motion video from automatically taken photos</title>
+         <link>http://feeds.feedburner.com/~r/TheCodeTrain/~3/479685221/</link>
+         <description>About a month ago now I shows you how to set up your Mac to automatically take photos. Hopefully by now you should have a good selection of photos, and you’ll be wondering what you can do with them. The answer? Make a video!</description>
+         <guid isPermaLink="false">http://thecodetrain.co.uk/?p=170</guid>
+         <pubDate>Tue, 09 Dec 2008 05:35:04 -0800</pubDate>
+
+         <content:encoded><![CDATA[<p>About a month ago now I shows you <a rel="nofollow" target="_blank" href="http://thecodetrain.co.uk/2008/11/how-to-automatically-take-photos-using-your-macs-webcam/">how to set up your Mac to automatically take photos</a>. Hopefully by now you should have a good selection of photos, and you&#8217;ll be wondering what you can do with them.</p> <p>The answer? Make a video!</p> <p>    <iframe class="embeddedvideo" type="application/x-shockwave-flash" src="http://www.flickr.com/apps/video/stewart.swf?v=63881" height="300" width="400"></iframe></p> <p>For this make you&#8217;ll need to have a copy of QuickTime Pro. Yes, I know you have to pay for this, but it works quickly and makes good quality videos. If you don&#8217;t want to use QuickTime Pro, there are other free alternatives available (I&#8217;ve had MEncoder mentioned to me), but I&#8217;ve not used them myself.</p> <p>Making a video out of sequenced images is easy with Quicktime Pro - just make sure your images are all in one folder, select a photo from that folder using the <code>File/Open Image Sequence</code> menu option, choose a frame rate and wait.</p> <p>Of course, things aren&#8217;t quite that easy. For one thing, Quicktime Pro doesn&#8217;t actually work with full folders of images - instead it works with sequences of images within a folder. So, if you selected <code>horse1.jpg</code> as the initial photo then only images matching <code>/horse&#92;n+&#92;.jpg/</code> would be sued to create the resultant video. Likewise, if the images were named in the format <code>YYYMMDD-hhmmss.jpg</code> then the video created would only contain images for a certain day, due to that pesky dash.</p> <p>Unfortunately, that was the original filename format <a rel="nofollow" target="_blank" href="http://github.com/NeilCrosby/autocamcapture/tree">autocamcapture</a> used. It doesn&#8217;t use that format any more, but all you early adopters will need to rename your images. Thankfully, that&#8217;s pretty damn easy to do. Just enter the following:</p> <pre><code>cd ~/Pictures/autocamcapture
+for file in *.jpg; do mv $file `echo $file | sed 's/-//g'`; done
+</code></pre> <p>Your images will suddenly all be in the format <code>YYYYMMDDHHMMSS.jpg</code> and Quicktime Pro will happily register them as all one sequence.</p> <p>So, that&#8217;s all there is to it. Have you been using the autocamcapture script? Yes? Then go make a video and add it to the <a rel="nofollow" target="_blank" href="http://www.flickr.com/groups/autocamcapture/">autocamcapture pool on Flickr</a>.</p>
+<img src="http://feeds.feedburner.com/~r/TheCodeTrain/~4/479685221" height="1" width="1"/>]]></content:encoded>
+      </item>
+      <item>
+         <title>Diary of the Dead - a Movie review by workingwithme</title>
+         <link>http://thetenwordreview.com/reviews/movie/diary+of+the+dead#ri10480</link>
+         <description>&lt;p&gt;Sarah Connor style voiceover annoys in documentary style zombie Cloverfield.&lt;/p&gt;&lt;p&gt;(&lt;a rel=&quot;nofollow&quot;&gt;a movie review&lt;/a&gt; written by &lt;a rel=&quot;nofollow&quot;&gt;workingwithme&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;&lt;em&gt;3 users thought this review was good. What do you think? &lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href='http://thetenwordreview.com/reviews/movie/diary+of+the+dead#ri10480'&gt;Visit TheTenWordReview.com to rate this review!&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+
+         <guid isPermaLink="false">http://thetenwordreview.com/reviews/movie/diary+of+the+dead#ri10480</guid>
+         <pubDate>Sun, 07 Dec 2008 08:45:03 -0800</pubDate>
+      </item>
+      <item>
+         <title>Mean Girls - a Movie review by workingwithme</title>
+         <link>http://thetenwordreview.com/reviews/movie/mean+girls#ri10460</link>
+         <description>&lt;p&gt;Home-schooled Lohan integrates into high-school to become quintessential Mean Girl.&lt;/p&gt;&lt;p&gt;(&lt;a rel=&quot;nofollow&quot;&gt;a movie review&lt;/a&gt; written by &lt;a rel=&quot;nofollow&quot;&gt;workingwithme&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;&lt;em&gt;3 users thought this review was good. What do you think? &lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href='http://thetenwordreview.com/reviews/movie/mean+girls#ri10460'&gt;Visit TheTenWordReview.com to rate this review!&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+
+         <guid isPermaLink="false">http://thetenwordreview.com/reviews/movie/mean+girls#ri10460</guid>
+         <pubDate>Sat, 06 Dec 2008 17:16:55 -0800</pubDate>
+      </item>
+      <item>
+         <title>John Tucker Must Die - a Movie review by workingwithme</title>
+         <link>http://thetenwordreview.com/reviews/movie/john+tucker+must+die#ri10459</link>
+         <description>&lt;p&gt;Weak variation on &quot;Mean Girls&quot; lacks character and ultimately flops.&lt;/p&gt;&lt;p&gt;(&lt;a rel=&quot;nofollow&quot;&gt;a movie review&lt;/a&gt; written by &lt;a rel=&quot;nofollow&quot;&gt;workingwithme&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;&lt;em&gt;3 users thought this review was good. What do you think? &lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href='http://thetenwordreview.com/reviews/movie/john+tucker+must+die#ri10459'&gt;Visit TheTenWordReview.com to rate this review!&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+
+         <guid isPermaLink="false">http://thetenwordreview.com/reviews/movie/john+tucker+must+die#ri10459</guid>
+         <pubDate>Sat, 06 Dec 2008 17:14:13 -0800</pubDate>
+      </item>
+      <item>
+         <title>Summer Heights High - a TV Show review by workingwithme</title>
+         <link>http://thetenwordreview.com/reviews/tv+show/summer+heights+high#ri10456</link>
+         <description>&lt;p&gt;Occasionally wryly amusing Australian mockumentary that&amp;#039;s more miss than hit.&lt;/p&gt;&lt;p&gt;(&lt;a rel=&quot;nofollow&quot;&gt;a tv show review&lt;/a&gt; written by &lt;a rel=&quot;nofollow&quot;&gt;workingwithme&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;&lt;em&gt;3 users thought this review was good. What do you think? &lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href='http://thetenwordreview.com/reviews/tv+show/summer+heights+high#ri10456'&gt;Visit TheTenWordReview.com to rate this review!&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+
+         <guid isPermaLink="false">http://thetenwordreview.com/reviews/tv+show/summer+heights+high#ri10456</guid>
+         <pubDate>Sat, 06 Dec 2008 08:50:02 -0800</pubDate>
+      </item>
+      <item>
+         <title>Boston Legal season 5 - a TV Show review by workingwithme</title>
+         <link>http://thetenwordreview.com/reviews/tv+show/boston+legal+season+5#ri10453</link>
+         <description>&lt;p&gt;Writers plead to stay on-air. Show gears up for cancellation.&lt;/p&gt;&lt;p&gt;(&lt;a rel=&quot;nofollow&quot;&gt;a tv show review&lt;/a&gt; written by &lt;a rel=&quot;nofollow&quot;&gt;workingwithme&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;&lt;em&gt;3 users thought this review was good. What do you think? &lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href='http://thetenwordreview.com/reviews/tv+show/boston+legal+season+5#ri10453'&gt;Visit TheTenWordReview.com to rate this review!&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+
+         <guid isPermaLink="false">http://thetenwordreview.com/reviews/tv+show/boston+legal+season+5#ri10453</guid>
+         <pubDate>Thu, 04 Dec 2008 16:05:02 -0800</pubDate>
+      </item>
+      <item>
+         <title>How to get more than the last 10 Recently Played Tracks from last.fm</title>
+         <link>http://feeds.feedburner.com/~r/TheCodeTrain/~3/471234301/</link>
+         <description>I don&amp;#8217;t have time for a full entry today, so here&amp;#8217;s a quick tip for last.fm users who are making use of their &amp;#8220;Recently Played Tracks&amp;#8221; RSS to do cool things. It turns out that you can increase the number of tracks returned by the feed simply by adding a limit=somenumber parameter to the URL. [...]</description>
+
+         <guid isPermaLink="false">http://thecodetrain.co.uk/?p=168</guid>
+         <pubDate>Mon, 01 Dec 2008 04:07:58 -0800</pubDate>
+         <content:encoded><![CDATA[<p>I don&#8217;t have time for a full entry today, so here&#8217;s a quick tip for <a rel="nofollow" target="_blank" href="http://last.fm">last.fm</a> users who are making use of their &#8220;Recently Played Tracks&#8221; RSS to do cool things.</p> <p>It turns out that you can increase the number of tracks returned by the feed simply by adding a <code>limit=somenumber</code> parameter to the URL. So, for me to grab the last 20 songs that I&#8217;ve scrobbled, I would ask for:</p> <pre><code>http://ws.audioscrobbler.com/1.0/user/NeilCrosby/recenttracks.rss?limit=20
+</code></pre> <p>I use this as a way of getting a decent sampling of my recent tracks to use on <a rel="nofollow" target="_blank" href="http://NeilCrosby.com">NeilCrosby.com</a>, as I found the default 10 was too limiting since my &#8220;Stream of Consciousness&#8221; stream normally covers a few days worth of information, whereas my last 10 tracks would only cover an hour or so of data.</p>
+<img src="http://feeds.feedburner.com/~r/TheCodeTrain/~4/471234301" height="1" width="1"/>]]></content:encoded>
+      </item>
+      <item>
+         <title>Where in the World is Osama Bin Laden? - a Movie review by workingwithme</title>
+         <link>http://thetenwordreview.com/reviews/movie/where+in+the+world+is+osama+bin+laden#ri10422</link>
+
+         <description>&lt;p&gt;Superbearded Spurlock seeks Osama. Weak documentary lacking a compelling narrative.&lt;/p&gt;&lt;p&gt;(&lt;a rel=&quot;nofollow&quot;&gt;a movie review&lt;/a&gt; written by &lt;a rel=&quot;nofollow&quot;&gt;workingwithme&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;&lt;em&gt;4 users thought this review was good. What do you think? &lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href='http://thetenwordreview.com/reviews/movie/where+in+the+world+is+osama+bin+laden#ri10422'&gt;Visit TheTenWordReview.com to rate this review!&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+
+         <guid isPermaLink="false">http://thetenwordreview.com/reviews/movie/where+in+the+world+is+osama+bin+laden#ri10422</guid>
+         <pubDate>Tue, 25 Nov 2008 13:48:03 -0800</pubDate>
+      </item>
+      <item>
+         <title>The Social Graph, and why rel=”me” is doomed to failure</title>
+         <link>http://feeds.feedburner.com/~r/TheCodeTrain/~3/463721290/</link>
+         <description>There has been a lot of talk recently of The Social Graph, the amorphous network of links on the web that define who we are and how we&amp;#8217;re connected to each other. In this post though, I&amp;#8217;m going to mostly ignore the social aspect of The Social Graph and instead look at the personal [...]</description>
+
+         <guid isPermaLink="false">http://thecodetrain.co.uk/?p=120</guid>
+         <pubDate>Sun, 23 Nov 2008 23:20:40 -0800</pubDate>
+         <content:encoded><![CDATA[<p>There has been a lot of talk recently of The Social Graph, the amorphous network of links on the web that define who we are and how we&#8217;re connected to each other. In this post though, I&#8217;m going to mostly ignore the social aspect of The Social Graph and instead look at the personal portion of the social graph - how the various profiles which we all have across the internet link together to create one single überprofile. After all, this is the building block that needs to be put in place before you can even start to think about how people link to each other across sites.</p> <p>The standard way to link the ownership of two pages to the same person is for each of them to connect to the other with a <a rel="nofollow" target="_blank" href="http://microformats.org/wiki/rel-me">rel=&#8221;me&#8221;</a> link. The good news here is that most social sites on the web add this attribute automatically when you add a link to your profile page. So, if you linked to your twitter account from your flickr account and vice-a-versa then a relationship-bot would be able to determine that both profiles were owned by the same person. On the face of it, this is all pretty simple stuff.</p> <p>The problem comes when you realise that reciprocation is necessary in order to have confidence in the validity of a link marked up with a rel=&#8221;me&#8221; attribute. To put it another way, if I were to link to Tantek&#8217;s homepage with a link containing a rel=&#8221;me&#8221; attribute that wouldn&#8217;t mean that it should be taken on trust that I was Tantek. After all, it&#8217;s blatently obvious that I&#8217;m not.</p> <p>So why is requiring reciprocation a problem?</p> <p>Well, most people don&#8217;t create these reciprocating links from their sites. Lets take an average internet user - for argument&#8217;s sake we&#8217;ll call him <a rel="nofollow" target="_blank" href="http://simonwillison.net">Simon Willison</a>. He uses the web most days, and has profiles on quite a few sites. On most of those sites he&#8217;s linked back to his own site, because he knows that it&#8217;s good to let people find him. What he hasn&#8217;t done is link back to those third party profiles from his own site. What this means is that all those nice connecting links from his external profiles are sitting there unable to be relied on because he hasn&#8217;t confirmed them with a link back.</p> <p>Simon isn&#8217;t alone on this either. Pulling a few names out of the bag of people I regularly bump into, the same is true for <a rel="nofollow" target="_blank" href="http://themattharris.com">Matt Harris</a>, <a rel="nofollow" target="_blank" href="http://fatbusinessman.com/">David Thompson</a> and pretty much anyone else I can think of. Even The <a rel="nofollow" target="_blank" href="http://dannyamey.com/">Littlest Webdev</a> and <a rel="nofollow" target="_blank" href="http://jonty.co.uk">Jonty Wareing</a>, whose sites literally only link out to their profiles on other sites don&#8217;t use rel=&#8221;me&#8221; to show that they are linking to other portions of their online identity.</p> <p>In fact, the only people I know who are using rel=&#8221;me&#8221; (other than me) on their own personal websites are those who are heavily entrenched in the microformats community. <a rel="nofollow" target="_blank" href="http://allinthehead.com">Drew Mclellan</a> is using them on his site, as are <a rel="nofollow" target="_blank" href="http://ben-ward.co.uk">Ben Ward</a> and <a rel="nofollow" target="_blank" href="http://fberriman.com/">Frances Berriman</a> on their sites.</p> <p>Actually, that&#8217;s a lie. Whilst looking around for people using rel=&#8221;me&#8221;, I did find one other person using it - <a rel="nofollow" target="_blank" href="http://blog.thirtylime.com/">Robert Lee-Cann</a>. A big round of applause to him.</p> <p>One argument many people will have against slapping a bunch of links on their homepages out to their external profiles is that adding a whole bunch of links is going to look butt-ugly. This doesn&#8217;t have to be the case though. One option would be to use iconified links back to their profiles, like <a rel="nofollow" target="_blank" href="http://thatcanadiangirl.co.uk">Vero</a> does. Another option would be to simply store all these links back to the profiles on a separate page on their site. This page would be linked to their homepage using a reciprocated rel=&#8221;me&#8221; link. So, all the profile&#8217;s could still point to a person&#8217;s homepage but still be indirectly verified by the tertiary page on the user&#8217;s own site. </p> <p>This is what I do with <a rel="nofollow" target="_blank" href="http://neilcrosby.com/vcard">my vCard</a> page (which is built automatically from my vCard in my Adress Book on my computer) - because NeilCrosby.com connects to my vCard using rel=&#8221;me&#8221;, I can tell my social profiles to link to NeilCrosby.com, and then link to my social profiles from my vCard. This forms a triangle of confirmed links and Google&#8217;s <a rel="nofollow" target="_blank" href="http://code.google.com/apis/socialgraph/docs/">Social Graph API</a> knows who I am across the web.</p> <p>So why is this so important? </p> <p>Well, without a proper graph of connections a fully portable social network will never be possible. I would love to be able to sign up to a new site tomorrow, tell it who I am on Flickr or Twitter or wherever and have it be able to go off and find out who I was everywhere else and do as much prefilling of my profile as possible based on who I was everywhere else. Even more than that though, I&#8217;d love for this mythical site to tell me which of my contacts on the 30 or so other sites I frequent were also on the one I was just signing up to.</p> <p>But, if even the alpha geeks of the world are not plugging into the graph, what hope is there?</p>
+<img src="http://feeds.feedburner.com/~r/TheCodeTrain/~4/463721290" height="1" width="1"/>]]></content:encoded>
+      </item>
+      <item>
+         <title>The Presidents of The United States of America - These Are The Good Times People - an Album review by workingwithme</title>
+         <link>http://thetenwordreview.com/reviews/album/presidents+of+the+united+states+of+america+these+a#ri10373</link>
+
+         <description>&lt;p&gt;PUSA are back on form. Simply crafted, hugely fun songs.&lt;/p&gt;&lt;p&gt;(&lt;a rel=&quot;nofollow&quot;&gt;an album review&lt;/a&gt; written by &lt;a rel=&quot;nofollow&quot;&gt;workingwithme&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;&lt;em&gt;4 users thought this review was good. What do you think? &lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href='http://thetenwordreview.com/reviews/album/presidents+of+the+united+states+of+america+these+a#ri10373'&gt;Visit TheTenWordReview.com to rate this review!&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+
+         <guid isPermaLink="false">http://thetenwordreview.com/reviews/album/presidents+of+the+united+states+of+america+these+a#ri10373</guid>
+         <pubDate>Fri, 21 Nov 2008 05:04:04 -0800</pubDate>
+      </item>
+      <item>
+         <title>Why git?</title>
+         <link>http://feeds.feedburner.com/~r/TheCodeTrain/~3/455794646/</link>
+         <description>As should be obvious by now, I write most of my code whilst I&amp;#8217;m on the train. Up until a couple of weeks ago I&amp;#8217;d been using Subversion as my Version Control System running on a remote server, but this had never sat completely easily with me because I had to wait until I [...]</description>
+
+         <guid isPermaLink="false">http://thecodetrain.co.uk/?p=149</guid>
+         <pubDate>Mon, 17 Nov 2008 00:20:23 -0800</pubDate>
+         <content:encoded><![CDATA[<p>As should be obvious by now, I write most of my code whilst I&#8217;m on the train. Up until a couple of weeks ago I&#8217;d been using Subversion as my Version Control System running on a remote server, but this had never sat completely easily with me because I had to wait until I got home (and got a network connection) to be able to make all my commits from the journey.</p> <p>So, &#8220;why didn&#8217;t you just run a Subversion repository on your local machine?&#8221;, I hear you cry. The answer is simple - I wanted to make sure I had the code backed up off-site and easily accessible from different machines. I also occasionally collaborate with others on the code I write, so having the repository on my local machine that only tends to be on when I have no network connection would be a bit of a non-starter as well.</p> <p>Now, I&#8217;d been aware of git (and also bazaar) for over a year, but had never taken the time to look at them properly. The reason was that whilst I wasn&#8217;t particularly happy with the fact that I had to hold my commits in my head until I got home with svn I had been able to work this way and get things done. I was also not convinced by what I considered &#8220;fad&#8221; Version Control Systems, and I didn&#8217;t relish the prospect of moving from one to another. This all changed for me when I watched Robert Lee-Cann&#8217;s <a rel="nofollow" target="_blank" href="http://www.headconference.com/">&lt;head&gt; conference</a> <a rel="nofollow" target="_blank" href="http://www.headconference.com/speakers/robert-lee-cann/">talk about git</a>. Although more in the style of a Barcamp (rather than conference) talk, Leeky&#8217;s session was far and away the one that I gained most from over the course of the event. The tipping point for me was that I could, if I wanted to, use git on the train to do intermediary commits and then commit back to svn when I got home. This fitted my mental model, and I was happy.</p> <p>Of course, things didn&#8217;t quite happen that way. I started using git with <a rel="nofollow" target="_blank" href="http://github.com">GitHub</a> as <a rel="nofollow" target="_blank" href="http://github.com/NeilCrosby">my remote repository</a> for a couple of minor projects, decided I really got on with git in the limited way I was using it and decided to move across wholesale from svn.</p> <h3>Github</h3> <p>A big part of the reason I fell in love with git was GitHub. Ostensibly, GitHub is just a place to publicly store your code, but that word &#8220;publicly&#8221; is so very important.</p> <p>One of the things that I wanted to do when I moved from <a rel="nofollow" target="_blank" href="http://www.workingwith.me.uk">Working With Me</a> to <a rel="nofollow" target="_blank" href="http://thecodetrain.co.uk">The Code Train</a> was create a sandbox area where I could make my half finished code public and allow people to fiddle with it and use it. Previously I&#8217;ve been much more likely to sit on code for months at a time, willing it to become more stable and generalised before pushing it out to the public, meaning that so many of the ideas and hacks I play with don&#8217;t make it out into the real world to be fiddled with by others. It turns out that I don&#8217;t need to create that special section of my site any more - with GitHub I get it for free! Now, whenever I start hacking on something, however small it may be, I&#8217;ll immediately start a new git repository and stick it up onto GitHub.</p> <p>There are quite a few benefits to working this way:</p> <ul>
+<li><p>I get to benefit from the eyes of people I work with and greatly respect. </p> <p>Whilst most of the code I stick up will be hacky in nature having other people be able to look at the things that interest them means that bugs, issues and mis-thinkings are much more likely to get picked up on. I love the idea of code reviews, and using GitHub is yet another, informal, way of allowing them to happen.</p></li>
+<li><p>I get to share what I&#8217;m working on publicly, which might just help someone, somewhere.</p> <p>Just because I don&#8217;t think that something is ready for production use doesn&#8217;t mean that what I&#8217;ve done won&#8217;t be useful so someone out there. Whether it&#8217;s useful in solving a problem, or they just decide to use it wholesale, that&#8217;s all good.</p></li>
+<li><p>I get added incentive to improve my code.</p> <p>Because there is the opportunity for so many eyes to be watching the code that I&#8217;m producing I feel a greater urge to improve it more quickly. I see this as a game that I get to play, and by playing it everyone&#8217;s a winner. </p> <p><a rel="nofollow" target="_blank" href="http://mikewest.org/">Mike</a> introduced me to <a rel="nofollow" target="_blank" href="http://calendaraboutnothing.com/">Calendar About Nothing</a> which similarly turns writing code into a game. Calendar About Nothing attempts to add incentive to writing code by giving you your own <a rel="nofollow" target="_blank" href="http://calendaraboutnothing.com/~NeilCrosby">personal calendar</a> that has each day crossed off as you commit public code to GitHub. The idea is to build up longer and longer unbroken chains of committing code to the public good each and every day. As well as the personal incentive of making your chain longer, the site also has lists of people with the longest chains currently and of all time. The longest chain of all time is currently at 59 days. My aim is to make it to 60 days of committing public code which actively makes something better.</p></li>
+</ul> <p>So there you go - I&#8217;m loving git, and I&#8217;m loving GitHub. If you want to check out the projects I&#8217;m working on, head on over to <a rel="nofollow" target="_blank" href="http://github.com/NeilCrosby">my GitHub profile</a>. </p> <p>Probably the most interesting projects I&#8217;m working on right now are:</p> <ul>
+<li><p><a rel="nofollow" target="_blank" href="http://github.com/NeilCrosby/wikislurp/tree/master">WikiSlurp</a> - a tool to pull HTML formatted data out of Wikipedia.</p></li>
+<li><p><a rel="nofollow" target="_blank" href="http://github.com/NeilCrosby/multi-level-vcards/tree/master">Multi Level vCards</a> - use your vCard to publish information to the web, allowing only certain people to see your more sensitive data.</p></li>
+<li><p><a rel="nofollow" target="_blank" href="http://github.com/NeilCrosby/twitbot/tree/master">TwitBot</a> - a tool to allow easy creation of bots for use on twitter.</p></li>
+</ul> <p>So, what are you waiting for? Get yourself onto GitHub and lets see the code you&#8217;re writing! Oh yes, and don&#8217;t forget to read what <a rel="nofollow" target="_blank" href="http://mikewest.org/2008/11/i-love-github">Mike</a> and <a rel="nofollow" target="_blank" href="http://dynamicflash.com/2008/11/do-it-in-public/">Steve</a> have to say on the subject of GitHub too.</p>
+<img src="http://feeds.feedburner.com/~r/TheCodeTrain/~4/455794646" height="1" width="1"/>]]></content:encoded>
+      </item>
+      <item>
+         <title>Make it Work, Make it Pretty, Make it Right</title>
+         <link>http://feeds.feedburner.com/~r/TheCodeTrain/~3/448242335/</link>
+
+         <description>A phrase a lot of people are used to nowadays in software development is &amp;#8220;Make it work, make it right, make it fast&amp;#8221; - meaning that you should first make your code do what you expect, then make it elegant, then finally optimise for speed. For me, I like the intent of the phrase, but I [...]</description>
+         <guid isPermaLink="false">http://thecodetrain.co.uk/?p=146</guid>
+         <pubDate>Mon, 10 Nov 2008 01:45:46 -0800</pubDate>
+         <content:encoded><![CDATA[<p>A phrase a lot of people are used to nowadays in software development is &#8220;Make it work, make it right, make it fast&#8221; - meaning that you should first make your code do what you expect, then make it elegant, then finally optimise for speed.</p> <p>For me, I like the intent of the phrase, but I don&#8217;t fully agree with it. For one thing, my personal view is that &#8220;make it right&#8221; and &#8220;make it fast&#8221; should generally go hand in hand and that if you&#8217;re making something right you will likely be making it fast at the same time.</p> <p>Instead, I prefer to work to the mantra &#8220;Make it Work, Make it Pretty, Make it Right&#8221;.</p> <h3>Make it Work, Make it Pretty, Make it Right</h3> <p>The rationale behind my mantra is simple - &#8220;work, right, fast&#8221; only covers the quality of code, it does not look to the quality of experience. By merging &#8220;right&#8221; and &#8220;fast&#8221; into a single &#8220;right&#8221; rule and inserting a &#8220;pretty&#8221; rule the development process immediately becomes more concerned with how people will interact with what I&#8217;ve produced.</p> <p>This process, by necessity, describes how I try to work as a single developer on my own on the train on my &#8220;itch to scratch&#8221; projects. </p>  <h4>Make it Work</h4> <p>At the start of any of my projects I will have the germ of an idea that I want to flesh out, so I&#8217;ll start writing code. Obviously, making it work it pretty darned important to the whole process. At this point though, I won&#8217;t be too concerned about the elegance or performance of the code. What I&#8217;m looking for is for it to work; nothing more, nothing less.</p> <p>To ensure the code actually works, I&#8217;m trying my best nowadays to create Test Suites that should be run before any code commit to make sure that I&#8217;ve not inadvertently broken anything. A quick look at my <a rel="nofollow" target="_blank" href="http://github.com/NeilCrosby">GitHub commits</a> will show you that I&#8217;ve got a way to go in this regard, but I am getting there slowly but surely. These test suites become vitally important when you get to the &#8220;Make it Right&#8221; stage, but more of that later.</p>  <h4>Make it Pretty</h4> <p>Once the code is working, and a test suite with good code coverage exists, it&#8217;s time to make what you&#8217;ve produced &#8220;pretty&#8221;. This could include (but is not limited to) improving the visuals of your site or application, writing documentation or even just making sure your code blocks line up nicely.</p> <p>You see, &#8220;pretty&#8221; isn&#8217;t just about visuals. It&#8217;s about doing anything you can to make things easier for whoever comes later. That could be someone using the website you&#8217;ve just built, but it could just as easily be someone who&#8217;s trying to install your software on their own machine or the unlucky chap who&#8217;s got to fix a particularly nasty bug in the code you wrote.</p> <p>This rule is the one that gets more people to use what you&#8217;ve created. Sure, some people will use the thing that works, but lots more will use the thing that works <em>and</em> is pretty.</p>  <h4>Make it Right</h4> <p>The final step in the process is to make things &#8220;right&#8221;. The step is all about the &#8220;re&#8221; words - refactor, re-evaluate and reduce bugs.</p> <p>Having a good test suite by this point is vital, because it gives me a huge amount more confidence in the fact that I can change how my code works without changing what it ultimately does.</p> <h3>And that&#8217;s that</h3> <p>So, there we go - that&#8217;s how I like to work. I&#8217;m not great at following everything in the mantra just yet, but I&#8217;m getting better. In time, I may even be awesome.</p> <p>Oh, and for what&#8217;s worth, this post very much falls into the &#8220;Make it Pretty&#8221; rule. I&#8217;ve been trying to work to this mantra for a while, and now I&#8217;m documenting to make things easier for others to use if they want. And now that I&#8217;ve finished writing there&#8217;s the comments section, where hopefully you&#8217;ll help to make everything right for me.</p>
+<img src="http://feeds.feedburner.com/~r/TheCodeTrain/~4/448242335" height="1" width="1"/>]]></content:encoded>
+      </item>
+      <item>
+
+         <title>Con Air - a Movie review by workingwithme</title>
+         <link>http://thetenwordreview.com/reviews/movie/con+air#ri10058</link>
+         <description>&lt;p&gt;Parolee kicks ass on flight home to daughter. Cheesy fun.&lt;/p&gt;&lt;p&gt;(&lt;a rel=&quot;nofollow&quot;&gt;a movie review&lt;/a&gt; written by &lt;a rel=&quot;nofollow&quot;&gt;workingwithme&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;&lt;em&gt;6 users thought this review was good. What do you think? &lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href='http://thetenwordreview.com/reviews/movie/con+air#ri10058'&gt;Visit TheTenWordReview.com to rate this review!&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+
+         <guid isPermaLink="false">http://thetenwordreview.com/reviews/movie/con+air#ri10058</guid>
+         <pubDate>Sun, 09 Nov 2008 11:48:31 -0800</pubDate>
+      </item>
+      <item>
+         <title>Neil, the randy bisexual whore</title>
+         <link>http://www.flickr.com/photos/thevoicewithin/3015088913/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/thevoicewithin/&quot;&gt;thevoicewithin&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/thevoicewithin/3015088913/&quot; title=&quot;Neil, the randy bisexual whore&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3043/3015088913_fcfb109480_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;Neil, the randy bisexual whore&quot;/&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;I was wandering around Bloodstone yesterday, and who should I find?&lt;br /&gt;
+
+&lt;br /&gt;
+Well, it amused me.&lt;/p&gt;</description>
+         <author>nobody@flickr.com (thevoicewithin)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/3015088913</guid>
+         <pubDate>Sun, 09 Nov 2008 06:28:15 -0800</pubDate>
+         <media:title>Neil, the randy bisexual whore</media:title>
+
+         <media:description>&amp;lt;p&amp;gt;I was wandering around Bloodstone yesterday, and who should I find?&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;
+Well, it amused me.&amp;lt;/p&amp;gt;</media:description>
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3043/3015088913_fcfb109480_s.jpg" height="75"/>
+         <media:category>amusing fable2 publishneilcrosbycom</media:category>
+         <media:credit>thevoicewithin</media:credit>
+
+      </item>
+      <item>
+         <title>High School Musical 3 - a Movie review by workingwithme</title>
+         <link>http://thetenwordreview.com/reviews/movie/high+school+musical+3#ri10053</link>
+         <description>&lt;p&gt;More downbeat than previous two. Efron does Angry Bacon dance.&lt;/p&gt;&lt;p&gt;(&lt;a rel=&quot;nofollow&quot;&gt;a movie review&lt;/a&gt; written by &lt;a rel=&quot;nofollow&quot;&gt;workingwithme&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;&lt;em&gt;4 users thought this review was good. What do you think? &lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href='http://thetenwordreview.com/reviews/movie/high+school+musical+3#ri10053'&gt;Visit TheTenWordReview.com to rate this review!&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+
+         <guid isPermaLink="false">http://thetenwordreview.com/reviews/movie/high+school+musical+3#ri10053</guid>
+         <pubDate>Sat, 08 Nov 2008 14:07:10 -0800</pubDate>
+      </item>
+      <item>
+         <title>Call of Duty 4 - a Game review by workingwithme</title>
+         <link>http://thetenwordreview.com/reviews/game/call+of+duty+4#ri9859</link>
+         <description>&lt;p&gt;Great fun, best played in multi-player with co-workers. &quot;Frag Out!&quot;&lt;/p&gt;&lt;p&gt;(&lt;a rel=&quot;nofollow&quot;&gt;a game review&lt;/a&gt; written by &lt;a rel=&quot;nofollow&quot;&gt;workingwithme&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;&lt;em&gt;4 users thought this review was good. What do you think? &lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href='http://thetenwordreview.com/reviews/game/call+of+duty+4#ri9859'&gt;Visit TheTenWordReview.com to rate this review!&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+
+         <guid isPermaLink="false">http://thetenwordreview.com/reviews/game/call+of+duty+4#ri9859</guid>
+         <pubDate>Thu, 06 Nov 2008 06:50:58 -0800</pubDate>
+      </item>
+      <item>
+         <title>How to Automatically Take Photos Using Your Mac’s Webcam</title>
+         <link>http://feeds.feedburner.com/~r/TheCodeTrain/~3/440224472/</link>
+         <description>On friday, Norm happened across one of my automated photos on Flickr and asked me how I did it. Because I realised that I couldn&amp;#8217;t actually remember exactly how everything fitted together I decided to take a look at it again this weekend and actually write things up this time. So, here&amp;#8217;s how to do [...]</description>
+
+         <guid isPermaLink="false">http://thecodetrain.co.uk/?p=143</guid>
+         <pubDate>Sun, 02 Nov 2008 11:34:47 -0800</pubDate>
+         <content:encoded><![CDATA[<p>On friday, <a rel="nofollow" target="_blank" href="http://marknormanfrancis.com/">Norm</a> happened across <a rel="nofollow" target="_blank" href="http://www.flickr.com/photos/thevoicewithin/2249082200/">one of my automated photos</a> on Flickr and asked me how I did it. Because I realised that I couldn&#8217;t actually remember exactly how everything fitted together I decided to take a look at it again this weekend and actually write things up this time.</p> <p><a rel="nofollow" target="_blank" href="http://www.flickr.com/photos/thevoicewithin/2249082200/" title="Where is my happy face, take 2 by thevoicewithin, on Flickr"><img src="http://farm3.static.flickr.com/2343/2249082200_49f25a4281.jpg" width="500" height="375" alt="Where is my happy face, take 2"/></a></p> <p>So, here&#8217;s how to do it:</p> <ol>
+<li><p>Create a directory <code>/Applications/autocamcapture</code> - this is where the executables we&#8217;ll be using will live.</p></li>
+<li><p>Create a directory <code>~/Pictures/autocamcapture</code> - this is where the automatically generated images will live.</p></li>
+<li><p>Download <a rel="nofollow" target="_blank" href="http://slappingturtle.com/home/index.php?option=com_content&amp;task=view&amp;id=20&amp;Itemid=1">CamCapture</a> and put the executable in <code>/Applications/autocamcapture</code></p></li>
+<li><p>Open the &#8220;Script Editor&#8221; application and enter the following:</p> <pre><code>set commandPath to "/Applications/autocamcapture/"
+set commandName to "camcapture"
+set outputImagePath to "~/Pictures/autocamcapture/"
+set outputImageName to do shell script "date +%Y%m%d-%H%M%S"
+do shell script commandPath &amp; commandName &amp; " " &amp; outputImagePath &amp; outputImageName
+</code></pre></li>
+<li><p>Save this file as <code>/Applications/autocamcapture/autocamcapture.scpt</code></p></li>
+<li><p>Open a terminal window, and run <code>crontab -e</code>. Add the following cron job:</p> <pre><code>* * * * * osascript /Applications/autocamcapture/autocamcapture.scpt
+</code></pre></li>
+<li><p>Now, once a minute a cron job will be fired off and a picture will be taken and placed in your <code>~/Pictures/autocamcapture</code> directory.</p></li>
+</ol> <p>The obvious question to go with this is &#8220;but why would you do this?&#8221;. Frankly, originally the answer was just &#8220;because I can&#8221;. I carried on doing it though because in amongst all the dross that inevitably gets taken <a rel="nofollow" target="_blank" href="http://www.flickr.com/search/?q=automated&amp;w=36778932%40N00">some interesting photos do occur</a>. Try it out yourself, you might snap something fun.</p>
+<img src="http://feeds.feedburner.com/~r/TheCodeTrain/~4/440224472" height="1" width="1"/>]]></content:encoded>
+      </item>
+      <item>
+         <title>Five ways to make offline working easier</title>
+         <link>http://feeds.feedburner.com/~r/TheCodeTrain/~3/435041342/</link>
+
+         <description>Nowadays an &amp;#8220;always on&amp;#8221; existence is far less of a pipe dream than it was even a year ago. Usable wireless hotspots have popped up everywhere and many of us have data tariffs on our mobile phones. It&amp;#8217;s no surprise then that many people simply expect to always have a network connection and [...]</description>
+         <guid isPermaLink="false">http://thecodetrain.co.uk/?p=129</guid>
+         <pubDate>Tue, 28 Oct 2008 11:15:14 -0700</pubDate>
+         <content:encoded><![CDATA[<p>Nowadays an &#8220;always on&#8221; existence is far less of a pipe dream than it was even a year ago. Usable wireless hotspots have popped up everywhere and many of us have data tariffs on our mobile phones. It&#8217;s no surprise then that many people simply expect to always have a network connection and become flummoxed when this is taken away from them.</p> <p>Not having a connection to the outside world shouldn&#8217;t be a blocker to getting work done though. On my commute to and from work I have no internet connection available to my laptop and it really doesn&#8217;t stop me from getting anything done. In fact, being disconnected from the cloud actually helps to free my mind and reduce the distractions that so often occur when I am connected.</p> <p>A few people have asked me what my setup is for working on the train, so here&#8217;s a brief rundown of what I have on my laptop:</p> <h3>A Development Environment</h3> <p>For me, this is <a rel="nofollow" target="_blank" href="http://www.mamp.info/en/index.php">MAMP</a>, a simple installation LAMP setup for the Mac. I personally currently run MAMP Pro, which costs money but gives me an easy interface for creating Virtual Hosts which I find very handy.</p> <h3>Documentation</h3> <p>Just as important as the development environment is the documentation to go with it. If there&#8217;s a language or tool that you use that has documentation available for it then download it - you&#8217;ll regret your decision not to if you need it and you&#8217;re away from a network connection.</p> <p>Because I write a lot of PHP and it&#8217;s a little inconsistent in its naming conventions I&#8217;m constantly in and out of the documentation. I find the <a rel="nofollow" target="_blank" href="http://www.artissoftware.com/phpfi/">PHP Function Index</a> application invaluable on the train, as it makes the PHP documentation searchable and also allows you to download and keep an offline copy of all the user comments from PHP.net.</p> <h3>MarsEdit</h3> <p>Right now I&#8217;m working in <a rel="nofollow" target="_blank" href="http://www.red-sweater.com/marsedit/">MarsEdit</a>, the really rather nice blog entry writing tool. It allows me to write entries for multiple blogs, store them locally and sync with the blog servers when I have a network connection. It has built in support for Markdown (which matters to me) and gives a nice preview of your entries as you write them. I really wish it would let me turn on a column to show the &#8220;Post Status&#8221; of my entries though - it would make finding the half finished things so much easier.</p> <h3>Git</h3> <p>I&#8217;ve only just started using git (check out <a rel="nofollow" target="_blank" href="http://github.com/NeilCrosby">my profile on GitHub</a>), but it&#8217;s looking like it should fit my usage nicely. Working on the train means that there are plenty of times when I solve a problem and then want to move on to a new one. With my previous setup of an SVN server on a completely separate machine I couldn&#8217;t commit my code before starting the second problem. With git though, I can commit any changes I want locally and then upload them to an external server later at my leisure. Apparently, I can even use git on the train for intermediary commits and then commit back to my normal SVN repository when I get home.</p> <h3>A backup network connection</h3> <p>Of course, there are times when you really do need a network connection and then a phone with a decent data plan really comes in handy. On those occasions though Sod&#8217;s Law will apply and you won&#8217;t have any signal. When that happens I just sit back, relax and move onto something else.</p>
+<img src="http://feeds.feedburner.com/~r/TheCodeTrain/~4/435041342" height="1" width="1"/>]]></content:encoded>
+      </item>
+      <item>
+
+         <title>Why (and how) am I changing my online identity?</title>
+         <link>http://feeds.feedburner.com/~r/TheCodeTrain/~3/426575394/</link>
+         <description>Over the last month or so I&amp;#8217;ve been slowly but surely beginning my migration of usernames from things like &amp;#8220;thevoicewithin&amp;#8221; and &amp;#8220;workingwithme&amp;#8221; to plain and simple &amp;#8220;NeilCrosby&amp;#8221;. The question quite a few people have been asking me is &amp;#8220;Why?&amp;#8221;. Some have called it an identity crisis, others have said that it&amp;#8217;s a [...]</description>
+
+         <guid isPermaLink="false">http://thecodetrain.co.uk/?p=93</guid>
+         <pubDate>Mon, 20 Oct 2008 09:20:42 -0700</pubDate>
+         <content:encoded><![CDATA[<p>Over the last month or so I&#8217;ve been slowly but surely beginning my migration of usernames from things like &#8220;thevoicewithin&#8221; and &#8220;workingwithme&#8221; to plain and simple &#8220;NeilCrosby&#8221;. The question quite a few people have been asking me is &#8220;Why?&#8221;. Some have called it an identity crisis, others have said that it&#8217;s a personal branding exercise, but really it&#8217;s neither and both.</p> <p>So why am I changing my online persona? Both &#8220;thevoicewithin&#8221; and &#8220;workingwithme&#8221; are personae that I&#8217;ve had and loved but ultimately, like so many other usernames I&#8217;ve had before, they&#8217;re having to go. I&#8217;ve been using &#8220;thevoicewithin&#8221; since about 2001, when I started university, and moved on to &#8220;workingwithme&#8221; in 2004 when I was getting ready to leave and find my way into the big wide world of work. Both usernames have held an important place in my heart, but ultimately they don&#8217;t say anything about who I am.</p> <p>&#8220;NeilCrosby&#8221;, I think, does. After all, it&#8217;s my name. It&#8217;s the one thing about me that I am unlikely to change during my life, and I&#8217;m now at a point in my life that the things that I do online I&#8217;m perfectly happy to have associated with me by name. It&#8217;s also obviously a lot easier to tell people &#8220;I&#8217;m NeilCrosby on such and such a site&#8221;, rather than having to try and remember which one of the three names I was using when I joined which particular site.</p> <p>So, I&#8217;m changing my usernames across the internet.</p> <h3>Changing your Usernames</h3> <p>Obviously, the most important thing in this post is how I&#8217;m going about changing my usernames on the various sites I use, and how to mitigate the fail that goes along with that.</p> <h4>The easy sites that allow you to simply change your username</h4> <ul>
+<li><p><a rel="nofollow" target="_blank" href="http://twitter.com">Twitter</a> allows you to change your username willynilly whenever you want. Just go to the &#8220;Settings&#8221; section and type in a new username. As long as it&#8217;s not already been taken then you&#8217;re good to go.</p> <p>One thing to bear in mind when changing your username on twitter is that any tweets that people have ever @linked to your old username will end up pointing into nothingness. Twitter doesn&#8217;t perform any sort of redirecting from those old links to your new username.</p></li>
+<li><p><a rel="nofollow" target="_blank" href="http://xbox.live.com">X-box Live</a> lets you change your gamertag if you pay 800 Microsoft points. You have to do this on your X-Box itself.</p> <p>Apparently if ten people say your gamertag offends them though, you are &#8220;allowed&#8221; to change your tag without paying, so if you want to change without paying, that might be an option.</p></li>
+<li><p><a rel="nofollow" target="_blank" href="http://upcoming.yahoo.com">Upcoming</a> lets you change your screen name, nice and easily, and because all Upcoming URLs are numerically based, you won&#8217;t lose any linkage like you do with Twitter.</p> <p>Just log into your account, and go to the &#8220;My Account&#8221; section. Edit your personal profile, and then choose the &#8220;Screen Name (change)&#8221; link. Change your name, and you&#8217;re all done.</p></li>
+<li><p><a rel="nofollow" target="_blank" href="http://brightkite.com/">Brightkite</a> is easy. Just go to account settings, and then change your username.</p></li>
+</ul> <h4>The slightly more annoying sites</h4> <ul>
+<li><p><a rel="nofollow" target="_blank" href="http://delicious.com">Delicious</a> doesn&#8217;t allow you to change your username directly. Instead, you can export your links from one account (don&#8217;t forget to include your tags). You can then create a new account and re-import those links.</p> <p>I&#8217;ve noticed two things that go missing when you do this. Firstly, if you&#8217;ve set up a network of friends then you&#8217;ll lose these. I had about 30 people in my network, and it took about 10 minutes to re-add them all. The real upset here comes with trying to get them to re-add you with your new username.</p> <p>The other thing that ends up MIA when you re-import your tags are any tag bundles that you&#8217;d previously set up. I haven&#8217;t yet got round to re-setting up my bundles, so obviously they weren&#8217;t that important to me.</p></li>
+</ul> <h4>The sites I want to change my profile on but can&#8217;t yet</h4> <ul>
+<li><p><a rel="nofollow" target="_blank" href="http://flickr.com">Flickr</a>. I have over 2000 photos on flickr, and god only knows how many comments. I don&#8217;t want to have to lose all this with an export and re-import. Neither do I want to start again. But, there&#8217;s no option to change my URL. indeed, back when I set it up three years ago, Flickr warned that was the case so I can&#8217;t complain too much.</p></li>
+<li><p><a rel="nofollow" target="_blank" href="http://technorati.com">Technorati</a>. Again, no option to change my username. I don&#8217;t have any contacts on the Technorati system, so it&#8217;s entirely possible that I could nuke from orbit and restart. But how happy is Technorati with changing a claim on a blog from one person to another?</p></li>
+<li><p><a rel="nofollow" target="_blank" href="http://thetenwordreview.com">TheTen Word Review</a> is completely under my control, but short of me making a database change there&#8217;s no way for anyone to change their username. I&#8217;m going to have to add this feature at some point soon.</p></li>
+</ul> <p>So, there you have it. Consolidating your online identity might not be massively easy all the time, but it is doable. The sites mentioned above are only the ones I&#8217;ve looked at as yet. If you&#8217;ve had any interesting experiences doing this yourself, let me know.</p>
+<img src="http://feeds.feedburner.com/~r/TheCodeTrain/~4/426575394" height="1" width="1"/>]]></content:encoded>
+      </item>
+      <item>
+         <title>The best bit of &quot;Doomed&quot;</title>
+         <link>http://www.flickr.com/photos/thevoicewithin/2932661994/</link>
+
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/thevoicewithin/&quot;&gt;thevoicewithin&lt;/a&gt; posted a photo:&lt;/p&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/thevoicewithin/2932661994/&quot; title=&quot;The best bit of &quot;Doomed&quot;&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3149/2932661994_777b73d077_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;The best bit of &quot;Doomed&quot;&quot;/&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;A little while back, Becca and I bought &quot;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.imdb.com/title/tt0956335/&quot;&gt;Doomed&lt;/a&gt;&quot; from TESCO for £1. This disclaimer, at the very end of the credits, was by far the best bit.&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (thevoicewithin)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/2932661994</guid>
+         <pubDate>Sat, 11 Oct 2008 14:48:36 -0700</pubDate>
+         <media:title>The best bit of &quot;Doomed&quot;</media:title>
+         <media:description>&amp;lt;p&amp;gt;A little while back, Becca and I bought &quot;&amp;lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.imdb.com/title/tt0956335/&quot;&amp;gt;Doomed&amp;lt;/a&amp;gt;&quot; from TESCO for £1. This disclaimer, at the very end of the credits, was by far the best bit.&amp;lt;/p&amp;gt;</media:description>
+
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3149/2932661994_777b73d077_s.jpg" height="75"/>
+         <media:category>dvdcap publishneilcrosbycom</media:category>
+         <media:credit>thevoicewithin</media:credit>
+      </item>
+      <item>
+         <title>I won the Moo API competition</title>
+         <link>http://feeds.feedburner.com/~r/TheCodeTrain/~3/417743336/</link>
+
+         <description>So, it turns out that my Ten Word Review Moo Card Generator won the Moo API competition. Go me! What I won was a pink Flip Video Ultra, a cute little handheld video camera that shoots 2 hours of 640&amp;#215;480 video onto solid state memory. You then get to transfer it over to your [...]</description>
+         <guid isPermaLink="false">http://thecodetrain.co.uk/?p=87</guid>
+         <pubDate>Sat, 11 Oct 2008 05:59:37 -0700</pubDate>
+         <content:encoded><![CDATA[<p>So, it turns out that my <a rel="nofollow" target="_blank" href="http://thecodetrain.co.uk/2008/10/ten-word-moo-card/">Ten Word Review Moo Card Generator</a> won the <a rel="nofollow" target="_blank" href="http://www.moo.com/blog/2008/10/06/moo-api-hacks-at-barcamplondon5-and-a-winner/">Moo API competition</a>. Go me!</p> <p>What I won was a pink <a rel="nofollow" target="_blank" href="http://www.theflip.com/products_flip_ultra.shtml">Flip Video Ultra</a>, a cute little handheld video camera that shoots 2 hours of 640&#215;480 video onto solid state memory. You then get to transfer it over to your computer by activating the flick-knife like USB connector.</p> <p>I&#8217;ve not had chance to play much with it yet, but I&#8217;ve posted <a rel="nofollow" target="_blank" href="http://www.flickr.com/photos/thevoicewithin/tags/flipvideoultra/">a couple of test videos</a> onto Flickr. So far it seems pretty decent - it&#8217;s nice and responsive to changes in light, so that makes me happy. It&#8217;s also pretty sturdy, and feels like you could chuck it around a fair bit and it would be okay, which is good because I tend to throw things about a bit.</p> <p>Thanks to the Moo chaps for choosing me as the winner, and I look forward to seeing what they do with the API going forwards.</p>
+<img src="http://feeds.feedburner.com/~r/TheCodeTrain/~4/417743336" height="1" width="1"/>]]></content:encoded>
+      </item>
+      <item>
+         <title>VisualHub is dead, long live HandBrake!</title>
+
+         <link>http://feeds.feedburner.com/~r/TheCodeTrain/~3/411814720/</link>
+         <description>I&amp;#8217;ve been a big fan of VisualHub for about a year now, and before that I was just as much a fan of iSquint, the video encoding software from Techspansion. I&amp;#8217;d paid for the software, talked about it at BarCamps, and generally evangelised about it whenever anyone asked what was good for re-encoding video. [...]</description>
+         <guid isPermaLink="false">http://thecodetrain.co.uk/?p=80</guid>
+         <pubDate>Sun, 05 Oct 2008 03:56:17 -0700</pubDate>
+         <content:encoded><![CDATA[<p>I&#8217;ve been a big fan of <a rel="nofollow" target="_blank" href="http://www.techspansion.com/visualhub/">VisualHub</a> for about a year now, and before that I was just as much a fan of iSquint, the video encoding software from Techspansion. I&#8217;d paid for the software, <a rel="nofollow" target="_blank" href="http://www.slideshare.net/neilcrosby/tv-tubes-talkin-bout-my-automation-presentation">talked about it at BarCamps</a>, and generally evangelised about it whenever anyone asked what was good for re-encoding video. And now it&#8217;s dead.</p> <p>Yesterday Tyler Loch, the creator of VisualHub, posted a &#8220;software update&#8221; which said that &#8220;After much soul-searching (it&#8217;s not you, it&#8217;s me), for personal reasons, Techspansion is closing its virtual doors&#8221;. The software was no longer available for download and so far there&#8217;s been no further explanation as to why this has happened.</p> <p>There has been much wailing and gnashing of teeth since the announcement. People have been <a rel="nofollow" target="_blank" href="http://www.isquint.org/cgi-bin/ikonboard.cgi?act=ST;f=8;t=6938">asking for VisualHub to be Open Sourced and released to the community</a>. Others, like me, would be happy for now <a rel="nofollow" target="_blank" href="http://www.isquint.org/cgi-bin/ikonboard.cgi?act=ST;f=8;t=6940">if we could just download the final version of the software</a> that was available before the decision was made. Some people (again, I&#8217;m in the category) are <a rel="nofollow" target="_blank" href="http://www.isquint.org/cgi-bin/ikonboard.cgi?act=ST&amp;f=8&amp;t=6938&amp;st=30#entry31329">thinking that Tyler has been getting some pressure from the licence holders</a> of the internally used CODECs.</p> <p>Whatever the actual situation though, the outcome for now is the same - there is no way for a new user to start using VisualHub. All is not lost though, because it looks like <a rel="nofollow" target="_blank" href="http://handbrake.fr/">HandBrake</a> is going to step in where VisualHub left off, with <a rel="nofollow" target="_blank" href="http://forum.handbrake.fr/viewtopic.php?f=6&amp;t=7230">the introduction of Universal Input Suuport in HandBrake 0.9.3 Snapshot Build 3</a>, essentially allowing re-encoding of <em>anything</em>, not just DVDs. Obviously it&#8217;s not release ready yet, but it sounds like in time it should be able to take over where VisualHub left off. Plus, it&#8217;s Open Source, and what&#8217;s not to like about that?</p>
+<img src="http://feeds.feedburner.com/~r/TheCodeTrain/~4/411814720" height="1" width="1"/>]]></content:encoded>
+      </item>
+
+      <item>
+         <title>We Built This City…</title>
+         <link>http://feeds.feedburner.com/~r/IWearCotton/~3/410025371/</link>
+         <description>When we built this city, we didn&amp;#8217;t go down the traditional route of bricks and mortar. We didn&amp;#8217;t go for the currently in vogue technique of Rock and Roll. We didn&amp;#8217;t even use jam and scones. Instead, we got out our old Lego bricks and started building that way. Sure, it took a [...]</description>
+         <guid isPermaLink="false">http://iwearcotton.com/?p=31</guid>
+
+         <pubDate>Fri, 03 Oct 2008 00:00:11 -0700</pubDate>
+         <content:encoded><![CDATA[<p>When we built this city, we didn&#8217;t go down the traditional route of bricks and mortar. We didn&#8217;t go for the currently in vogue technique of Rock and Roll. We didn&#8217;t even use jam and scones. Instead, we got out our old Lego bricks and started building that way.</p> <p><a rel="nofollow" class="action_shot" target="_blank" href="http://www.flickr.com/photos/thevoicewithin/2516477901/" title="We built this city by thevoicewithin, on Flickr"><img src="http://farm3.static.flickr.com/2110/2516477901_6641346c4b_m.jpg" width="240" height="180" alt="We built this city"/></a></p> <p>Sure, it took a long time to build the city, but since it was funded by the government they didn&#8217;t seem to mind that we we over budget and over schedule - what we came up with in the end was pretty, if a little bit uncomfortable to walk around on in bare feet.</p> <p>I&#8217;m a big fan of Lego, so any shirt showing a minifig is immediately going to score extra points in my book. Add to that the use of Starship&#8217;s &#8220;We Built This City&#8221; and we have a winner. </p> <p>The shirt isn&#8217;t over the top, using a simple single colour print. The print colour is Lego minifig yellow, and the typeface is the classic Lego font. Add to that the fact that the minifigs are the modern era &#8220;simple&#8221; minifgs that I grew up with and this shirt quickly became a must have for me.</p> <p>&#8220;<a rel="nofollow" target="_blank" href="http://www.anrdoezrs.net/click-3032853-10499752?url=http%3A%2F%2Ftracking.searchmarketing.com%2Fclick.asp%3Faid%3D164906834&amp;cjsku=BT209a">We Built This City</a>&#8221; is printed on a red American Apparel t-shirt and is sold by <a rel="nofollow" target="_blank" href="http://www.kqzyfj.com/click-3032853-10406621">Busted Tees</a> for $18.99. It comes in both male and female sizes.</p>
+<img src="http://feeds.feedburner.com/~r/IWearCotton/~4/410025371" height="1" width="1"/>]]></content:encoded>
+      </item>
+      <item>
+         <title>Ghosts</title>
+         <link>http://www.flickr.com/photos/thevoicewithin/2887296710/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/thevoicewithin/&quot;&gt;thevoicewithin&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/thevoicewithin/2887296710/&quot; title=&quot;Ghosts&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3208/2887296710_8dac4aa104_m.jpg&quot; width=&quot;240&quot; height=&quot;102&quot; alt=&quot;Ghosts&quot;/&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;I just got an email from photobucket, reminding me of an account I'd completely forgotten about. These were the photos it contained.&lt;br /&gt;
+
+&lt;br /&gt;
+I really liked my effort on this one.&lt;/p&gt;</description>
+         <author>nobody@flickr.com (thevoicewithin)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/2887296710</guid>
+         <pubDate>Thu, 25 Sep 2008 02:52:16 -0700</pubDate>
+         <media:title>Ghosts</media:title>
+
+         <media:description>&amp;lt;p&amp;gt;I just got an email from photobucket, reminding me of an account I'd completely forgotten about. These were the photos it contained.&amp;lt;br /&amp;gt;
+&amp;lt;br /&amp;gt;
+I really liked my effort on this one.&amp;lt;/p&amp;gt;</media:description>
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3208/2887296710_8dac4aa104_s.jpg" height="75"/>
+         <media:category>aberystwyth photobucket publishneilcrosbycom</media:category>
+         <media:credit>thevoicewithin</media:credit>
+
+      </item>
+      <item>
+         <title>Mia, all curled up and asleep</title>
+         <link>http://www.flickr.com/photos/thevoicewithin/2884847844/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/thevoicewithin/&quot;&gt;thevoicewithin&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/thevoicewithin/2884847844/&quot; title=&quot;Mia, all curled up and asleep&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3029/2884847844_f6f788c854_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;Mia, all curled up and asleep&quot;/&gt;&lt;/a&gt;&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (thevoicewithin)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/2884847844</guid>
+         <pubDate>Wed, 24 Sep 2008 04:03:28 -0700</pubDate>
+         <media:title>Mia, all curled up and asleep</media:title>
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3029/2884847844_f6f788c854_s.jpg" height="75"/>
+         <media:category>mia ratties missmia publishneilcrosbycom</media:category>
+
+         <media:credit>thevoicewithin</media:credit>
+      </item>
+      <item>
+         <title>Brains!</title>
+         <link>http://feeds.feedburner.com/~r/IWearCotton/~3/399090372/</link>
+         <description>Frankly, I&amp;#8217;m an idiot. When I bought this t-shirt, I bought it because I got a feeling of &amp;#8220;gee whiz, it&amp;#8217;s the scarecrow from The Wizard of Oz but he&amp;#8217;s a zombie now!&amp;#8221;. It wasn&amp;#8217;t until a couple of weeks later that I realised &amp;#8220;oh&amp;#8230; in the books he wanted brains, didn&amp;#8217;t he? [...]</description>
+
+         <guid isPermaLink="false">http://iwearcotton.com/?p=16</guid>
+         <pubDate>Sun, 21 Sep 2008 11:28:43 -0700</pubDate>
+         <content:encoded><![CDATA[<p>Frankly, I&#8217;m an idiot. When I bought this t-shirt, I bought it because I got a feeling of &#8220;gee whiz, it&#8217;s the scarecrow from The Wizard of Oz but he&#8217;s a zombie now!&#8221;. It wasn&#8217;t until a couple of weeks later that I realised &#8220;oh&#8230; in the books he wanted brains, didn&#8217;t he? Oh, that&#8217;s kind of funny&#8221;.</p> <p><a rel="nofollow" class="action_shot" target="_blank" href="http://www.flickr.com/photos/thevoicewithin/2516378571/" title="Braaaaaaains by thevoicewithin, on Flickr"><img src="http://farm3.static.flickr.com/2194/2516378571_373cb53f7c_m.jpg" width="240" height="180" alt="Braaaaaaains"/></a></p> <p>So yeah, like I said - idiot.</p> <p>The thing I like most about this shirt, and which isn&#8217;t obvious from the photos on Busted Tee&#8217;s site, is the fine detail of the scarecrow. If you look closely at the image above you&#8217;ll see very thin lines of dark brown around the bright red of zombie-scarecrow&#8217;s eyes, and light green detailing around the tufts of corn protruding from his clothes. It&#8217;s scratchy, but it&#8217;s there and I kind of like it.</p> <p>&#8220;<a rel="nofollow" target="_blank" href="http://www.dpbolvw.net/click-3032853-10499752?url=http%3A%2F%2Ftracking.searchmarketing.com%2Fclick.asp%3Faid%3D164906924&amp;cjsku=BT396a">Brains!</a>&#8221; is available from <a rel="nofollow" target="_blank" href="http://www.tkqlhce.com/click-3032853-10410897">Busted Tees</a> for $13.99 in both men&#8217;s and women&#8217;s sizes. It&#8217;s printed on a bright green American Apparel t-shirt and it wants to eat your brains.</p>
+<img src="http://feeds.feedburner.com/~r/IWearCotton/~4/399090372" height="1" width="1"/>]]></content:encoded>
+      </item>
+      <item>
+         <title>Caterpillar</title>
+         <link>http://www.flickr.com/photos/thevoicewithin/2811792870/</link>
+
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/thevoicewithin/&quot;&gt;thevoicewithin&lt;/a&gt; posted a photo:&lt;/p&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/thevoicewithin/2811792870/&quot; title=&quot;Caterpillar&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3111/2811792870_e9fb8a22bc_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;Caterpillar&quot;/&gt;&lt;/a&gt;&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (thevoicewithin)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/2811792870</guid>
+         <pubDate>Sat, 30 Aug 2008 11:48:36 -0700</pubDate>
+         <media:title>Caterpillar</media:title>
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3111/2811792870_e9fb8a22bc_s.jpg" height="75"/>
+         <media:category>macro caterpillar stripey cinnabarmothcaterpillar publishneilcrosbycom</media:category>
+
+         <media:credit>thevoicewithin</media:credit>
+      </item>
+      <item>
+         <title>SM Happy Place</title>
+         <link>http://www.flickr.com/photos/thevoicewithin/2807708907/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/thevoicewithin/&quot;&gt;thevoicewithin&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/thevoicewithin/2807708907/&quot; title=&quot;SM Happy Place&quot;&gt;&lt;img src=&quot;http://farm3.static.flickr.com/2360/2807708907_2902e6d608_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;SM Happy Place&quot;/&gt;&lt;/a&gt;&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (thevoicewithin)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/2807708907</guid>
+         <pubDate>Fri, 29 Aug 2008 05:32:32 -0700</pubDate>
+         <media:title>SM Happy Place</media:title>
+         <media:thumbnail width="75" url="http://farm3.static.flickr.com/2360/2807708907_2902e6d608_s.jpg" height="75"/>
+         <media:category>needstags publishneilcrosbycom</media:category>
+
+         <media:credit>thevoicewithin</media:credit>
+      </item>
+      <item>
+         <title>Just another super day at Alton Towers</title>
+         <link>http://www.flickr.com/photos/thevoicewithin/2729453412/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/thevoicewithin/&quot;&gt;thevoicewithin&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/thevoicewithin/2729453412/&quot; title=&quot;Just another super day at Alton Towers&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3283/2729453412_ce4466536a_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;Just another super day at Alton Towers&quot;/&gt;&lt;/a&gt;&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (thevoicewithin)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/2729453412</guid>
+         <pubDate>Sun, 03 Aug 2008 13:47:03 -0700</pubDate>
+         <media:title>Just another super day at Alton Towers</media:title>
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3283/2729453412_ce4466536a_s.jpg" height="75"/>
+         <media:category>superman wonderwoman batman dangermouse altontowers publishneilcrosbycom biggeekdayout upcoming:event=495352</media:category>
+
+         <media:credit>thevoicewithin</media:credit>
+      </item>
+      <item>
+         <title>Beware of Beard</title>
+         <link>http://feeds.feedburner.com/~r/IWearCotton/~3/312280502/</link>
+         <description>I bought this shirt a few months ago now, when I was in the full flow of not shaving for Bearduary. The world was good, my life was happy, but my beard was starting to take on a life of its own - it had to be stopped! &amp;#8220;Beware of Beard&amp;#8221; is a full frontal [...]</description>
+
+         <guid isPermaLink="false">http://iwearcotton.com/?p=23</guid>
+         <pubDate>Sun, 15 Jun 2008 01:59:56 -0700</pubDate>
+         <content:encoded><![CDATA[<p>I bought this shirt a few months ago now, when I was in the full flow of not shaving for <a rel="nofollow" target="_blank" href="http://www.bearduary.com/">Bearduary</a>. The world was good, my life was happy, but my beard was starting to take on <a rel="nofollow" target="_blank" href="http://buttersafe.com/2008/03/06/the-massive-beard/">a life of its own</a> - it had to be stopped!</p> <p><a rel="nofollow" class='action_shot' target="_blank" href="http://www.flickr.com/photos/thevoicewithin/2580152510/" title="Beware of Beard Triptych by thevoicewithin, on Flickr"><img src="http://farm4.static.flickr.com/3095/2580152510_8df8d09bdd.jpg" width="222" height="500" alt="Beware of Beard Triptych"/></a>&#8220;<a rel="nofollow" target="_blank" href="http://www.turnnocturnal.com/product/beware-of-beard">Beware of Beard</a>&#8221; is a full frontal print. It&#8217;s <em>big, and takes up the entire front of the t-shirt. But it&#8217;s cool. Raise it up over the lower half of your head and you can pull faces, and people will never know whether you&#8217;re sporting hair or not. This t-shirt tells the world that beards aren&#8217;t to be trusted, and if you see one you should run away, fast. Either that or stroke it. I&#8217;m not sure which.</p> <p>This is the first shirt that I&#8217;ve bought from <a rel="nofollow" target="_blank" href="http://www.turnnocturnal.com/">turn nocturnal</a>, and it&#8217;s a good&#8217;un. The print has a high quality rubbery feel to it, and is printed on a Gildan Heavy Cotton t-shirt. My only (very minor) gripe is the postcard-sized Turn Nocturnal logo on the back of the shirt, but even that&#8217;s not that obtrusive.</p> <p>Given the fact that I love this shirt, it&#8217;s a pity that Turn Nocturnal don&#8217;t have anything else in their selection that really inspires me. I&#8217;m sure a lot of people would love <a rel="nofollow" target="_blank" href="http://www.turnnocturnal.com/product/punctuation-foil">Puctuation</a> and <a rel="nofollow" target="_blank" href="http://www.turnnocturnal.com/product/sans-serif-black">sans-serif</a>, but they just don&#8217;t do it for me.</p> <p>&#8220;<a rel="nofollow" target="_blank" href="http://www.turnnocturnal.com/product/beware-of-beard">Beware of Beard</a>&#8221; is currently available from <a rel="nofollow" target="_blank" href="http://www.turnnocturnal.com/">Turn Nocturnal</a> for $10 and it&#8217;s printed on a dark red Gildan Heavy Cotton shirt. Unfortunately only small sizes are still available, but you could always ask them to reprint - it couldn&#8217;t hurt. Yarr.</p>
+<img src="http://feeds.feedburner.com/~r/IWearCotton/~4/312280502" height="1" width="1"/></em>]]></content:encoded>
+      </item>
+   </channel>
+</rss>
+<!-- fe2.pipes.re3.yahoo.com uncompressed/chunked Wed Dec 10 06:49:50 PST 2008 -->

@@ -13,3 +13,11 @@ RewriteRule ^main.rss$ /feeds.php?feed=considered [L]
 RewriteRule ^stream-of-consciousness.rss$ /feeds.php?feed=stream-of-consciousness [L]
 RewriteRule ^others-said.rss$ /feeds.php?feed=others-said [L]
 
+###################################################
+# Don't let people see config etc directories
+###################################################
+RewriteRule ^\. - [F,L]
+RewriteRule ^data(/.*)?$ - [F,L]
+RewriteRule ^README.Markdown$ - [F,L]
+RewriteRule ^LICENSE$ - [F,L]
+

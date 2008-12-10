@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:yt="http://gdata.youtube.com/schemas/2007">
+   <channel>
+      <title>Others Said</title>
+      <description>Pipes Output</description>
+      <link>http://pipes.yahoo.com/pipes/pipe.info?_id=ygKh4Siu3BGqyNyQJphxuA</link>
+      <pubDate>Wed, 10 Dec 2008 06:51:07 -0800</pubDate>
+      <generator>http://pipes.yahoo.com/pipes/</generator>
+
+      <item>
+         <title>Github and Axford</title>
+         <link>http://blog.dorward.me.uk/2008/12/07/github-and-axford.html</link>
+         <description>During my stint at Playfire, I learned to love this piece of software.</description>
+         <guid isPermaLink="false">http://blog.dorward.me.uk/2008/12/07/github-and-axford.html</guid>
+         <pubDate>Sun, 07 Dec 2008 13:24:00 -0800</pubDate>
+
+      </item>
+      <item>
+         <title>Django Static Asset Management</title>
+         <link>http://intranation.com/entries/2008/11/django-static-asset-management/</link>
+         <description>With GitHub gaining popularity amongst my peers, open source projects are a dime–a–dozen.</description>
+         <guid isPermaLink="false">http://intranation.com/entries/2008/11/django-static-asset-management/</guid>
+         <pubDate>Sun, 30 Nov 2008 09:24:00 -0800</pubDate>
+
+      </item>
+      <item>
+         <title>Close-up, Part the Second</title>
+         <link>http://www.flickr.com/photos/fatty/3049242266/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/fatty/&quot;&gt;FatBusinessman&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/fatty/3049242266/&quot; title=&quot;Close-up, Part the Second&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3282/3049242266_eafe580a6f_m.jpg&quot; width=&quot;240&quot; height=&quot;160&quot; alt=&quot;Close-up, Part the Second&quot;/&gt;&lt;/a&gt;&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (FatBusinessman)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/3049242266</guid>
+         <pubDate>Fri, 21 Nov 2008 15:57:58 -0800</pubDate>
+         <media:title>Close-up, Part the Second</media:title>
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3282/3049242266_eafe580a6f_s.jpg" height="75"/>
+         <media:category>neilcrosby workingwithme</media:category>
+
+         <media:credit>FatBusinessman</media:credit>
+      </item>
+      <item>
+         <title>Glance</title>
+         <link>http://www.flickr.com/photos/fatty/3049230586/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/fatty/&quot;&gt;FatBusinessman&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/fatty/3049230586/&quot; title=&quot;Glance&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3286/3049230586_6021b0ddc5_m.jpg&quot; width=&quot;240&quot; height=&quot;160&quot; alt=&quot;Glance&quot;/&gt;&lt;/a&gt;&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (FatBusinessman)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/3049230586</guid>
+         <pubDate>Fri, 21 Nov 2008 15:50:49 -0800</pubDate>
+         <media:title>Glance</media:title>
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3286/3049230586_6021b0ddc5_s.jpg" height="75"/>
+         <media:category>neilcrosby mattwestcott</media:category>
+
+         <media:credit>FatBusinessman</media:credit>
+      </item>
+      <item>
+         <title>Close-up, Part the First</title>
+         <link>http://www.flickr.com/photos/fatty/3049198164/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/fatty/&quot;&gt;FatBusinessman&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/fatty/3049198164/&quot; title=&quot;Close-up, Part the First&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3196/3049198164_03537a1b40_m.jpg&quot; width=&quot;240&quot; height=&quot;160&quot; alt=&quot;Close-up, Part the First&quot;/&gt;&lt;/a&gt;&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (FatBusinessman)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/3049198164</guid>
+         <pubDate>Fri, 21 Nov 2008 15:30:50 -0800</pubDate>
+         <media:title>Close-up, Part the First</media:title>
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3196/3049198164_03537a1b40_s.jpg" height="75"/>
+         <media:category>neilcrosby workingwithme</media:category>
+
+         <media:credit>FatBusinessman</media:credit>
+      </item>
+      <item>
+         <title>Bookmarks for November 18th through November 20th</title>
+         <link>http://www.bieberlabs.com/archives/2008/11/20/bookmarks-for-november-18th-through-november-20th/</link>
+         <description>from Agile - assuming it's really what's used. Learn about the sins that have been committed in the name of &quot;Agile.&quot;&quot; - Excellent article about skill aquisitiion and common misinterpretations of &quot;methodologies&quot; and tools and where they are relevant. Why git? » Blog Archive » The Code Train - &quot;Now, I’d been aware of git (and also bazaar) for over a year, but had never taken the time to look at them properly. The reason was that whilst I wasn’t particularly happy with the fact that I had to hold my commits in my head until I got home</description>
+
+         <guid isPermaLink="false">http://www.bieberlabs.com/archives/2008/11/20/bookmarks-for-november-18th-through-november-20th/</guid>
+         <pubDate>Thu, 20 Nov 2008 06:00:06 -0800</pubDate>
+      </item>
+      <item>
+         <title>Bookmarks for November 18th through November 20th</title>
+         <link>http://feeds.feedburner.com/~r/BieberLabs/~3/459589140/</link>
+         <description>The Commoditization of Massive Data Analysis - O'Reilly Radar - &quot;There is a debate brewing among data systems cognoscenti as to the best way to do</description>
+
+         <guid isPermaLink="false">http://feeds.feedburner.com/~r/BieberLabs/~3/459589140/</guid>
+         <pubDate>Thu, 20 Nov 2008 06:00:00 -0800</pubDate>
+      </item>
+      <item>
+         <title>web output</title>
+         <link>http://blog.ginader.de</link>
+         <description>Ajaxian • AlternateIdea - Home • Andreas Demmer • Apple Gazette • Ask the CSS Guy • Barrierekompass • BeBlog • betamagazin blog • Carbon Silk • Caroline Mockett • cazmockett.com • The Code Train • Connecting the dots... • CSSHilfe • danwebb.net - Home • David Dorward's Blog • dean edwards • die Netzspielwiese • Digital Media Minute • Digitale Tage • DOM Scripting Blog • dropdesign</description>
+
+         <guid isPermaLink="false">/blogs/blog.ginader.de</guid>
+         <pubDate>Wed, 19 Nov 2008 09:46:18 -0800</pubDate>
+      </item>
+      <item>
+         <title>Links for 2008-11-18 [del.icio.us]</title>
+         <link>http://feedproxy.google.com/~r/sijobling/~3/x4LaVu4s5Ls/simey_j</link>
+         <description>&quot;The Art &amp;#038; Science of CSS&quot; &lt;b&gt;co&lt;/b&gt;-written by Cameron Adams, Jina Bolton, David Johnson, Steve Smith and Jonathan Snook is meant to be a really...</description>
+
+         <guid isPermaLink="false">http://feedproxy.google.com/~r/sijobling/~3/x4LaVu4s5Ls/simey_j</guid>
+         <pubDate>Wed, 19 Nov 2008 00:00:00 -0800</pubDate>
+      </item>
+      <item>
+         <title>I Love GitHub Two</title>
+         <link>http://morethanseven.net/2008/11/16/i-hearts-github-two/</link>
+         <description>I’d been meaning to write a quick article about GitHub, but then Mike and Neil beat me to it and stole most of the best bits. Read both of those articles then come back if you want. I agree whole heartedly. Now I’ve used public hosted source control before. But Google Code, Sourceforge or Launchpad never felt like this. Their</description>
+
+         <guid isPermaLink="false">http://morethanseven.net/2008/11/16/i-hearts-github-two/</guid>
+         <pubDate>Sun, 16 Nov 2008 11:08:35 -0800</pubDate>
+      </item>
+      <item>
+         <title>Smileziz</title>
+         <link>http://www.flickr.com/photos/ptg/3029745980/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/ptg/&quot;&gt;Patrick Griffiths&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/ptg/3029745980/&quot; title=&quot;Smileziz&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3021/3029745980_3348a5bf93_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;Smileziz&quot;/&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Photog by ?&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (Patrick Griffiths)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/3029745980</guid>
+         <pubDate>Fri, 14 Nov 2008 03:57:38 -0800</pubDate>
+         <media:title>Smileziz</media:title>
+         <media:description>&amp;lt;p&amp;gt;Photog by ?&amp;lt;/p&amp;gt;</media:description>
+
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3021/3029745980_3348a5bf93_s.jpg" height="75"/>
+         <media:category>36 patrickgriffiths xxxvi pubstandards bricklayersarms neilcrosby upcoming:event=1316322</media:category>
+         <media:credit>Patrick Griffiths</media:credit>
+      </item>
+      <item>
+         <title>Grab</title>
+         <link>http://www.flickr.com/photos/actel/3029657026/</link>
+
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/actel/&quot;&gt;Actel&lt;/a&gt; posted a photo:&lt;/p&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/actel/3029657026/&quot; title=&quot;Grab&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3021/3029657026_35ac0e104e_m.jpg&quot; width=&quot;180&quot; height=&quot;240&quot; alt=&quot;Grab&quot;/&gt;&lt;/a&gt;&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (Actel)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/3029657026</guid>
+         <pubDate>Fri, 14 Nov 2008 02:40:07 -0800</pubDate>
+         <media:title>Grab</media:title>
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3021/3029657026_35ac0e104e_s.jpg" height="75"/>
+         <media:category>groping pubstandards neilcrosby upcoming:event=1316322 pubstandardsxxxvi</media:category>
+
+         <media:credit>Actel</media:credit>
+      </item>
+      <item>
+         <title>Come Dancing</title>
+         <link>http://www.flickr.com/photos/actel/3028823481/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/actel/&quot;&gt;Actel&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/actel/3028823481/&quot; title=&quot;Come Dancing&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3047/3028823481_600b3ca1a0_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;Come Dancing&quot;/&gt;&lt;/a&gt;&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (Actel)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/3028823481</guid>
+         <pubDate>Fri, 14 Nov 2008 02:40:05 -0800</pubDate>
+         <media:title>Come Dancing</media:title>
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3047/3028823481_600b3ca1a0_s.jpg" height="75"/>
+         <media:category>dancing pubstandards neilcrosby upcoming:event=1316322 pubstandardsxxxvi</media:category>
+
+         <media:credit>Actel</media:credit>
+      </item>
+      <item>
+         <title>Tinky Winky</title>
+         <link>http://www.flickr.com/photos/actel/3029656860/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/actel/&quot;&gt;Actel&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/actel/3029656860/&quot; title=&quot;Tinky Winky&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3228/3029656860_13886e778e_m.jpg&quot; width=&quot;180&quot; height=&quot;240&quot; alt=&quot;Tinky Winky&quot;/&gt;&lt;/a&gt;&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (Actel)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/3029656860</guid>
+         <pubDate>Fri, 14 Nov 2008 02:39:58 -0800</pubDate>
+         <media:title>Tinky Winky</media:title>
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3228/3029656860_13886e778e_s.jpg" height="75"/>
+         <media:category>handbag manbag pubstandards neilcrosby upcoming:event=1316322 pubstandardsxxxvi</media:category>
+
+         <media:credit>Actel</media:credit>
+      </item>
+      <item>
+         <title>Drunken photos ftw</title>
+         <link>http://www.flickr.com/photos/slayeh/3028747932/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/slayeh/&quot;&gt;Ash Berlin&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/slayeh/3028747932/&quot; title=&quot;Drunken photos ftw&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3068/3028747932_f2e5c93952_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;Drunken photos ftw&quot;/&gt;&lt;/a&gt;&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (Ash Berlin)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/3028747932</guid>
+         <pubDate>Thu, 13 Nov 2008 16:23:31 -0800</pubDate>
+         <media:title>Drunken photos ftw</media:title>
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3068/3028747932_f2e5c93952_s.jpg" height="75"/>
+         <media:category>actel neilcrosby pjbarry dombaggott evilstreak upcoming:event=1316322</media:category>
+
+         <media:credit>Ash Berlin</media:credit>
+      </item>
+      <item>
+         <title>An Admonition Regarding Details</title>
+         <link>http://mikewest.org/2008/11/an-admonition-regarding-details</link>
+         <description>mostly work. Test-Driven Development generally advocates that you should begin by ignoring (irrelevant) details and “Do the simplest thing that could possibly work.” Neil Crosby similarly says “Make it work, Make it pretty, Make it right.” My Dad (enthralled with the message while completely missing the commercial point of the Nike campaign) always told us “Just do it.” These are starting to resonate with me, and I like the idea of the development process as a continual process</description>
+         <guid isPermaLink="false">http://mikewest.org/2008/11/an-admonition-regarding-details</guid>
+
+         <pubDate>Tue, 11 Nov 2008 14:33:41 -0800</pubDate>
+      </item>
+      <item>
+         <title>Five ways to make offline working easier</title>
+         <link>http://tumblr.iamdanw.com/post/56981997</link>
+         <description>Five ways to make offline working easier</description>
+         <guid isPermaLink="false">http://tumblr.iamdanw.com/post/56981997</guid>
+
+         <pubDate>Wed, 29 Oct 2008 13:32:19 -0700</pubDate>
+      </item>
+      <item>
+         <title>Brokeback</title>
+         <link>http://www.flickr.com/photos/actel/2960587577/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/actel/&quot;&gt;Actel&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/actel/2960587577/&quot; title=&quot;Brokeback&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3062/2960587577_9bd1f8df2f_m.jpg&quot; width=&quot;180&quot; height=&quot;240&quot; alt=&quot;Brokeback&quot;/&gt;&lt;/a&gt;&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (Actel)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/2960587577</guid>
+         <pubDate>Tue, 21 Oct 2008 05:20:45 -0700</pubDate>
+         <media:title>Brokeback</media:title>
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3062/2960587577_9bd1f8df2f_s.jpg" height="75"/>
+         <media:category>manlove kapowaz bendarlow neilcrosby</media:category>
+
+         <media:credit>Actel</media:credit>
+      </item>
+      <item>
+         <title>The Love That Dare Not Speak Its Name</title>
+         <link>http://www.flickr.com/photos/actel/2960581679/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/actel/&quot;&gt;Actel&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/actel/2960581679/&quot; title=&quot;The Love That Dare Not Speak Its Name&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3023/2960581679_d534e69ac2_m.jpg&quot; width=&quot;180&quot; height=&quot;240&quot; alt=&quot;The Love That Dare Not Speak Its Name&quot;/&gt;&lt;/a&gt;&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (Actel)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/2960581679</guid>
+         <pubDate>Tue, 21 Oct 2008 05:16:18 -0700</pubDate>
+         <media:title>The Love That Dare Not Speak Its Name</media:title>
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3023/2960581679_d534e69ac2_s.jpg" height="75"/>
+         <media:category>manlove kapowaz bendarlow neilcrosby pureunadulteratedterror</media:category>
+
+         <media:credit>Actel</media:credit>
+      </item>
+      <item>
+         <title>The Trouble with BarCamp</title>
+         <link>http://allinthehead.com/retro/332/the-trouble-with-barcamp</link>
+         <description>had a ticket but didn’t show up for BarCamp London 5</description>
+         <guid isPermaLink="false">http://allinthehead.com/retro/332/the-trouble-with-barcamp</guid>
+
+         <pubDate>Tue, 14 Oct 2008 09:25:23 -0700</pubDate>
+      </item>
+      <item>
+         <title>MOO Card Mashup Winners at BarCamp London</title>
+         <link>http://blog.programmableweb.com/2008/10/13/moo-card-mashup-winners-at-barcamp-london/</link>
+         <description>together in hours, in true barcamp spirit), but they do demonstrate the range of things one can do quite nicely. We have now listed four of them in our directory. As a matter of fact, all of today’s mashups are MOO mashups. The winning entry was Ten Word Moo Card, submitted by Neil Crosby. Neil’s application takes the best rated reviews from TheTenWordReview.com and automatically creates MOO cards from them, using the MOO API (our Ten Word Moo Card mashup profile</description>
+         <guid isPermaLink="false">http://blog.programmableweb.com/2008/10/13/moo-card-mashup-winners-at-barcamp-london/</guid>
+
+         <pubDate>Sun, 12 Oct 2008 22:50:18 -0700</pubDate>
+      </item>
+      <item>
+         <title>MOO API hacks at BarCampLondon5 - and a winner</title>
+         <link>http://moocards.vox.com/library/post/moo-api-hacks-at-barcamplondon5---and-a-winner.html</link>
+         <description>Make MOO Postcards from Flickr Sunsets by Nathan O'Hanlon Make MOO minicards from Amazon book covers. by Simon Willison Generate minicards with your Wii codes on them for sharing by Dominic Hodgson (and (unnamed) girlfriend) Ten Word Review Moo cards which takes reviews from , The Ten Word Review and renders them into cards. by Neil Crosby</description>
+         <guid isPermaLink="false">http://moocards.vox.com/library/post/moo-api-hacks-at-barcamplondon5---and-a-winner.html</guid>
+
+         <pubDate>Mon, 06 Oct 2008 08:43:18 -0700</pubDate>
+      </item>
+      <item>
+         <title>MOO API hacks at BarCampLondon5 - and a winner</title>
+         <link>http://www.moo.com/blog/2008/10/06/moo-api-hacks-at-barcamplondon5-and-a-winner/</link>
+         <description>Make MOO Postcards from Flickr Sunsets by Nathan O’Hanlon Make MOO minicards from Amazon book covers. by Simon Willison Generate minicards with your Wii codes on them for sharing by Dominic Hodgson (and (unnamed) girlfriend) Ten Word Review Moo cards which takes reviews from , The Ten Word Review and renders them into cards. by Neil Crosby</description>
+         <guid isPermaLink="false">http://www.moo.com/blog/2008/10/06/moo-api-hacks-at-barcamplondon5-and-a-winner/</guid>
+
+         <pubDate>Mon, 06 Oct 2008 08:30:29 -0700</pubDate>
+      </item>
+      <item>
+         <title>Neil @ BarcampLondon5 - Day 1</title>
+         <link>http://www.flickr.com/photos/cristiano_betta/2909878811/</link>
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/cristiano_betta/&quot;&gt;Cristiano Betta&lt;/a&gt; posted a photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/cristiano_betta/2909878811/&quot; title=&quot;Neil @ BarcampLondon5 - Day 1&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3044/2909878811_ebe3aa72a2_m.jpg&quot; width=&quot;240&quot; height=&quot;160&quot; alt=&quot;Neil @ BarcampLondon5 - Day 1&quot;/&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Add your own tags&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (Cristiano Betta)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/2909878811</guid>
+         <pubDate>Fri, 03 Oct 2008 14:55:00 -0700</pubDate>
+         <media:title>Neil @ BarcampLondon5 - Day 1</media:title>
+         <media:description>&amp;lt;p&amp;gt;Add your own tags&amp;lt;/p&amp;gt;</media:description>
+
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3044/2909878811_ebe3aa72a2_s.jpg" height="75"/>
+         <media:category>uk london plane airplane ebay aeroplane dieselsweeties gurning tiefighter barcamp neilcrosby bcl5 upcoming:event=861798 barcamplondon5</media:category>
+         <media:credit>Cristiano Betta</media:credit>
+      </item>
+      <item>
+         <title>Neil @ BarcampLondon5 - Day 1</title>
+         <link>http://www.flickr.com/photos/cristiano_betta/2909877745/</link>
+
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/cristiano_betta/&quot;&gt;Cristiano Betta&lt;/a&gt; posted a photo:&lt;/p&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/cristiano_betta/2909877745/&quot; title=&quot;Neil @ BarcampLondon5 - Day 1&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3193/2909877745_fa741b9c4d_m.jpg&quot; width=&quot;240&quot; height=&quot;160&quot; alt=&quot;Neil @ BarcampLondon5 - Day 1&quot;/&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Add your own tags&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (Cristiano Betta)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/2909877745</guid>
+         <pubDate>Fri, 03 Oct 2008 14:54:23 -0700</pubDate>
+         <media:title>Neil @ BarcampLondon5 - Day 1</media:title>
+         <media:description>&amp;lt;p&amp;gt;Add your own tags&amp;lt;/p&amp;gt;</media:description>
+
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3193/2909877745_fa741b9c4d_s.jpg" height="75"/>
+         <media:category>uk london ebay aeroplanes alistairmacdonald barcamp neilcrosby bcl5 upcoming:event=861798 barcamplondon5</media:category>
+         <media:credit>Cristiano Betta</media:credit>
+      </item>
+      <item>
+         <title>The Code Train » Blog Archive » Ten Word Moo Card</title>
+         <link>http://meccaibrahim.co.uk/post/52612622</link>
+
+         <description>The Code Train » Blog Archive » Ten Word Moo Card</description>
+         <guid isPermaLink="false">http://meccaibrahim.co.uk/post/52612622</guid>
+         <pubDate>Wed, 01 Oct 2008 09:01:46 -0700</pubDate>
+      </item>
+      <item>
+         <title>Mooooooose!</title>
+         <link>http://www.flickr.com/photos/rugbymadgirl/2895709451/</link>
+
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/rugbymadgirl/&quot;&gt;Rugby Mad Girl&lt;/a&gt; posted a photo:&lt;/p&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/rugbymadgirl/2895709451/&quot; title=&quot;Mooooooose!&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3265/2895709451_8b74a17e49_m.jpg&quot; width=&quot;240&quot; height=&quot;160&quot; alt=&quot;Mooooooose!&quot;/&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Neil does his best moose impression during the improvisation session. Ref: D404-042&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (Rugby Mad Girl)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/2895709451</guid>
+         <pubDate>Sun, 28 Sep 2008 14:48:48 -0700</pubDate>
+         <media:title>Mooooooose!</media:title>
+         <media:description>&amp;lt;p&amp;gt;Neil does his best moose impression during the improvisation session. Ref: D404-042&amp;lt;/p&amp;gt;</media:description>
+
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3265/2895709451_8b74a17e49_s.jpg" height="75"/>
+         <media:category>london ebay moose improvisation neilcrosby workingwithme bcl5 upcoming:event=861798 barcamplondon5</media:category>
+         <media:credit>Rugby Mad Girl</media:credit>
+      </item>
+      <item>
+         <title>Worship The Jesusphone!</title>
+         <link>http://www.flickr.com/photos/rugbymadgirl/2896550544/</link>
+
+         <description>&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/people/rugbymadgirl/&quot;&gt;Rugby Mad Girl&lt;/a&gt; posted a photo:&lt;/p&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/rugbymadgirl/2896550544/&quot; title=&quot;Worship The Jesusphone!&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3151/2896550544_baa0dcf66d_m.jpg&quot; width=&quot;240&quot; height=&quot;160&quot; alt=&quot;Worship The Jesusphone!&quot;/&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;The Monkeys bow down to the holy iPhone. Ref: D404-040&lt;/p&gt;</description>
+
+         <author>nobody@flickr.com (Rugby Mad Girl)</author>
+         <guid isPermaLink="false">tag:flickr.com,2004:/photo/2896550544</guid>
+         <pubDate>Sun, 28 Sep 2008 14:48:46 -0700</pubDate>
+         <media:title>Worship The Jesusphone!</media:title>
+         <media:description>&amp;lt;p&amp;gt;The Monkeys bow down to the holy iPhone. Ref: D404-040&amp;lt;/p&amp;gt;</media:description>
+
+         <media:thumbnail width="75" url="http://farm4.static.flickr.com/3151/2896550544_baa0dcf66d_s.jpg" height="75"/>
+         <media:category>london ebay improvisation monkeys iphone neilcrosby bcl5 upcoming:event=861798 barcamplondon5</media:category>
+         <media:credit>Rugby Mad Girl</media:credit>
+      </item>
+   </channel>
+</rss>
+<!-- fe3.pipes.re3.yahoo.com uncompressed/chunked Wed Dec 10 06:51:07 PST 2008 -->
