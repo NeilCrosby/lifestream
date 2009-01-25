@@ -25,7 +25,6 @@ $template = getTemplate();
 $template = str_replace( array('##consideredthoughts##', '##streamofconsciousness##', '##otherssaid##'),
                          array($considered, $stream, $others),
                          $template );
-
 saveOutput($template);
 
 $server = ( 80 == $_SERVER['SERVER_PORT'])
@@ -116,6 +115,8 @@ function getHtmlForEntry( $item, $stream='considered', $backlog = array() ) {
         return $html.getHtmlForEntryTwitter($item);
     } else if ( preg_match( '/^http:\/\/upcoming\.yahoo\.com/', $item->link ) ) {
         return $html.getHtmlForEntryUpcoming($item);
+    } else if ( preg_match( '/IWearCotton/', $item->link ) ) {
+        return $html.getHtmlForEntryIWearCotton($item);
     }
 
     $maxDescLen = 100;
@@ -181,6 +182,43 @@ function getHtmlForEntryUpcoming( $item ) {
             </div>
             <div class='ft'>
                 <p>{$item->pubDate}</p>
+            </div>
+        </li>
+HTML;
+}
+
+function getHtmlForEntryIWearCotton( $item ) {
+    $doc = new DOMDocument();
+    // have to give charset otherwise loadHTML gets confused
+    $doc->loadHTML(
+        '<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"></head><body>'.
+        $item->description.
+        '</body></html>'
+    );
+    $xpath = new DOMXPath($doc);
+    $imgs = $xpath->query('//img');
+    
+    $imgNode = ($imgs->length > 0) ? $imgs->item(0) : '';
+    
+    $img = "<img";
+    foreach ($imgNode->attributes as $attrName => $attrNode) {
+        $img .= " $attrName='{$attrNode->value}'";
+    }
+    $img .= ">";
+    
+    $description = strip_tags($item->description);
+
+    return <<<HTML
+        <li class='module iwearcotton'>
+            <div class='hd'>
+                <h3><a href='{$item->link}'>{$item->title}</a></h3>
+            </div>
+            <div class='bd'>
+                {$img}
+                {$description}
+            </div>
+            <div class='ft'>
+                <p>$item->pubDate</p>
             </div>
         </li>
 HTML;
