@@ -63,6 +63,11 @@
             font-size: 85%;
             margin-top: 1em;
         }
+        
+        #primary .module {
+            padding-bottom: 1em;
+            border-bottom: 1px solid #ddd;
+        }
     
         #secondary .module {
             font-size: 93%;
@@ -251,6 +256,11 @@
             color: #f8f3f8;
             border: 1px solid black;
             position: relative;
+        }
+
+        #primary .module.thetenwordreview {
+            padding: 0;
+            border: 1px solid black;
         }
 
         .module.thetenwordreview .hd {
