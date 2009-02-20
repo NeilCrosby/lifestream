@@ -294,7 +294,7 @@
         <div id="hd">
             <h1>Neil Crosby</h1>
             <p>
-                An automagically updating collection of things that I've either created, liked or had written about <a href="/vcard" rel="me">Neil Crosby</a>.
+                An automagically updating collection of things written by, about, or simply liked by <a href="/vcard" rel="me">Neil Crosby</a>.
             </p>
         </div>
         <div id="bd">
