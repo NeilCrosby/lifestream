@@ -16,8 +16,10 @@
         }
     
         h1 {
-            font-size: 300%;
+            font-size: 500%;
             font-weight: bold;
+            font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+            letter-spacing: -0.02em;
         }
       
         h2 {
