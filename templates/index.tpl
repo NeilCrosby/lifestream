@@ -23,9 +23,9 @@
         }
       
         h2 {
-            font-size: 107%;
+            font-size: 138.5%;
             margin: 1em 4px 1em 4px;
-            font-weight: bold;
+            font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
         }
     
         ol,
@@ -43,6 +43,25 @@
     
         .module .bd p {
             margin: 0.5em 0 0.5em 0;
+        }
+        
+        #primary .module .hd {
+            font-size: 116%;
+            margin-bottom: 1em;
+            font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+        }
+    
+        #primary .module .hd a {
+            text-decoration: none;
+        }
+    
+        #primary .module .hd a:hover {
+            text-decoration: underline;
+        }
+    
+        #primary .module .ft {
+            font-size: 85%;
+            margin-top: 1em;
         }
     
         #secondary .module {
@@ -282,7 +301,7 @@
             <div id="yui-main">
                 <div class="yui-b">
                     <div class='yui-g'>
-                        <div class='yui-u first'>
+                        <div class='yui-u first' id='primary'>
                             <h2>Considered Thoughts <a href='/main.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
                             ##consideredthoughts##
                         </div>
