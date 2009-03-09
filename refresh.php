@@ -119,9 +119,10 @@ function getHtmlForEntry( $item, $stream='considered', $backlog = array() ) {
         return $html.getHtmlForEntryIWearCotton($item);
     }
 
-    $maxDescLen = 100;
+    $maxDescLen = ('considered' == $stream) ? 500: 100;
+    
     $description = strip_tags($item->description);
-    if ( 'considered' != $stream && mb_strlen($description) > $maxDescLen ) {
+    if ( mb_strlen($description) > $maxDescLen ) {
         $description = mb_substr( $description, 0, $maxDescLen ).'&hellip;';
     }
   
