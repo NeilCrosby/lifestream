@@ -66,7 +66,7 @@ function getHtmlForStream($stream, $url) {
     $data = getDataFromFeed( $url );
 
     $backlog = array();
-    $output = "<ol>";
+    $output = '';
     foreach ( $data->channel->item as $item ) {
         $output .= getHtmlForEntry($item, $stream, &$backlog);
     }
@@ -75,9 +75,11 @@ function getHtmlForStream($stream, $url) {
         $output .= getHtmlForEntry($item, $stream, &$backlog);
     }
     
-    $output .= "</ol>";
-  
-    return $output;
+    if ( '' == $output ) {
+        return $output;
+    }
+
+    return "<ol>$output</ol>";
 }
 
 function getDataFromFeed( $url ) {
