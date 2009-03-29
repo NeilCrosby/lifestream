@@ -263,6 +263,8 @@ HTML;
 
 function getHtmlForEntrySlideshare( $item ) {
     preg_match('/(<iframe.*<\/iframe>)/', $item->description, $matches);
+    $description = str_replace('width="425"', 'width="469"', $matches[0]);
+    $description = str_replace('height="355"', 'height="392"', $description);
     
     return <<<HTML
         <li class='module slideshare'>
@@ -270,7 +272,7 @@ function getHtmlForEntrySlideshare( $item ) {
                 <h3><a href='{$item->link}'>{$item->title}</a></h3>
             </div>
             <div class='bd'>
-                {$matches[0]}
+                {$description}
             </div>
             <div class='ft'>
                 <p>{$item->pubDate}</p>

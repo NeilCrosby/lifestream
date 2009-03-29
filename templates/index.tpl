@@ -296,6 +296,10 @@
             margin: 0.5em 10px 0.5em 70px;
             font-size: 75%;
         }
+        
+        iframe {
+            border: none;
+        }
 
     </style>
 </head>
