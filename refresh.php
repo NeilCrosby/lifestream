@@ -111,6 +111,8 @@ function getHtmlForEntry( $item, $stream='considered', $backlog = array() ) {
         return $html.getHtmlForEntryDelicious($item);
     } else if ( preg_match( '/^http:\/\/thetenwordreview\.com/', $item->link ) ) {
         return $html.getHtmlForEntryTheTenWordReview($item);
+    } else if ( preg_match( '/^http:\/\/www\.slideshare\.net/', $item->link ) ) {
+        return $html.getHtmlForEntrySlideshare($item);
     } else if ( preg_match( '/^http:\/\/www\.last\.fm/', $item->link ) ) {
         return $html.getHtmlForEntryLastFm($item);
     } else if ( preg_match( '/^http:\/\/twitter\.com/', $item->link ) ) {
@@ -251,6 +253,24 @@ function getHtmlForEntryFlickr( $item ) {
             </div>
             <div class='bd'>
                 {$description}
+            </div>
+            <div class='ft'>
+                <p>{$item->pubDate}</p>
+            </div>
+        </li>
+HTML;
+}
+
+function getHtmlForEntrySlideshare( $item ) {
+    preg_match('/(<iframe.*<\/iframe>)/', $item->description, $matches);
+    
+    return <<<HTML
+        <li class='module slideshare'>
+            <div class='hd'>
+                <h3><a href='{$item->link}'>{$item->title}</a></h3>
+            </div>
+            <div class='bd'>
+                {$matches[0]}
             </div>
             <div class='ft'>
                 <p>{$item->pubDate}</p>
