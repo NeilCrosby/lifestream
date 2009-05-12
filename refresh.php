@@ -168,6 +168,8 @@ function getHtmlForEntryUpcoming( $item ) {
     if ( false !== $pos ) {
         $item->description = mb_substr( $item->description, 0, $pos );
     }
+
+    $item->description = strip_tags($item->description);
     
     $maxDescriptionLength = 70;
 
