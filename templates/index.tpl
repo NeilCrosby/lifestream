@@ -64,7 +64,7 @@
         #hd ul {
             position: absolute;
             right: 0;
-            top: 1em;
+            top: 1.7em;
         }
         
         #hd ul li {
