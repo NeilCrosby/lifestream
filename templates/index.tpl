@@ -20,6 +20,7 @@
         #hd {
             margin: 0 4px 2em 4px;
             padding-top: 1em;
+            position: relative;
         }
         
         #primary {
@@ -58,6 +59,17 @@
             font-size: 100%;
             left: 0;
             top: 1.2em;
+        }
+        
+        #hd ul {
+            position: absolute;
+            right: 0;
+            top: 1em;
+        }
+        
+        #hd ul li {
+            float: right;
+            margin-left: 1em;
         }
 
         h2 {
@@ -362,6 +374,10 @@
                 and
                 <a href="http://upcoming.yahoo.com/event/2566869/">BarCamp Leeds {2009}</a>.
             </p>
+            <ul>
+                <li><a href="/vcard" rel="me"><img src="/images/vcard.png" alt="Neil Crosby's vCard" title="Neil Crosby's vCard"></a></li>
+                <!--<li><a href="http://upcoming.yahoo.com/user/73013/" rel="me"><img src="/images/ical.png" alt="Neil Crosby's Upcoming Events"></a></li>-->
+            </ul>
         </div>
         <div id="bd">
             <div id="yui-main">
