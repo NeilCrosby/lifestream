@@ -320,8 +320,16 @@ function getHtmlForEntryFlickrThumbnail( $items, $stream ) {
         $description = $item->description;
         if (preg_match( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg/', $item->description, $matches) ) {
             $item = makeSafeForHtml($item);
+            
+            $width = 75;
+            $img_url = "{$matches[1]}_s.jpg";
+            
+            if ('consciousness' == $stream) {
+                $width = 75 * 3;
+                $img_url = "{$matches[1]}_m.jpg";
+            }
                     
-            $description = "<a href='{$item->link}'><img src='{$matches[1]}_s.jpg' alt='{$item['title']}'></a>";
+            $description = "<a href='{$item->link}'><img src='{$img_url}' width='{$width}' alt='{$item['title']}'></a>";
         }
 
 
