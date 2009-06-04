@@ -206,6 +206,12 @@
             padding: 5px 5px 5px 52px;
         }
 
+        #secondary .module.github  {
+            min-height: 42px;
+            background: url(/images/favicon_github.png) no-repeat 5px 50%;
+            padding: 5px 5px 5px 52px;
+        }
+
         #secondary .module.lastfm  {
             min-height: 21px;
             background: #d20039 url(images/lozenge_lastfm_tl.png) no-repeat left top;

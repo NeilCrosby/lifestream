@@ -123,6 +123,8 @@ function getHtmlForEntry( $item, $stream='considered', $backlog = array() ) {
         return $html.getHtmlForEntryTwitter($item);
     } else if ( preg_match( '/^http:\/\/upcoming\.yahoo\.com/', $item->link ) ) {
         return $html.getHtmlForEntryUpcoming($item);
+    } else if ( preg_match( '/^http:\/\/github\.com/', $item->link ) ) {
+        return $html.getHtmlForEntryGithub($item);
     } else if ( preg_match( '/IWearCotton/', $item->link ) ) {
         return $html.getHtmlForEntryIWearCotton($item);
     }
@@ -402,6 +404,43 @@ function getHtmlForEntryLastFm( $item ) {
                 <p>{$item->pubDate}</p>
             </div>
             <div class='ft'>
+            </div>
+        </li>
+HTML;
+}
+
+function getHtmlForEntryGithub( $item ) {
+    $maxDescLen = ('considered' == $stream) ? 500: 100;
+
+    $title       = strip_tags($item->title);
+    $description = strip_tags($item->description);
+
+    $pointer = "started ";
+    $pos = mb_strpos($title, $pointer);
+    if ( FALSE !== $pos ) {
+        $title = mb_substr($title, $pos + mb_strlen($pointer));
+        $title = str_replace('/', ' / ', $title);
+    }
+    
+    $pointer = "'s description:";
+    $pos = mb_strpos($description, $pointer);
+    if ( FALSE !== $pos ) {
+        $description = mb_substr($description, $pos + mb_strlen($pointer));
+    }
+    if ( mb_strlen($description) > $maxDescLen ) {
+        $description = mb_substr( $description, 0, $maxDescLen, "UTF-8" ).'&hellip;';
+    }
+
+    return $html.<<<HTML
+        <li class='module github'>
+            <div class='hd'>
+                <h3><a href='{$item->link}'>{$title}</a></h3>
+            </div>
+            <div class='bd'>
+                {$description}
+            </div>
+            <div class='ft'>
+                <p>$item->pubDate</p>
             </div>
         </li>
 HTML;
