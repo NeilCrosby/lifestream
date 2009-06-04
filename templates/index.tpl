@@ -6,81 +6,119 @@
     <title>Neil Crosby</title>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.4.1/build/reset-fonts-grids/reset-fonts-grids.css">
     <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
-    <style>
+    <style type="text/css">
         html {
             font-family: Arial, sans-serif;
+            background: #101010;
+            color: #cfcfcf;
+        }
+
+        #doc4 {
+            background: #101010;
+        }
+
+        #hd {
+            margin: 0 4px 2em 4px;
+            padding-top: 1em;
         }
         
-        #hd {
-            margin: 2em 4px 2em 4px;
+        #primary {
         }
-    
+        
+        #consciousness {
+        }
+        
+        #otherssaid {
+        }
+
+        a {
+            color: #dd621f;
+        }
+
         h1 {
             font-size: 500%;
             font-weight: bold;
             font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
             letter-spacing: -0.02em;
+            position: relative;
+            padding-left: 0.6em;
         }
-      
+
+        h1 span {
+            font-size: 35%;
+            font-weight: normal;
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            /*color: #003;*/
+            letter-spacing: 0;
+        }
+
+        h1 span span {
+            font-size: 100%;
+            left: 0;
+            top: 1.2em;
+        }
+
         h2 {
             font-size: 138.5%;
             margin: 1em 4px 1em 4px;
             font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
         }
-    
+
         ol,
         li {
             list-style: none;
             padding: 0;
             margin: 0 0 1em 0;
         }
-    
+
         .module {
             clear: both;
             margin: 1em 4px 1em 4px;
             overflow: hidden;
         }
-    
+
         .module .bd p {
             margin: 0.5em 0 0.5em 0;
         }
-        
+
         #primary .module .hd {
             font-size: 116%;
             margin-bottom: 1em;
             font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
         }
-    
+
         #primary .module .hd a {
             text-decoration: none;
         }
-    
+
         #primary .module .hd a:hover {
             text-decoration: underline;
         }
-    
+
         #primary .module .ft {
             font-size: 85%;
             margin-top: 1em;
         }
-        
+
         #primary .module {
             padding-bottom: 1em;
             border-bottom: 1px solid #ddd;
         }
-    
+
         #secondary .module {
             font-size: 93%;
         }
-    
+
         #secondary .module * {
             margin: 0;
         }
-    
+
         #secondary .module h2 {
             margin: 1em 0;
         }
-    
+
         #secondary .module .hd h3 {
             font-size: 100%;
             padding-bottom: 0.2em;
@@ -108,13 +146,13 @@
             text-align: center;
         }
 
+
         #secondary .module.twitter .hd {
-            background: transparent url(images/lozenge_twitter_speech.png) no-repeat 4.3em 0.5em;
+            background: transparent url(images/lozenge_twitter_speech.png) no-repeat 3.8em 0.5em;
         }
 
         #secondary .module.twitter .hd h3 a {
-            background: transparent url(images/favicon_twitter.png) no-repeat left 50%;
-            padding-left: 18px;
+            padding-left: 0.5em;
         }
 
         #secondary .module.twitter .bd  {
@@ -164,9 +202,7 @@
 
         #secondary .module.delicious  {
             min-height: 42px;
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-            background: #eee url(http://images.del.icio.us/static/img/delicious.42px.gif) no-repeat 5px 50%;
+            background: url(http://images.del.icio.us/static/img/delicious.42px.gif) no-repeat 5px 50%;
             padding: 5px 5px 5px 52px;
         }
 
@@ -199,7 +235,7 @@
         #secondary .module.lastfm .bd {
             font-size: 75%;
             color: #eee;
-            background: #d20039 url(images/lozenge_lastfm_br.png) no-repeat right bottom;
+            background: #d20039 url(images/lozenge_lastfm_tl.png) no-repeat right bottom;
             padding: 0 5px 5px 26px;
         }
 
@@ -230,6 +266,8 @@
             font-size: 200%;
             font-weight: bold;
             border: 1px solid black;
+            background: #efefef;
+            color: #101010;
         }
 
         #secondary .module.upcoming .bd p.date span {
@@ -245,6 +283,10 @@
         #secondary .module.flickr .bd li {
             float: left;
             height: 75px;
+        }
+
+        #secondary #consciousness .module.flickr .bd li {
+            height: auto;
         }
 
         #secondary .module.flickr .ft {
@@ -296,7 +338,7 @@
             margin: 0.5em 10px 0.5em 70px;
             font-size: 75%;
         }
-        
+
         iframe {
             border: none;
         }
@@ -306,9 +348,13 @@
 <body>
     <div id="doc4">                   
         <div id="hd">
-            <h1>Neil Crosby</h1>
+            <h1><span>Hi, <span>I'm</span></span> Neil Crosby</h1>
             <p>
-                An automagically updating collection of things written by, about, or simply liked by <a href="/vcard" rel="me">Neil Crosby</a>.
+                You may remember me from such events as
+                <a href="http://upcoming.yahoo.com/event/2142631/">Open Hack 2009: London</a>,
+                <a href="http://upcoming.yahoo.com/event/2620372/">Pub Standards XLII</a>
+                and
+                <a href="http://upcoming.yahoo.com/event/2566869/">BarCamp Leeds {2009}</a>.
             </p>
         </div>
         <div id="bd">
@@ -324,12 +370,9 @@
                                 <h2>Stream of Consciousness <a href='/stream-of-consciousness.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
                                 ##streamofconsciousness##
                             </div>
-                            <div class='yui-u'>
-                                <div id='otherssaid'>
-                                    <h2>From Elsewhere <a href='/others-said.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
-
-                                    ##otherssaid##
-                                </div>
+                            <div class='yui-u' id='otherssaid'>
+                                <h2>From Elsewhere <a href='/others-said.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
+                                ##otherssaid##
                             </div>
                         </div>
                     </div>
@@ -337,7 +380,9 @@
             </div>
         </div>
         <div id="ft">
-            <p>Some sort of footer crap 2.0</p>
+            <p>
+                Being an automagically updating collection of things written by, about, or simply liked by <a href="/vcard" rel="me">Neil Crosby</a>.
+            </p>
         </div>
     </div>
 </body>
