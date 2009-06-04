@@ -102,8 +102,8 @@ function getHtmlForEntry( $item, $stream='considered', $backlog = array() ) {
 
     if ( preg_match( '/^http:\/\/www\.flickr\.com/', $item->link ) ) {
 
-        if ( 'considered' == $stream ) {
-            return getHtmlForEntryFlickr($item);
+        if ( 'considered' == $stream || 'consciousness' == $stream ) {
+            return getHtmlForEntryFlickr($item, $stream);
         } else {
             $backlog[] = $item;
             return '';
@@ -255,30 +255,42 @@ function getHtmlForEntryIWearCotton( $item ) {
 HTML;
 }
 
-function getHtmlForEntryFlickr( $item ) {
-    $description = $item->description;
-    preg_match( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg" width="(\d+)" height="(\d+)/', $description, $matches);
-
+function getHtmlForEntryFlickr( $item, $stream ) {
+    $maxWidth = 469;
+    $maxHeight = 469;
+    
     $item = makeSafeForHtml($item);
     
+    $title = $item['title'];
+    $description = $item->description;
+
+    if ( 'consciousness' == $stream ) {
+        $title = 'flickr fave: '.$title;
+        $maxWidth = 75 * 3;
+        $maxHeight = 469;
+    }
+
+    preg_match( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg" width="(\d+)" height="(\d+)/', $description, $matches);
     if ( $matches ) {
         $width = $matches[2];
         $height = $matches[3];
         
-        $maxWidth = 469;
-        $maxHeight = 469;
-        
         $height = ($maxWidth / $width) * $height;
         $width  = $maxWidth;
         
-        $description = "<p><a href='{$item['link']}'><img src='{$matches[1]}.jpg' width='{$width}' height='{$height}' alt='{$item['title']}'></a></p>";
+        $img_url = "{$matches[1]}.jpg";
+        if ( 'consciousness' == $stream ) {
+            $img_url = "{$matches[1]}_m.jpg";
+        }
+
+        $description = "<p><a href='{$item['link']}'><img src='{$img_url}' width='{$width}' height='{$height}' alt='{$item['title']}'></a></p>";
     }
     
     
     return <<<HTML
         <li class='module flickr'>
             <div class='hd'>
-                <h3><a href='{$item['link']}'>{$item['title']}</a></h3>
+                <h3><a href='{$item['link']}'>{$title}</a></h3>
             </div>
             <div class='bd'>
                 {$description}
@@ -315,9 +327,6 @@ function getHtmlForEntryFlickrThumbnail( $items, $stream ) {
     $output = '';
     foreach ( $items as $item ) {
         $title = $item->title;
-        if ( 'consciousness' == $stream ) {
-            $title = 'flickr favourite: '.$title;
-        }
 
         $description = $item->description;
         if (preg_match( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg/', $item->description, $matches) ) {
@@ -326,11 +335,6 @@ function getHtmlForEntryFlickrThumbnail( $items, $stream ) {
             $width = 75;
             $img_url = "{$matches[1]}_s.jpg";
             
-            if ('consciousness' == $stream) {
-                $width = 75 * 3;
-                $img_url = "{$matches[1]}_m.jpg";
-            }
-                    
             $description = "<a href='{$item->link}'><img src='{$img_url}' width='{$width}' alt='{$item['title']}'></a>";
         }
 
