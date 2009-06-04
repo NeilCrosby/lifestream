@@ -20,6 +20,8 @@ if ( !$considered || !$stream || !$others ) {
     return;
 }
 
+mb_internal_encoding("UTF-8");
+
 $template = getTemplate();
 
 $template = str_replace( array('##consideredthoughts##', '##streamofconsciousness##', '##otherssaid##'),
@@ -129,7 +131,7 @@ function getHtmlForEntry( $item, $stream='considered', $backlog = array() ) {
     
     $description = strip_tags($item->description);
     if ( mb_strlen($description) > $maxDescLen ) {
-        $description = mb_substr( $description, 0, $maxDescLen ).'&hellip;';
+        $description = mb_substr( $description, 0, $maxDescLen, "UTF-8" ).'&hellip;';
     }
   
     return $html.<<<HTML
@@ -148,16 +150,20 @@ HTML;
 }
 
 function getHtmlForEntryAmazon( $item ) {
-    return $html.<<<HTML
+    $description = $item->description;
+    $description = str_replace('&', '&amp;', $description);
+    
+    $item = makeSafeForHtml($item);
+    return <<<HTML
         <li class='module amazon'>
             <div class='hd'>
-                <h3><a href='{$item->link}'>{$item->title}</a></h3>
+                <h3><a href='{$item['link']}'>{$item['title']}</a></h3>
             </div>
             <div class='bd'>
-                {$item->description}
+                {$description}
             </div>
             <div class='ft'>
-                <p>$item->pubDate</p>
+                <p>{$item['pubDate']}</p>
             </div>
         </li>
 HTML;
@@ -250,6 +256,8 @@ HTML;
 function getHtmlForEntryFlickr( $item ) {
     $description = $item->description;
     preg_match( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg" width="(\d+)" height="(\d+)/', $description, $matches);
+
+    $item = makeSafeForHtml($item);
     
     if ( $matches ) {
         $width = $matches[2];
@@ -261,19 +269,20 @@ function getHtmlForEntryFlickr( $item ) {
         $height = ($maxWidth / $width) * $height;
         $width  = $maxWidth;
         
-        $description = "<p><a href='{$item->link}'><img src='{$matches[1]}.jpg' width='{$width}' height='{$height}' alt='{$item->title}'></a></p>";
+        $description = "<p><a href='{$item['link']}'><img src='{$matches[1]}.jpg' width='{$width}' height='{$height}' alt='{$item['title']}'></a></p>";
     }
+    
     
     return <<<HTML
         <li class='module flickr'>
             <div class='hd'>
-                <h3><a href='{$item->link}'>{$item->title}</a></h3>
+                <h3><a href='{$item['link']}'>{$item['title']}</a></h3>
             </div>
             <div class='bd'>
                 {$description}
             </div>
             <div class='ft'>
-                <p>{$item->pubDate}</p>
+                <p>{$item['pubDate']}</p>
             </div>
         </li>
 HTML;
@@ -283,6 +292,7 @@ function getHtmlForEntrySlideshare( $item ) {
     preg_match('/(<iframe.*<\/iframe>)/', $item->description, $matches);
     $description = str_replace('width="425"', 'width="469"', $matches[0]);
     $description = str_replace('height="355"', 'height="392"', $description);
+    $description = str_replace('&', '&amp;', $description);
     
     return <<<HTML
         <li class='module slideshare'>
@@ -309,7 +319,9 @@ function getHtmlForEntryFlickrThumbnail( $items, $stream ) {
 
         $description = $item->description;
         if (preg_match( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg/', $item->description, $matches) ) {
-            $description = "<a href='{$item->link}'><img src='{$matches[1]}_s.jpg' alt='$title'></a>";
+            $item = makeSafeForHtml($item);
+                    
+            $description = "<a href='{$item->link}'><img src='{$matches[1]}_s.jpg' alt='{$item['title']}'></a>";
         }
 
 
@@ -363,7 +375,7 @@ function getHtmlForEntryTheTenWordReview( $item ) {
             </div>
             <div class='bd'>
                 {$description->p[0]}
-                <p class='icon'><a href='http://thetenwordreview.com/users/{$user}'><img src='http://thetenwordreview.com/images/icons/{$user}.png' alt='{$user}&apos;s icon'></a></p>
+                <p class='icon'><a href='http://thetenwordreview.com/users/{$user}'><img src='http://thetenwordreview.com/images/icons/{$user}.png' alt='{$user}&#039;s icon'></a></p>
             </div>
             <div class='ft'>
                 <p>{$item->pubDate}</p>
@@ -397,16 +409,18 @@ function getHtmlForEntryDelicious( $item ) {
     
     preg_match( '/^del\.icio\.us link:\s*(.*)/', $item->title, $matches);
 
+    $item = makeSafeForHtml($item);
+
     return <<<HTML
         <li class='module delicious'>
             <div class='hd'>
-                <h3><a href='{$item->link}'>{$matches[1]}</a></h3>
+                <h3><a href='{$item['link']}'>{$matches[1]}</a></h3>
             </div>
             <div class='bd'>
                 <p>$description</p>
             </div>
             <div class='ft'>
-                <p>{$item->pubDate}</p>
+                <p>{$item['pubDate']}</p>
             </div>
         </li>
 HTML;
@@ -435,6 +449,24 @@ function getHtmlForEntryTwitter( $item ) {
             </div>
         </li>
 HTML;
+}
+
+function makeSafeForHtml($item) {
+    if (is_array($item)) {
+        foreach ( $item as $key=>$value ) {
+            $item[$key] = htmlentities($value, ENT_QUOTES);
+        }
+        return $item;
+        
+    } else if (is_object($item)) {
+        foreach ( $item as $key=>$value ) {
+            $item[$key] = htmlentities($value, ENT_QUOTES);
+        }
+        return $item;
+        
+    }
+    
+    return htmlentities($item, ENT_QUOTES);
 }
 
 ?>
