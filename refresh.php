@@ -3,6 +3,7 @@
 define("INPUT_RSS_CONSIDERED",      "http://pipes.yahoo.com/pipes/pipe.run?_id=ADbNqOil3BGGzfPa6kjTQA&_render=rss");
 define("INPUT_RSS_CONSCIOUSNESS",   "http://pipes.yahoo.com/pipes/pipe.run?_id=f41d64550e674b7f01bad0f3c49d46f8&_render=rss");
 define("INPUT_RSS_OTHERS_SAID",     "http://pipes.yahoo.com/pipes/pipe.run?_id=ygKh4Siu3BGqyNyQJphxuA&_render=rss");
+define("INPUT_RSS_EVENTS",          "http://pipes.yahoo.com/pipes/pipe.run?_id=9h81k_pR3hGH5QGoPm7D0g&_render=rss");
 define("FILE_TEMPLATE",             "/templates/index.tpl");
 define("FILE_OUTPUT",               "/index.html");
 define("TEN_WORD_USER",             "workingwithme");
@@ -15,6 +16,7 @@ function __autoload($class_name) {
 $considered = getConsideredThoughts();
 $stream = getStreamOfConsciousness();
 $others = getOthersSaid();
+$events = getEvents();
 
 if ( !$considered || !$stream || !$others ) {
     return;
@@ -24,8 +26,8 @@ mb_internal_encoding("UTF-8");
 
 $template = getTemplate();
 
-$template = str_replace( array('##consideredthoughts##', '##streamofconsciousness##', '##otherssaid##'),
-                         array($considered, $stream, $others),
+$template = str_replace( array('##consideredthoughts##', '##streamofconsciousness##', '##otherssaid##', '###events###'),
+                         array($considered, $stream, $others, $events),
                          $template );
 saveOutput($template);
 
@@ -62,6 +64,42 @@ function getOthersSaid() {
     $rand = ""; // because pipes isn't happy with me breaking caching
 
     return getHtmlForStream('otherssaid', INPUT_RSS_OTHERS_SAID.$rand);
+}
+
+function getEvents() {
+    $rand = "&rand=".time();
+    $data = getDataFromFeed( INPUT_RSS_EVENTS.$rand );
+
+    $items = array();
+    foreach ( $data->channel->item as $item ) {
+        $items[] = $item;
+    }
+    
+    if ( 0 === count($items) ) {
+        return '';
+    }
+    
+    $items = array_reverse($items);
+    
+    $output = '<p>You may remember me from such events as ';
+
+    $numItems = count($items);
+    $doneItems = 0;
+    foreach ($items as $item) {
+        $doneItems++;
+        
+        $joiner = '.';
+        if ($doneItems < $numItems - 1) {
+            $joiner = ', ';
+        } else if ($doneItems < $numItems) {
+            $joiner = ' and ';
+        }
+
+        $output .= "<a href='{$item->link}'>{$item->title}</a>{$joiner}";
+    }
+    $output .= '</p>';
+
+    return $output;
 }
 
 function getHtmlForStream($stream, $url) {

@@ -367,13 +367,7 @@
     <div id="doc4">                   
         <div id="hd">
             <h1><span>Hi, <span>I'm</span></span> Neil Crosby</h1>
-            <p>
-                You may remember me from such events as
-                <a href="http://upcoming.yahoo.com/event/2142631/">Open Hack 2009: London</a>,
-                <a href="http://upcoming.yahoo.com/event/2620372/">Pub Standards XLII</a>
-                and
-                <a href="http://upcoming.yahoo.com/event/2566869/">BarCamp Leeds {2009}</a>.
-            </p>
+            ###events###
             <ul>
                 <li><a href="/vcard" rel="me"><img src="/images/vcard.png" alt="Neil Crosby's vCard" title="Neil Crosby's vCard"></a></li>
                 <!--<li><a href="http://upcoming.yahoo.com/user/73013/" rel="me"><img src="/images/ical.png" alt="Neil Crosby's Upcoming Events"></a></li>-->
