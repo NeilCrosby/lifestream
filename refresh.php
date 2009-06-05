@@ -307,7 +307,7 @@ function getHtmlForEntryFlickr( $item, $stream ) {
     if ( 'consciousness' == $stream ) {
         $title = 'flickr fave: '.$title;
         $maxWidth = 75 * 3;
-        $maxHeight = 469;
+        $maxHeight = 240;
     }
 
     preg_match( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg" width="(\d+)" height="(\d+)/', $description, $matches);
@@ -315,8 +315,13 @@ function getHtmlForEntryFlickr( $item, $stream ) {
         $width = $matches[2];
         $height = $matches[3];
         
-        $height = ($maxWidth / $width) * $height;
-        $width  = $maxWidth;
+            $height = ($maxWidth / $width) * $height;
+            $width  = $maxWidth;
+
+            if ($height > $maxHeight) {
+                $width = ($maxHeight / $height) * $width;
+                $height = $maxHeight;
+            }
         
         $img_url = "{$matches[1]}.jpg";
         if ( 'consciousness' == $stream ) {
