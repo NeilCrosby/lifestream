@@ -550,19 +550,19 @@ HTML;
 function makeSafeForHtml($item) {
     if (is_array($item)) {
         foreach ( $item as $key=>$value ) {
-            $item[$key] = htmlentities($value, ENT_QUOTES);
+            $item[$key] = htmlentities($value, ENT_QUOTES, 'UTF-8');
         }
         return $item;
         
     } else if (is_object($item)) {
         foreach ( $item as $key=>$value ) {
-            $item[$key] = htmlentities($value, ENT_QUOTES);
+            $item[$key] = htmlentities($value, ENT_QUOTES, 'UTF-8');
         }
         return $item;
         
     }
     
-    return htmlentities($item, ENT_QUOTES);
+    return htmlentities($item, ENT_QUOTES, 'UTF-8');
 }
 
 ?>
