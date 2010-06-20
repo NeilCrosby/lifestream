@@ -35,7 +35,11 @@ $server = ( 80 == $_SERVER['SERVER_PORT'])
         ? $_SERVER['SERVER_NAME']
         : $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'];
 
-header("Location: http://$server/");
+if (!isset($_GET['no_redirect'])) {
+    header("Location: http://$server/");
+}
+
+exit();
 
 
 function getTemplate() {
