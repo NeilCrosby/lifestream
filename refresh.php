@@ -1,6 +1,10 @@
 <?php
 
-define("INPUT_RSS_CONSIDERED",      "http://pipes.yahoo.com/pipes/pipe.run?_id=ADbNqOil3BGGzfPa6kjTQA&_render=rss&FeedLength=6");
+ini_set("log_errors", true);
+ini_set("error_reporting", E_ALL);
+
+define("INPUT_RSS_CONSIDERED",      "http://pipes.yahoo.com/pipes/pipe.run?_id=ADbNqOil3BGGzfPa6kjTQA&_render=rss&FeedLength=7");
+define("INPUT_RSS_FLICKR",          "http://api.flickr.com/services/feeds/photos_public.gne?id=36778932@N00&tags=publishneilcrosbycom&lang=en-us&format=rss_200");
 define("INPUT_RSS_CONSCIOUSNESS",   "http://pipes.yahoo.com/pipes/pipe.run?_id=f41d64550e674b7f01bad0f3c49d46f8&_render=rss&FeedLength=20");
 define("INPUT_RSS_OTHERS_SAID",     "http://pipes.yahoo.com/pipes/pipe.run?_id=ygKh4Siu3BGqyNyQJphxuA&_render=rss&FeedLength=30");
 define("INPUT_RSS_EVENTS",          "http://pipes.yahoo.com/pipes/pipe.run?_id=9h81k_pR3hGH5QGoPm7D0g&_render=rss");
@@ -13,12 +17,16 @@ function __autoload($class_name) {
     require_once $class_name . '.php';
 }
 
-$considered = getConsideredThoughts();
-$stream = getStreamOfConsciousness();
-$others = getOthersSaid();
-$events = getEvents();
 
-if ( !$considered || !$stream || !$others ) {
+
+$flickr     = getHtmlForStream('flickr',        INPUT_RSS_FLICKR,           7);
+$considered = getHtmlForStream('considered',    INPUT_RSS_CONSIDERED,       5);
+$stream     = '';//getHtmlForStream('consciousness', INPUT_RSS_CONSCIOUSNESS,    20);
+$others     = '';//getHtmlForStream('otherssaid',    INPUT_RSS_OTHERS_SAID,      30);
+$events     = getEvents();
+
+if ( !$flickr || !$considered ) {
+    error_log("some data didn't return");
     return;
 }
 
@@ -26,8 +34,8 @@ mb_internal_encoding("UTF-8");
 
 $template = getTemplate();
 
-$template = str_replace( array('##consideredthoughts##', '##streamofconsciousness##', '##otherssaid##', '###events###'),
-                         array($considered, $stream, $others, $events),
+$template = str_replace( array('##flickr##', '##consideredthoughts##', '##streamofconsciousness##', '##otherssaid##', '###events###'),
+                         array($flickr, $considered, $stream, $others, $events),
                          $template );
 saveOutput($template);
 
@@ -50,29 +58,8 @@ function saveOutput( $template ) {
     return file_put_contents($_SERVER['DOCUMENT_ROOT'].FILE_OUTPUT, $template);
 }
 
-
-function getConsideredThoughts() {
-    $rand = "&rand=".time();
-
-    return getHtmlForStream('considered', INPUT_RSS_CONSIDERED.$rand);
-}
-
-function getStreamOfConsciousness() {
-    $rand = "&rand=".time();
-
-    return getHtmlForStream('consciousness', INPUT_RSS_CONSCIOUSNESS.$rand);
-}
-
-function getOthersSaid() {
-    $rand = "&rand=".time();
-    $rand = ""; // because pipes isn't happy with me breaking caching
-
-    return getHtmlForStream('otherssaid', INPUT_RSS_OTHERS_SAID.$rand);
-}
-
 function getEvents() {
-    $rand = "&rand=".time();
-    $data = getDataFromFeed( INPUT_RSS_EVENTS.$rand );
+    $data = getDataFromFeed( INPUT_RSS_EVENTS );
 
     $items = array();
     foreach ( $data->channel->item as $item ) {
@@ -106,13 +93,18 @@ function getEvents() {
     return $output;
 }
 
-function getHtmlForStream($stream, $url) {
+function getHtmlForStream($stream, $url, $maxItems = 100) {
     $data = getDataFromFeed( $url );
 
     $backlog = array();
     $output = '';
+    $numItems = 0;
     foreach ( $data->channel->item as $item ) {
-        $output .= getHtmlForEntry($item, $stream, &$backlog);
+        if ($numItems >= $maxItems) {
+            continue;
+        }
+        $output .= getHtmlForEntry($item, $stream, &$backlog, !((bool)$numItems));
+        $numItems++;
     }
     
     if ( sizeof($backlog) > 0) {
@@ -120,6 +112,7 @@ function getHtmlForStream($stream, $url) {
     }
     
     if ( '' == $output ) {
+        error_log('returning early');
         return $output;
     }
 
@@ -127,12 +120,22 @@ function getHtmlForStream($stream, $url) {
 }
 
 function getDataFromFeed( $url ) {
-    $data = simplexml_load_file( $url );
+    $urlHash = md5($url);
+    
+    $data = apc_fetch($urlHash);
+    if (!$data) {
+        error_log('CACHE MISS: '.$url);
 
+        $data = file_get_contents( $url."&rand=".time() );
+
+        apc_store($urlHash, $data, 600);
+    }
+    
+    $data = simplexml_load_string( $data );
     return $data;
 }
 
-function getHtmlForEntry( $item, $stream='considered', $backlog = array() ) {
+function getHtmlForEntry( $item, $stream='considered', $backlog = array(), $isFirst = false ) {
     $item->pubDate = date('l jS F Y, H:i', strtotime($item->pubDate));
 
     $html = '';
@@ -144,8 +147,8 @@ function getHtmlForEntry( $item, $stream='considered', $backlog = array() ) {
 
     if ( preg_match( '/^http:\/\/www\.flickr\.com/', $item->link ) ) {
 
-        if ( 'considered' == $stream || 'consciousness' == $stream ) {
-            return getHtmlForEntryFlickr($item, $stream);
+        if ( 'flickr' == $stream || 'considered' == $stream || 'consciousness' == $stream ) {
+            return getHtmlForEntryFlickr($item, $stream, $isFirst);
         } else {
             $backlog[] = $item;
             return '';
@@ -193,75 +196,6 @@ function getHtmlForEntry( $item, $stream='considered', $backlog = array() ) {
 HTML;
 }
 
-function getHtmlForEntryAmazon( $item ) {
-    $description = $item->description;
-    $description = str_replace('&', '&amp;', $description);
-    
-    $item = makeSafeForHtml($item);
-    return <<<HTML
-        <li class='module amazon'>
-            <div class='hd'>
-                <h3><a href='{$item['link']}'>{$item['title']}</a></h3>
-            </div>
-            <div class='bd'>
-                {$description}
-            </div>
-            <div class='ft'>
-                <p>{$item['pubDate']}</p>
-            </div>
-        </li>
-HTML;
-}
-
-function getHtmlForEntryUpcoming( $item ) {
-    $pos = strpos( $item->description, '<br />' );
-    if ( false !== $pos ) {
-        $item->description = mb_substr( $item->description, 0, $pos );
-    }
-
-    $item->description = strip_tags($item->description);
-    
-    $maxDescriptionLength = 70;
-
-    $description = $item->description;
-    if ( mb_strlen($description) > $maxDescriptionLength ) {
-        $description = mb_substr( $description, 0, $maxDescriptionLength) . '&hellip;';
-    }
-    
-    $pos = strpos( $item->title, ':' );
-    if ( false !== $pos ) {
-        $date = mb_substr( $item->title, 0, $pos );
-        $item->title = mb_substr( $item->title, $pos + 2 );
-
-        preg_match( '/(\w+)\s+(\d+),\s+(\d+)/', $date, $matches );
-        $month = $matches[1];
-        $day   = $matches[2];
-        $year  = $matches[3];
-    }
-    
-    $maxTitleLength = 23;
-
-    $title = $item->title;
-    if ( mb_strlen($title) > $maxTitleLength ) {
-        $title = mb_substr( $title, 0, $maxTitleLength) . '&hellip;';
-    }
-    
-    return <<<HTML
-        <li class='module upcoming'>
-            <div class='hd'>
-                <h3><a href='{$item->link}'>{$title}</a></h3>
-            </div>
-            <div class='bd'>
-                <p class='date'><span>{$month} {$year}</span>{$day}</p>
-                <p>{$description}</p>
-            </div>
-            <div class='ft'>
-                <p>{$item->pubDate}</p>
-            </div>
-        </li>
-HTML;
-}
-
 function getHtmlForEntryIWearCotton( $item ) {
     $doc = new DOMDocument();
     // have to give charset otherwise loadHTML gets confused
@@ -299,10 +233,11 @@ function getHtmlForEntryIWearCotton( $item ) {
 HTML;
 }
 
-function getHtmlForEntryFlickr( $item, $stream ) {
+function getHtmlForEntryFlickr( $item, $stream, $isFirst=false ) {
     $maxWidth = 469;
     $maxHeight = 469;
     
+    $class = ($isFirst) ? ' first' : ' flickr_secondary';
     $item = makeSafeForHtml($item);
     
     $title = $item['title'];
@@ -314,21 +249,30 @@ function getHtmlForEntryFlickr( $item, $stream ) {
         $maxHeight = 240;
     }
 
+    if ( !$isFirst ) {
+        $maxWidth = 230;
+        $maxHeight = 160;
+    }
+
     preg_match( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg" width="(\d+)" height="(\d+)/', $description, $matches);
     if ( $matches ) {
         $width = $matches[2];
         $height = $matches[3];
         
-            $height = ($maxWidth / $width) * $height;
-            $width  = $maxWidth;
+            $height = (int)(($maxWidth / $width) * $height);
+            $width  = (int)($maxWidth);
 
             if ($height > $maxHeight) {
-                $width = ($maxHeight / $height) * $width;
-                $height = $maxHeight;
+                $width = (int)(($maxHeight / $height) * $width);
+                $height = (int)($maxHeight);
             }
         
         $img_url = "{$matches[1]}.jpg";
         if ( 'consciousness' == $stream ) {
+            $img_url = "{$matches[1]}_m.jpg";
+        }
+
+        if ( !$isFirst ) {
             $img_url = "{$matches[1]}_m.jpg";
         }
 
@@ -337,7 +281,7 @@ function getHtmlForEntryFlickr( $item, $stream ) {
     
     
     return <<<HTML
-        <li class='module flickr'>
+        <li class='module flickr{$class}'>
             <div class='hd'>
                 <h3><a href='{$item['link']}'>{$title}</a></h3>
             </div>
@@ -447,21 +391,6 @@ function getHtmlForEntryTheTenWordReview( $item ) {
 HTML;
 }
 
-function getHtmlForEntryLastFm( $item ) {
-    return <<<HTML
-        <li class='module lastfm'>
-            <div class='hd'>
-                <h3><span>Last.fm: </span><a href='{$item->link}'>{$item->title}</a></h3>
-            </div>
-            <div class='bd'>
-                <p>{$item->pubDate}</p>
-            </div>
-            <div class='ft'>
-            </div>
-        </li>
-HTML;
-}
-
 function getHtmlForEntryGithub( $item ) {
     $maxDescLen = ('considered' == $stream) ? 500: 100;
 
@@ -521,31 +450,6 @@ function getHtmlForEntryDelicious( $item ) {
             </div>
             <div class='ft'>
                 <p>{$item['pubDate']}</p>
-            </div>
-        </li>
-HTML;
-}
-
-function getHtmlForEntryTwitter( $item ) {
-    $description = strip_tags($item->description);
-    $class = '';
-    if ( TWITTER_USERNAME != mb_substr($item->author[0], 0, mb_strlen(TWITTER_USERNAME)) && TWITTER_USERNAME != mb_substr($description, 0, mb_strlen(TWITTER_USERNAME)) ) {
-        $author = $item->author[0];
-        preg_match('/(^[^\s]+)/', $author, $matches);
-        $description = $matches[1] . ': ' . $description;
-        $class=' twitter_at_user';
-    }
-    
-    return <<<HTML
-        <li class='module twitter$class'>
-            <div class='hd'>
-                <h3><a href='{$item->link}'>Twitter</a></h3>
-            </div>
-            <div class='bd'>
-                <p><a href='{$item->link}'>{$description}</a></p>
-            </div>
-            <div class='ft'>
-                <p>{$item->pubDate}</p>
             </div>
         </li>
 HTML;

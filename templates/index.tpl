@@ -95,30 +95,50 @@
             margin: 0.5em 0 0.5em 0;
         }
 
-        #primary .module .hd {
+        .module .hd {
             font-size: 116%;
             margin-bottom: 1em;
             font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
         }
 
-        #primary .module .hd a {
+        .module .hd a {
             text-decoration: none;
         }
 
-        #primary .module .hd a:hover {
+        .module .hd a:hover {
             text-decoration: underline;
         }
 
-        #primary .module .ft {
+        .module .ft {
             font-size: 85%;
             margin-top: 1em;
         }
 
-        #primary .module {
+        .module {
             padding-bottom: 1em;
             border-bottom: 1px solid #ddd;
         }
+        
+        .flickr_secondary {
+            border: none;
+            float: left;
+            clear: none;
+            margin: 0 5px 9px 4px;
+            padding: 0;
+        }
+        
+        .flickr_secondary .bd p,
+        .flickr_secondary .bd p * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .flickr_secondary .hd,
+        .flickr_secondary .ft {
+            display: none;
+        }
 
+/*
         #secondary .module {
             font-size: 93%;
         }
@@ -310,7 +330,7 @@
         #secondary .module.flickr .ft {
             clear: both;
         }
-
+*/
         .module.thetenwordreview {
             background: #8c288b;
             color: #f8f3f8;
@@ -377,10 +397,16 @@
             <div id="yui-main">
                 <div class="yui-b">
                     <div class='yui-g'>
-                        <div class='yui-u first' id='primary'>
-                            <h2>Considered Thoughts <a href='/main.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
+                        <div class='yui-u first'>
+                            <h2>Recent Blog Posts <a href='/main.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
                             ##consideredthoughts##
                         </div>
+                        <div class='yui-u'>
+                            <h2>Some of my Flickr Photos <a href='#TODO'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
+                            ##flickr##
+                        </div>
+
+<!--
                         <div class='yui-g' id='secondary'>
                             <div id='consciousness' class='yui-u first'>
                                 <h2>Stream of Consciousness <a href='/stream-of-consciousness.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
@@ -391,6 +417,7 @@
                                 ##otherssaid##
                             </div>
                         </div>
+-->
                     </div>
                 </div>
             </div>
