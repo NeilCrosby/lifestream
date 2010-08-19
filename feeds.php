@@ -4,6 +4,7 @@ $options = array(
     'considered' => 'http://feeds.neilcrosby.com/NeilCrosbyLifestreamConsidered',
     'stream-of-consciousness' => 'http://feeds.neilcrosby.com/NeilCrosbyLifestreamOfConsciousness',
     'others-said' => 'http://feeds.neilcrosby.com/NeilCrosbyOthersSaid',
+    'flickr' => 'http://api.flickr.com/services/feeds/photos_public.gne?id=36778932@N00&tags=publishneilcrosbycom&lang=en-us&format=rss_200',
 );
 
 $optionsFeedburner = array(

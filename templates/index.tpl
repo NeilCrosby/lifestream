@@ -402,7 +402,7 @@
                             ##consideredthoughts##
                         </div>
                         <div class='yui-u'>
-                            <h2>Some of my Flickr Photos <a href='#TODO'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
+                            <h2>Some of my Flickr Photos <a href='/flickr.rss'><img src='/images/feed-icon-14x14.png' alt='RSS'></a></h2>
                             ##flickr##
                         </div>
 
