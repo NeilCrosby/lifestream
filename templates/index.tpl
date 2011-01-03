@@ -18,7 +18,7 @@
         }
 
         #hd {
-            margin: 0 4px 2em 4px;
+            margin: 0 4px 1em 4px;
             padding-top: 1em;
             position: relative;
         }
@@ -72,6 +72,51 @@
             margin-left: 1em;
         }
 
+        #hd #sites {
+            margin: 0.5em 0 1em 0;
+            border-top: 1px solid #cfcfcf;
+            border-bottom: 1px solid #cfcfcf;
+            padding: 0.8em 0;
+        }
+
+        #hd #sites h2 {
+            display: inline;
+            margin-left: 0;
+        }
+
+        #hd #sites ul {
+            display: inline;
+            position: relative;
+            left: 0;
+            top: 0;
+            padding-left: 3em;
+        }
+
+        #hd #sites ul li {
+            float: none;
+            display: inline;
+            margin: 0 3em 0 0;
+            padding: 12px 0 12px 40px;
+            background: transparent url(/images/sites.png) no-repeat left top;
+        }
+                
+        #hd #sites ul li.thecodetrain {
+            background-position: 0 -3px;
+        }
+        
+        #hd #sites ul li.iwearcotton {
+            background-position: 0 -66px;
+        }
+        
+        #hd #sites ul li.neilsnoms {
+            background-position: 0 -144px;
+        }
+        
+        #hd #sites ul li.nakedfatty {
+            background-position: 0 -236px;
+        }
+        
+        
         h2 {
             font-size: 138.5%;
             margin: 1em 4px 1em 4px;
@@ -387,11 +432,36 @@
     <div id="doc4">                   
         <div id="hd">
             <h1><span>Hi, <span>I'm</span></span> Neil Crosby</h1>
-            ###events###
             <ul>
                 <li><a href="/vcard" rel="me"><img src="/images/vcard.png" alt="Neil Crosby's vCard" title="Neil Crosby's vCard"></a></li>
                 <!--<li><a href="http://upcoming.yahoo.com/user/73013/" rel="me"><img src="/images/ical.png" alt="Neil Crosby's Upcoming Events"></a></li>-->
             </ul>
+            <div id="sites">
+            <h2>I have some other sites as well&hellip;</h2>
+                <ul>
+                    <li class="thecodetrain">
+                        <a href="http://thecodetrain.co.uk" class="thecodetrain" rel="me">
+                            The Code Train
+                        </a>
+                    </li>
+                    <li class="iwearcotton">
+                        <a href="http://iwearcotton.com" class="iwearcotton" rel="me">
+                            I Wear Cotton
+                        </a>
+                    </li>
+                    <li class="neilsnoms">
+                        <a href="http://neilsnoms.com" class="neilsnoms" rel="me">
+                            Neil's Noms
+                        </a>
+                    </li>
+                    <li class="nakedfatty">
+                        <a href="http://nakedfatty.com" class="nakedfatty" rel="me">
+                            Naked Fatty
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            ###events###
         </div>
         <div id="bd">
             <div id="yui-main">

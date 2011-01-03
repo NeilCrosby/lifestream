@@ -1,4 +1,5 @@
 <?php
+require_once 'classes/iCalcreator.class.php';
 
 ini_set("log_errors", true);
 ini_set("error_reporting", E_ALL);
@@ -8,6 +9,7 @@ define("INPUT_RSS_FLICKR",          "http://api.flickr.com/services/feeds/photos
 define("INPUT_RSS_CONSCIOUSNESS",   "http://pipes.yahoo.com/pipes/pipe.run?_id=f41d64550e674b7f01bad0f3c49d46f8&_render=rss&FeedLength=20");
 define("INPUT_RSS_OTHERS_SAID",     "http://pipes.yahoo.com/pipes/pipe.run?_id=ygKh4Siu3BGqyNyQJphxuA&_render=rss&FeedLength=30");
 define("INPUT_RSS_EVENTS",          "http://pipes.yahoo.com/pipes/pipe.run?_id=9h81k_pR3hGH5QGoPm7D0g&_render=rss");
+//define("INPUT_RSS_EVENTS",          "http://lanyrd.com/people/neilcrosby/neilcrosby.ics");
 define("FILE_TEMPLATE",             "/templates/index.tpl");
 define("FILE_OUTPUT",               "/index.html");
 define("TEN_WORD_USER",             "workingwithme");
@@ -59,6 +61,7 @@ function saveOutput( $template ) {
 }
 
 function getEvents() {
+
     $data = getDataFromFeed( INPUT_RSS_EVENTS );
 
     $items = array();
@@ -72,7 +75,7 @@ function getEvents() {
     
     $items = array_reverse($items);
     
-    $output = '<p>You may remember me from such events as ';
+    $output = '<p>You may also remember me from such events as ';
 
     $numItems = count($items);
     $doneItems = 0;
@@ -91,6 +94,64 @@ function getEvents() {
     $output .= '</p>';
 
     return $output;
+
+
+#    //$data = getDataFromFeed( INPUT_RSS_EVENTS );
+#    $data = getDataFromIcal( INPUT_RSS_EVENTS );
+#
+#    $now = time();
+#
+#    $items = array();
+#    echo "<pre>";
+#    foreach ( $data as $item ) {
+#        $dtstart = $item->getProperty('dtstart');
+#
+#        var_dump($item);
+#        $date = mktime(0, 0, 0, $dtstart['month'], $dtstart['day'], $dtstart['year']);
+#        
+#        if ($date > $now) {
+#            echo "Too new!\n";
+#            continue;
+#        }
+#        if (sizeof($items) >= 3) {
+#            echo "Too many!\n";
+#            break;
+#        }
+#        
+#        $items[] = $item;
+#    }
+#    
+#    if ( 0 === count($items) ) {
+#        return '';
+#    }
+#    
+#    $items = array_reverse($items);
+#    
+#    $output = '<p>You may also remember me from such events as ';
+#
+#    $numItems = count($items);
+#    $doneItems = 0;
+#    foreach ($items as $item) {
+#        $url     = $item->getProperty('url');
+#        $summary = $item->getProperty('summary');
+#
+#        $doneItems++;
+#        
+#        $joiner = '.';
+#        if ($doneItems < $numItems - 1) {
+#            $joiner = ', ';
+#        } else if ($doneItems < $numItems) {
+#            $joiner = ' and ';
+#        }
+#
+#        $output .= "<a href='{$url}'>{$summary}</a>{$joiner}";
+#    }
+#    $output .= '</p>';
+#    
+#    echo $output;
+#    exit();
+#
+#    return $output;
 }
 
 function getHtmlForStream($stream, $url, $maxItems = 100) {
@@ -133,6 +194,29 @@ function getDataFromFeed( $url ) {
     
     $data = simplexml_load_string( $data );
     return $data;
+}
+
+function getDataFromIcal( $url ) {
+    $urlHash = md5($url);
+    
+    $data = apc_fetch($urlHash);
+    if (!$data) {
+        error_log('CACHE MISS: '.$url);
+
+        $data = file_get_contents( $url );
+
+        apc_store($urlHash, $data, 600);
+    }
+
+    $filename = tempnam( "/tmp", "" ) ;
+    $f = fopen($filename,"w") ;
+    fwrite( $f, $data );
+    fclose($f);
+    
+    $var = new vcalendar();
+    $var->parse($filename);
+    
+    return $var->components;
 }
 
 function getHtmlForEntry( $item, $stream='considered', $backlog = array(), $isFirst = false ) {
