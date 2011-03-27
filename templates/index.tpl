@@ -170,6 +170,7 @@
             clear: none;
             margin: 0 5px 9px 4px;
             padding: 0;
+            height: 151px;
         }
         
         .flickr_secondary .bd p,
