@@ -1,5 +1,5 @@
 <?php
-require_once 'classes/iCalcreator.class.php';
+#require_once 'classes/iCalcreator.class.php';
 
 ini_set("log_errors", true);
 ini_set("error_reporting", E_ALL);
@@ -196,28 +196,28 @@ function getDataFromFeed( $url ) {
     return $data;
 }
 
-function getDataFromIcal( $url ) {
-    $urlHash = md5($url);
-    
-    $data = apc_fetch($urlHash);
-    if (!$data) {
-        error_log('CACHE MISS: '.$url);
-
-        $data = file_get_contents( $url );
-
-        apc_store($urlHash, $data, 600);
-    }
-
-    $filename = tempnam( "/tmp", "" ) ;
-    $f = fopen($filename,"w") ;
-    fwrite( $f, $data );
-    fclose($f);
-    
-    $var = new vcalendar();
-    $var->parse($filename);
-    
-    return $var->components;
-}
+#function getDataFromIcal( $url ) {
+#    $urlHash = md5($url);
+#    
+#    $data = apc_fetch($urlHash);
+#    if (!$data) {
+#        error_log('CACHE MISS: '.$url);
+#
+#        $data = file_get_contents( $url );
+#
+#        apc_store($urlHash, $data, 600);
+#    }
+#
+#    $filename = tempnam( "/tmp", "" ) ;
+#    $f = fopen($filename,"w") ;
+#    fwrite( $f, $data );
+#    fclose($f);
+#    
+#    $var = new vcalendar();
+#    $var->parse($filename);
+#    
+#    return $var->components;
+#}
 
 function getHtmlForEntry( $item, $stream='considered', $backlog = array(), $isFirst = false ) {
     $item->pubDate = date('l jS F Y, H:i', strtotime($item->pubDate));
