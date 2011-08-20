@@ -9,7 +9,7 @@ define("INPUT_RSS_FLICKR",          "http://api.flickr.com/services/feeds/photos
 define("INPUT_RSS_CONSCIOUSNESS",   "http://pipes.yahoo.com/pipes/pipe.run?_id=f41d64550e674b7f01bad0f3c49d46f8&_render=rss&FeedLength=20");
 define("INPUT_RSS_OTHERS_SAID",     "http://pipes.yahoo.com/pipes/pipe.run?_id=ygKh4Siu3BGqyNyQJphxuA&_render=rss&FeedLength=30");
 define("INPUT_RSS_EVENTS",          "http://pipes.yahoo.com/pipes/pipe.run?_id=9h81k_pR3hGH5QGoPm7D0g&_render=rss");
-//define("INPUT_RSS_EVENTS",          "http://lanyrd.com/people/neilcrosby/neilcrosby.ics");
+define("INPUT_EVENTS",              "http://lanyrd.com/profile/neilcrosby/past/attending/");
 define("FILE_TEMPLATE",             "/templates/index.tpl");
 define("FILE_OUTPUT",               "/index.html");
 define("TEN_WORD_USER",             "workingwithme");
@@ -62,24 +62,22 @@ function saveOutput( $template ) {
 
 function getEvents() {
 
-    $data = getDataFromFeed( INPUT_RSS_EVENTS );
+    $data = getDataFromHtml( INPUT_EVENTS );
 
-    $items = array();
-    foreach ( $data->channel->item as $item ) {
-        $items[] = $item;
-    }
+    $xpath = new DOMXPath($data);
+    $items = $xpath->query("//div[contains(@class, 'conference-listing')]/ol/li[position() <= 3]/h4/a");
     
     if ( 0 === count($items) ) {
         return '';
     }
     
-    $items = array_reverse($items);
-    
     $output = '<p>You may also remember me from such events as ';
-
-    $numItems = count($items);
+    
+    $numItems  = $items->length;
     $doneItems = 0;
-    foreach ($items as $item) {
+    for ( $i = $numItems - 1; $i >= 0; $i-- ) {
+        $item = $items->item($i);
+        
         $doneItems++;
         
         $joiner = '.';
@@ -88,8 +86,11 @@ function getEvents() {
         } else if ($doneItems < $numItems) {
             $joiner = ' and ';
         }
+        
+        $text = $item->nodeValue;
+        $url  = $item->attributes->getNamedItem('href')->nodeValue;
 
-        $output .= "<a href='{$item->link}'>{$item->title}</a>{$joiner}";
+        $output .= "<a href='{$url}'>{$text}</a>{$joiner}";
     }
     $output .= '</p>';
 
@@ -196,28 +197,21 @@ function getDataFromFeed( $url ) {
     return $data;
 }
 
-#function getDataFromIcal( $url ) {
-#    $urlHash = md5($url);
-#    
-#    $data = apc_fetch($urlHash);
-#    if (!$data) {
-#        error_log('CACHE MISS: '.$url);
-#
-#        $data = file_get_contents( $url );
-#
-#        apc_store($urlHash, $data, 600);
-#    }
-#
-#    $filename = tempnam( "/tmp", "" ) ;
-#    $f = fopen($filename,"w") ;
-#    fwrite( $f, $data );
-#    fclose($f);
-#    
-#    $var = new vcalendar();
-#    $var->parse($filename);
-#    
-#    return $var->components;
-#}
+function getDataFromHtml( $url ) {
+    $data = apc_fetch($url);
+    if (!$data) {
+        error_log('CACHE MISS: '.$url);
+
+        $data = file_get_contents( $url );
+
+        apc_store($url, $data, 600);
+    }
+    
+    $doc = new DomDocument();
+    @$doc->loadHtml( $data );
+    
+    return $doc;
+}
 
 function getHtmlForEntry( $item, $stream='considered', $backlog = array(), $isFirst = false ) {
     $item->pubDate = date('l jS F Y, H:i', strtotime($item->pubDate));
@@ -380,10 +374,8 @@ HTML;
 }
 
 function getHtmlForEntrySlideshare( $item ) {
-    preg_match('/(<iframe.*<\/iframe>)/', $item->description, $matches);
-    $description = str_replace('width="425"', 'width="469"', $matches[0]);
-    $description = str_replace('height="355"', 'height="392"', $description);
-    $description = str_replace('&', '&amp;', $description);
+    preg_match('/id="__ss_(\d+)"/', $item->description, $matches);
+    $id = $matches[1];
     
     return <<<HTML
         <li class='module slideshare'>
@@ -391,7 +383,7 @@ function getHtmlForEntrySlideshare( $item ) {
                 <h3><a href='{$item->link}'>{$item->title}</a></h3>
             </div>
             <div class='bd'>
-                {$description}
+                <iframe src="http://www.slideshare.net/slideshow/embed_code/${id}" width="469" height="392" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
             </div>
             <div class='ft'>
                 <p>{$item->pubDate}</p>
