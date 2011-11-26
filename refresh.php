@@ -90,7 +90,7 @@ function getEvents() {
         $text = $item->nodeValue;
         $url  = $item->attributes->getNamedItem('href')->nodeValue;
 
-        $output .= "<a href='{$url}'>{$text}</a>{$joiner}";
+        $output .= "<a href='http://lanyrd.com{$url}'>{$text}</a>{$joiner}";
     }
     $output .= '</p>';
 
@@ -332,7 +332,7 @@ function getHtmlForEntryFlickr( $item, $stream, $isFirst=false ) {
         $maxHeight = 160;
     }
 
-    preg_match( '/(http:\/\/farm\d+\.static\.flickr\.com\/\d+\/[^.]*)_m.jpg" width="(\d+)" height="(\d+)/', $description, $matches);
+    preg_match( '/(http:\/\/farm\d+\.static\.?flickr\.com\/\d+\/[^.]*)_m.jpg" width="(\d+)" height="(\d+)/', $description, $matches);
     if ( $matches ) {
         $width = $matches[2];
         $height = $matches[3];
