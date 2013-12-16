@@ -177,20 +177,10 @@ function getHtmlForEntry( $item, $stream='considered', &$backlog = array(), $isF
             return '';
         }
 
-    } else if ( preg_match( '/^del\.icio\.us link:\s*/', $item->title ) ) {
-        return $html.getHtmlForEntryDelicious($item);
     } else if ( preg_match( '/^http:\/\/thetenwordreview\.com/', $item->link ) ) {
         return $html.getHtmlForEntryTheTenWordReview($item);
-    } else if ( preg_match( '/^http:\/\/www\.amazon\.co\.uk/', $item->link ) ) {
-        return $html.getHtmlForEntryAmazon($item);
     } else if ( preg_match( '/^http:\/\/www\.slideshare\.net/', $item->link ) ) {
         return $html.getHtmlForEntrySlideshare($item);
-    } else if ( preg_match( '/^http:\/\/www\.last\.fm/', $item->link ) ) {
-        return $html.getHtmlForEntryLastFm($item);
-    } else if ( preg_match( '/^http:\/\/twitter\.com/', $item->link ) ) {
-        return $html.getHtmlForEntryTwitter($item);
-    } else if ( preg_match( '/^http:\/\/upcoming\.yahoo\.com/', $item->link ) ) {
-        return $html.getHtmlForEntryUpcoming($item);
     } else if ( preg_match( '/^http:\/\/github\.com/', $item->link ) ) {
         return $html.getHtmlForEntryGithub($item);
     } else if ( preg_match( '/IWearCotton/', $item->link ) ) {
@@ -444,33 +434,6 @@ function getHtmlForEntryGithub( $item ) {
             </div>
             <div class='ft'>
                 <p>$item->pubDate</p>
-            </div>
-        </li>
-HTML;
-}
-
-function getHtmlForEntryDelicious( $item ) {
-    $maxDescriptionLength = 70;
-
-    $description = $item->description;
-    if ( mb_strlen($description) > $maxDescriptionLength ) {
-        $description = mb_substr( $description, 0, $maxDescriptionLength) . '&hellip;';
-    }
-    
-    preg_match( '/^del\.icio\.us link:\s*(.*)/', $item->title, $matches);
-
-    $item = makeSafeForHtml($item);
-
-    return <<<HTML
-        <li class='module delicious'>
-            <div class='hd'>
-                <h3><a href='{$item['link']}'>{$matches[1]}</a></h3>
-            </div>
-            <div class='bd'>
-                <p>$description</p>
-            </div>
-            <div class='ft'>
-                <p>{$item['pubDate']}</p>
             </div>
         </li>
 HTML;
