@@ -167,12 +167,12 @@ function getHtmlForStream($stream, $url, $maxItems = 100) {
         if ($numItems >= $maxItems) {
             continue;
         }
-        $output .= getHtmlForEntry($item, $stream, &$backlog, !((bool)$numItems));
+        $output .= getHtmlForEntry($item, $stream, $backlog, !((bool)$numItems));
         $numItems++;
     }
     
     if ( sizeof($backlog) > 0) {
-        $output .= getHtmlForEntry($item, $stream, &$backlog);
+        $output .= getHtmlForEntry($item, $stream, $backlog);
     }
     
     if ( '' == $output ) {
@@ -215,7 +215,7 @@ function getDataFromHtml( $url ) {
     return $doc;
 }
 
-function getHtmlForEntry( $item, $stream='considered', $backlog = array(), $isFirst = false ) {
+function getHtmlForEntry( $item, $stream='considered', &$backlog = array(), $isFirst = false ) {
     $item->pubDate = date('l jS F Y, H:i', strtotime($item->pubDate));
 
     $html = '';
