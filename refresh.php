@@ -99,64 +99,6 @@ function getEvents() {
     return $output;
 
 
-#    //$data = getDataFromFeed( INPUT_RSS_EVENTS );
-#    $data = getDataFromIcal( INPUT_RSS_EVENTS );
-#
-#    $now = time();
-#
-#    $items = array();
-#    echo "<pre>";
-#    foreach ( $data as $item ) {
-#        $dtstart = $item->getProperty('dtstart');
-#
-#        var_dump($item);
-#        $date = mktime(0, 0, 0, $dtstart['month'], $dtstart['day'], $dtstart['year']);
-#        
-#        if ($date > $now) {
-#            echo "Too new!\n";
-#            continue;
-#        }
-#        if (sizeof($items) >= 3) {
-#            echo "Too many!\n";
-#            break;
-#        }
-#        
-#        $items[] = $item;
-#    }
-#    
-#    if ( 0 === count($items) ) {
-#        return '';
-#    }
-#    
-#    $items = array_reverse($items);
-#    
-#    $output = '<p>You may also remember me from such events as ';
-#
-#    $numItems = count($items);
-#    $doneItems = 0;
-#    foreach ($items as $item) {
-#        $url     = $item->getProperty('url');
-#        $summary = $item->getProperty('summary');
-#
-#        $doneItems++;
-#        
-#        $joiner = '.';
-#        if ($doneItems < $numItems - 1) {
-#            $joiner = ', ';
-#        } else if ($doneItems < $numItems) {
-#            $joiner = ' and ';
-#        }
-#
-#        $output .= "<a href='{$url}'>{$summary}</a>{$joiner}";
-#    }
-#    $output .= '</p>';
-#    
-#    echo $output;
-#    exit();
-#
-#    return $output;
-}
-
 function getHtmlForStream($stream, $url, $maxItems = 100) {
     $data = getDataFromFeed( $url );
 
