@@ -97,7 +97,7 @@ function getEvents() {
     $output .= '</p>';
 
     return $output;
-
+}
 
 function getHtmlForStream($stream, $url, $maxItems = 100) {
     $data = getDataFromFeed( $url );
