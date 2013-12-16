@@ -185,9 +185,10 @@ function getHtmlForStream($stream, $url, $maxItems = 100) {
 
 function getDataFromFeed( $url ) {
     $urlHash = md5($url);
+    $ignoreCache = isset($_GET['ignore_cache']);
     
     $data = apc_fetch($urlHash);
-    if (!$data) {
+    if (!$data || $ignoreCache) {
         error_log('CACHE MISS: '.$url);
 
         $data = file_get_contents( $url."&rand=".time() );
