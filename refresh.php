@@ -15,6 +15,8 @@ define("FILE_OUTPUT",               "/index.html");
 define("TEN_WORD_USER",             "workingwithme");
 define("TWITTER_USERNAME",          "NeilCrosby");
 
+date_default_timezone_set('UTC');
+
 function __autoload($class_name) {
     require_once $class_name . '.php';
 }
