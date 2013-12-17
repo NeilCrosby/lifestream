@@ -1,6 +1,4 @@
 <?php
-#require_once 'classes/iCalcreator.class.php';
-
 ini_set("log_errors", true);
 ini_set("error_reporting", E_ALL);
 
@@ -18,16 +16,16 @@ define("TWITTER_USERNAME",          "NeilCrosby");
 date_default_timezone_set('UTC');
 
 function __autoload($class_name) {
-    require_once $class_name . '.php';
+    require_once 'classes/' . $class_name . '.php';
 }
 
-
+$eventsObj = new Events( INPUT_EVENTS );
 
 $flickr     = getHtmlForStream('flickr',        INPUT_RSS_FLICKR,           7);
 $considered = getHtmlForStream('considered',    INPUT_RSS_CONSIDERED,       5);
 $stream     = '';//getHtmlForStream('consciousness', INPUT_RSS_CONSCIOUSNESS,    20);
 $others     = '';//getHtmlForStream('otherssaid',    INPUT_RSS_OTHERS_SAID,      30);
-$events     = getEvents();
+$events     = $eventsObj->getEvents();
 
 if ( !$flickr || !$considered ) {
     error_log("some data didn't return");
@@ -62,45 +60,9 @@ function saveOutput( $template ) {
     return file_put_contents($_SERVER['DOCUMENT_ROOT'].FILE_OUTPUT, $template);
 }
 
-function getEvents() {
-
-    $data = getDataFromHtml( INPUT_EVENTS );
-
-    $xpath = new DOMXPath($data);
-    $items = $xpath->query("//div[contains(@class, 'conference-listing')]/ol/li[position() <= 3]/h4/a");
-    
-    if ( 0 === count($items) ) {
-        return '';
-    }
-    
-    $output = '<p>You may also remember me from such events as ';
-    
-    $numItems  = $items->length;
-    $doneItems = 0;
-    for ( $i = $numItems - 1; $i >= 0; $i-- ) {
-        $item = $items->item($i);
-        
-        $doneItems++;
-        
-        $joiner = '.';
-        if ($doneItems < $numItems - 1) {
-            $joiner = ', ';
-        } else if ($doneItems < $numItems) {
-            $joiner = ' and ';
-        }
-        
-        $text = $item->nodeValue;
-        $url  = $item->attributes->getNamedItem('href')->nodeValue;
-
-        $output .= "<a href='http://lanyrd.com{$url}'>{$text}</a>{$joiner}";
-    }
-    $output .= '</p>';
-
-    return $output;
-}
-
 function getHtmlForStream($stream, $url, $maxItems = 100) {
-    $data = getDataFromFeed( $url );
+    $dataReader = new DataReader();
+    $data = $dataReader->getDataFromFeed( $url );
 
     $backlog = array();
     $output = '';
@@ -125,57 +87,74 @@ function getHtmlForStream($stream, $url, $maxItems = 100) {
     return "<ol>$output</ol>";
 }
 
-function getDataFromFeed( $url ) {
-    $urlHash = md5($url);
-    $ignoreCache = isset($_GET['ignore_cache']);
-    
-    $data = apc_fetch($urlHash);
-    if (!$data || $ignoreCache) {
-        error_log('CACHE MISS: '.$url);
-
-        $data = file_get_contents( $url."&rand=".time() );
-
-        apc_store($urlHash, $data, 600);
-    }
-    
-    $data = simplexml_load_string( $data );
-    return $data;
-}
-
-function getDataFromHtml( $url ) {
-    $data = apc_fetch($url);
-    if (!$data) {
-        error_log('CACHE MISS: '.$url);
-
-        $data = file_get_contents( $url );
-
-        apc_store($url, $data, 600);
-    }
-    
-    $doc = new DomDocument();
-    @$doc->loadHtml( $data );
-    
-    return $doc;
-}
-
 function getHtmlForEntry( $item, $stream='considered', &$backlog = array(), $isFirst = false ) {
     $item->pubDate = date('l jS F Y, H:i', strtotime($item->pubDate));
 
     $html = '';
-    if ( sizeof( $backlog ) > 0 && !preg_match( '/^http:\/\/www\.flickr\.com/', $item->link ) ) {
+#    if ( sizeof( $backlog ) > 0 && !preg_match( '/^http:\/\/www\.flickr\.com/', $item->link ) ) {
+#
+#        $html = getHtmlForEntryFlickrThumbnail($backlog, $stream);
+#        $backlog = array();
+#    }
 
-        $html = getHtmlForEntryFlickrThumbnail($backlog, $stream);
+    if ( 'flickr' === $stream && !$isFirst) {
+        $backlog[] = $item;
+
+        if ( sizeof($backlog) < 3 ) {
+            return;            
+        }
+
+
+        $maxWidth = 469 - 18;
+        $totalWidth = 0;
+        $firstHeight = null;
+
+        foreach ($backlog as $key=>$backlogItem) {
+            $description = $backlogItem->description;
+
+            $width  = 0;
+            $height = 0;
+
+            preg_match( '/(http:\/\/farm\d+\.static\.?flickr\.com\/\d+\/[^.]*)_m.jpg" width="(\d+)" height="(\d+)/', $description, $matches);
+            if ( $matches ) {
+                $width = $matches[2];
+                $height = $matches[3];
+            }
+
+            if (is_null($firstHeight)) {
+                $firstHeight = $height;
+            }
+
+            $photoMultiplier = $firstHeight / $height;
+            $width = $width * $photoMultiplier;
+
+            $backlog[$key]->photoMultiplier = $photoMultiplier;
+
+            $totalWidth += $width;
+        }
+
+        $overallMultiplier = $maxWidth / $totalWidth;
+
+        foreach ($backlog as $backlogItem) {
+            $multiplier = (float)$overallMultiplier * (float)($backlogItem->photoMultiplier);
+
+            $html .= getHtmlForEntryFlickr($backlogItem, $stream, $isFirst, $multiplier);
+        }
+
         $backlog = array();
+
+        return $html;
+
     }
 
     if ( preg_match( '/^http:\/\/www\.flickr\.com/', $item->link ) ) {
 
-        if ( 'flickr' == $stream || 'considered' == $stream || 'consciousness' == $stream ) {
+        #if ( 'flickr' == $stream || 'considered' == $stream || 'consciousness' == $stream ) {
             return getHtmlForEntryFlickr($item, $stream, $isFirst);
-        } else {
-            $backlog[] = $item;
-            return '';
-        }
+        #} else {
+        #    $backlog[] = $item;
+        #    return '';
+        #}
 
     } else if ( preg_match( '/^http:\/\/thetenwordreview\.com/', $item->link ) ) {
         return $html.getHtmlForEntryTheTenWordReview($item);
@@ -246,7 +225,7 @@ function getHtmlForEntryIWearCotton( $item ) {
 HTML;
 }
 
-function getHtmlForEntryFlickr( $item, $stream, $isFirst=false ) {
+function getHtmlForEntryFlickr( $item, $stream, $isFirst=false, $photoSizeMultiplier = 0 ) {
     $maxWidth = 469;
     $maxHeight = 469;
     
@@ -271,7 +250,8 @@ function getHtmlForEntryFlickr( $item, $stream, $isFirst=false ) {
     if ( $matches ) {
         $width = $matches[2];
         $height = $matches[3];
-        
+
+        if ($photoSizeMultiplier === 0) {
             $height = (int)(($maxWidth / $width) * $height);
             $width  = (int)($maxWidth);
 
@@ -279,6 +259,9 @@ function getHtmlForEntryFlickr( $item, $stream, $isFirst=false ) {
                 $width = (int)(($maxHeight / $height) * $width);
                 $height = (int)($maxHeight);
             }
+
+            $photoSizeMultiplier = 1;
+        }
         
         $img_url = "{$matches[1]}.jpg";
         if ( 'consciousness' == $stream ) {
@@ -288,6 +271,9 @@ function getHtmlForEntryFlickr( $item, $stream, $isFirst=false ) {
         if ( !$isFirst ) {
             $img_url = "{$matches[1]}_m.jpg";
         }
+
+        $height = $height * $photoSizeMultiplier;
+        $width = $width * $photoSizeMultiplier;
 
         $description = "<p><a href='{$item['link']}'><img src='{$img_url}' width='{$width}' height='{$height}' alt='{$item['title']}'></a></p>";
     }
