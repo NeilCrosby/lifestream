@@ -1,0 +1,26 @@
+forge "http://forge.puppetlabs.com"
+
+mod "baseconfig",
+  :git => "git://github.com/NeilCrosby/puppet-base.git",
+  :path => "puppet/modules/baseconfig"
+
+mod "apache",
+  :git => "git://github.com/NeilCrosby/puppet-base.git",
+  :path => "puppet/modules/apache"
+
+mod "apache_vhosts",
+  :git => "git://github.com/NeilCrosby/puppet-base.git",
+  :path => "puppet/modules/apache_vhosts"
+
+mod "apt",
+  :git => "git://github.com/NeilCrosby/puppet-base.git",
+  :path => "puppet/modules/apt"
+
+mod "ondrejppa",
+  :git => "git://github.com/NeilCrosby/puppet-base.git",
+  :path => "puppet/modules/ondrejppa"
+
+mod "php",
+  :git => "git://github.com/NeilCrosby/puppet-base.git",
+  :path => "puppet/modules/php"
+

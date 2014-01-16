@@ -1,1 +1,7 @@
+.vagrant
+.tmp
+
+puppet/modules
+puppet/.librarian
+
 index.html

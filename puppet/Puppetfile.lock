@@ -1,0 +1,56 @@
+GIT
+  remote: git://github.com/NeilCrosby/puppet-base.git
+  path: puppet/modules/apache
+  ref: master
+  sha: dff20486c217c619c82860317da1c45bb9ebbe05
+  specs:
+    apache (0.0.1)
+
+GIT
+  remote: git://github.com/NeilCrosby/puppet-base.git
+  path: puppet/modules/apache_vhosts
+  ref: master
+  sha: dff20486c217c619c82860317da1c45bb9ebbe05
+  specs:
+    apache_vhosts (0.0.1)
+
+GIT
+  remote: git://github.com/NeilCrosby/puppet-base.git
+  path: puppet/modules/apt
+  ref: master
+  sha: dff20486c217c619c82860317da1c45bb9ebbe05
+  specs:
+    apt (0.0.1)
+
+GIT
+  remote: git://github.com/NeilCrosby/puppet-base.git
+  path: puppet/modules/baseconfig
+  ref: master
+  sha: dff20486c217c619c82860317da1c45bb9ebbe05
+  specs:
+    baseconfig (0.0.1)
+
+GIT
+  remote: git://github.com/NeilCrosby/puppet-base.git
+  path: puppet/modules/ondrejppa
+  ref: master
+  sha: dff20486c217c619c82860317da1c45bb9ebbe05
+  specs:
+    ondrejppa (0.0.1)
+
+GIT
+  remote: git://github.com/NeilCrosby/puppet-base.git
+  path: puppet/modules/php
+  ref: master
+  sha: dff20486c217c619c82860317da1c45bb9ebbe05
+  specs:
+    php (0.0.1)
+
+DEPENDENCIES
+  apache (>= 0)
+  apache_vhosts (>= 0)
+  apt (>= 0)
+  baseconfig (>= 0)
+  ondrejppa (>= 0)
+  php (>= 0)
+
