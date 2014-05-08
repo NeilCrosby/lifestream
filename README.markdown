@@ -1,6 +1,6 @@
 # Lifestream
 
-This code is currently used to generate [NeilCrosby.com][1].  Over time it will become more generalised and able to be used by other people.
+This code is currently used to generate [NeilCrosby.com][1].  Over time it will become more generalised and able to be used by other people (yeah, right).
 
 ## Generating a new index.php
 
